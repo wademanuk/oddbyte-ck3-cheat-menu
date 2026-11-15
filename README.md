@@ -10,6 +10,8 @@ A single-player cheat menu and character editor for **Crusader Kings III**. Chan
 
 **Version 1.5.2 · CK3 1.20.x · English · Single-player**
 
+**Designed for Windows, macOS and Linux — one release ZIP for all three.**
+
 ![Oddbyte cheat menu showing character selection and resource controls](docs/images/overview.jpg)
 
 ## What you can do
@@ -28,7 +30,17 @@ Pin up to eight characters, save favourite actions, search by word start and rem
 
 ## Start playing
 
-1. [Install the mod](docs/INSTALLATION.md) and enable **Oddbyte — CK3 Cheat Menu** in your launcher playset.
+Download and extract the [release ZIP](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/releases/latest). Copy the `tw_basic_cheat_menu` folder and adjacent `tw_basic_cheat_menu.mod` file into your platform's CK3 user-data `mod` folder:
+
+| Platform | Default mod folder |
+| --- | --- |
+| Windows | `%USERPROFILE%\Documents\Paradox Interactive\Crusader Kings III\mod` |
+| macOS | `~/Documents/Paradox Interactive/Crusader Kings III/mod` |
+| Linux (native game) | `~/.local/share/Paradox Interactive/Crusader Kings III/mod` |
+
+Create `mod` if needed. If Documents or the game's user-data folder is redirected, use its actual location. See the [full installation guide](docs/INSTALLATION.md) for each platform's steps and the Linux/Proton note.
+
+1. Restart the launcher, add **Oddbyte — CK3 Cheat Menu** to the playset you launch, and enable it.
 2. Load a single-player game and click **Cheats** near the lower-right map controls. **Decisions → Open Cheat Menu** also opens the window.
 3. Check the **Selected character** name before applying a cheat. To edit someone else, right-click their portrait and choose **Cheat Menu: Open Editor**.
 4. Open **Tools & editors** for the extended tools. For actions involving two people, choose **Cheat Menu: Set Other Character** on the second person's portrait.
@@ -37,7 +49,8 @@ No debug mode or console commands are required. The **Classic menu** remains ava
 
 ## Compatibility and limits
 
-- Built for CK3 **1.20.x** and tested on **1.20.1.2 on macOS**. Other game versions are not verified.
+- Designed for the **Windows, macOS and Linux** desktop versions of CK3 **1.20.x**. The mod uses CK3 scripts, GUI definitions and localisation files; it has no platform-specific executable.
+- Tested on **1.20.1.2 on macOS**. Windows and Linux have not been playtested by us; the macOS testing note is not a platform restriction. Other game versions are not verified.
 - Relevant DLC features still require their DLC. The catalog does not include extra choices added by other mods.
 - Existing saves can load the mod. Make a separate save before changing titles, family links or religious rules: many edits have no undo button.
 - Remove unwanted custom boosts before disabling the mod. Added building-slot capacity depends on the mod remaining enabled.

@@ -4,6 +4,8 @@
 
 The **1.5.2 release** passed **93 Python regression tests** and **5,520 native engine checks** against CK3 **1.20.1.2 on macOS**. It retains the reviewed gameplay effects while updating the branding, documentation and build configuration.
 
+The release mod is designed for **Windows, macOS and Linux**, using the same ZIP on all three. It contains CK3 scripts, GUI definitions and localisation files, with no platform-specific executable. Windows and Linux have not been playtested by us. The optional developer engine-check harness currently runs on macOS only; players do not need that harness or Python.
+
 Coverage includes:
 
 - Selection, pins, favourites, numeric input, expired references and confirmation snapshots.
