@@ -1,5 +1,5 @@
 <p>
-  <img src="docs/images/oddbyte-logo.png" alt="Oddbyte" width="520">
+  <img src="docs/images/oddbyte-logo.png" alt="Oddbyte" width="280">
 </p>
 
 # Oddbyte — CK3 Cheat Menu
