@@ -1,3 +1,7 @@
+<p>
+  <img src="docs/images/oddbyte-logo.png" alt="Oddbyte" width="520">
+</p>
+
 # Oddbyte — CK3 Cheat Menu
 
 A single-player cheat menu and character editor for **Crusader Kings III**. Change your ruler, edit other characters and shape your realm from a movable in-game window.
