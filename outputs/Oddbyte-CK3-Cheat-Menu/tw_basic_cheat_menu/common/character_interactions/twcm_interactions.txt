@@ -1,0 +1,19 @@
+﻿twcm_edit_character_interaction = {
+    category = interaction_category_friendly
+    common_interaction = yes
+    interface_priority = 100
+    icon = icon_contract_modification_single
+    desc = twcm_edit_character_interaction_desc
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+    auto_accept = yes
+    is_shown = {
+        scope:actor = { is_ai = no }
+        scope:recipient = { is_alive = yes }
+    }
+    on_accept = {
+        scope:recipient = { save_scope_as = twcm_target }
+        scope:actor = { trigger_event = { id = twcm.0001 } }
+    }
+    ai_will_do = { base = 0 }
+}

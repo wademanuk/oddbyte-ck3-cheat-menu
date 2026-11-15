@@ -1,0 +1,2 @@
+﻿twcm_weak_hook = { expiration_days = 3650 }
+twcm_strong_hook = { strong = yes expiration_days = 7300 }

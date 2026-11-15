@@ -1,0 +1,1 @@
+﻿twcm_cheat_opinion = { opinion = 0 years = 10 decaying = no stacking = no }

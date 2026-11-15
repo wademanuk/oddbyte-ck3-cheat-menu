@@ -1,0 +1,7 @@
+﻿twcm_window_decision = {
+ picture = { reference = "gfx/interface/illustrations/decisions/decision_castle_view.dds" }
+ desc = twcm_window_decision_desc selection_tooltip = twcm_window_decision_tooltip confirm_text = twcm_window_decision_confirm
+ sort_order = 2 ai_check_interval = 0 is_shown = { is_ai = no }
+ effect = { set_variable = { name = twcm_ui_target value = root } twcm_ui_open_effect = yes }
+ ai_potential = { always = no } ai_will_do = { base = 0 }
+}

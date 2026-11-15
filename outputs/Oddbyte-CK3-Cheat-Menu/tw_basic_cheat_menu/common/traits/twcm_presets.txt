@@ -1,0 +1,175 @@
+﻿twcm_super_character = {
+icon = "gfx/interface/icons/traits/intellect_good_3.dds"
+shown_in_ruler_designer = no
+shown_in_encyclopedia = no
+opposites = {
+    twcm_super_all
+}
+diplomacy = 100
+martial = 100
+stewardship = 100
+intrigue = 100
+learning = 100
+prowess = 100
+no_prowess_loss_from_age = yes
+fertility = 500
+health = 100
+monthly_income = 1000
+monthly_piety = 1000
+monthly_prestige = 30
+monthly_dynasty_prestige = 30
+stress_gain_mult = -10
+monthly_dread = 100
+dread_loss_mult = -100
+dread_baseline_add = 200
+domain_limit = 200
+vassal_limit = 200
+years_of_fertility = 100
+attraction_opinion = 1000
+ignore_negative_culture_opinion = yes
+enemy_hostile_scheme_phase_duration_add = 1000
+owned_scheme_secrecy_add = 1000
+owned_hostile_scheme_success_chance_add = 1000
+owned_hostile_scheme_success_chance_growth_add = 1000
+owned_hostile_scheme_success_chance_max_add = 1000
+owned_personal_scheme_success_chance_add = 1000
+owned_personal_scheme_success_chance_growth_add = 1000
+owned_personal_scheme_success_chance_max_add = 1000
+owned_political_scheme_success_chance_add = 1000
+owned_political_scheme_success_chance_growth_add = 1000
+owned_political_scheme_success_chance_max_add = 1000
+owned_contract_scheme_success_chance_add = 1000
+owned_contract_scheme_success_chance_growth_add = 1000
+owned_contract_scheme_success_chance_max_add = 1000
+}
+
+twcm_super_governor = {
+icon = "gfx/interface/icons/traits/administrator.dds"
+shown_in_ruler_designer = no
+shown_in_encyclopedia = no
+opposites = {
+    twcm_super_all
+}
+diplomacy = 100
+martial = 100
+stewardship = 100
+intrigue = 100
+learning = 100
+prowess = 100
+levy_size = 1
+build_speed = -1000
+build_gold_cost = -1000
+holding_build_speed = -1000
+holding_build_gold_cost = -1000
+tax_mult = 10
+development_growth = 1000
+monthly_county_control_growth_add = 100
+county_opinion_add = 100
+}
+
+twcm_super_commander = {
+icon = "gfx/interface/icons/traits/military_engineer.dds"
+shown_in_ruler_designer = no
+shown_in_encyclopedia = no
+opposites = {
+    twcm_super_all
+}
+diplomacy = 100
+martial = 100
+stewardship = 100
+intrigue = 100
+learning = 100
+prowess = 100
+min_combat_roll = 20
+max_combat_roll = 40
+naval_movement_speed_mult = 1000
+siege_phase_time = -100
+siege_morale_loss = 10
+movement_speed = 1000
+retreat_losses = -1
+hard_casualty_modifier = -1
+enemy_hard_casualty_modifier = 10
+advantage = 100
+enemy_terrain_advantage = -1
+no_water_crossing_penalty = yes
+raid_speed = 10
+hostile_county_attrition = -1
+supply_duration = 10
+supply_limit_mult = 10
+supply_capacity_mult = 10
+siege_weapon_max_size_mult = 3
+}
+
+twcm_super_all = {
+icon = "gfx/interface/icons/traits/august.dds"
+shown_in_ruler_designer = no
+shown_in_encyclopedia = no
+opposites = {
+    twcm_super_character
+    twcm_super_governor
+    twcm_super_commander
+}
+diplomacy = 100
+martial = 100
+stewardship = 100
+intrigue = 100
+learning = 100
+prowess = 100
+no_prowess_loss_from_age = yes
+fertility = 500
+health = 100
+monthly_income = 1000
+monthly_piety = 1000
+monthly_prestige = 30
+monthly_dynasty_prestige = 30
+stress_gain_mult = -10
+monthly_dread = 100
+dread_loss_mult = -100
+dread_baseline_add = 200
+domain_limit = 200
+vassal_limit = 200
+years_of_fertility = 100
+attraction_opinion = 1000
+ignore_negative_culture_opinion = yes
+enemy_hostile_scheme_phase_duration_add = 1000
+owned_scheme_secrecy_add = 1000
+owned_hostile_scheme_success_chance_add = 1000
+owned_hostile_scheme_success_chance_growth_add = 1000
+owned_hostile_scheme_success_chance_max_add = 1000
+owned_personal_scheme_success_chance_add = 1000
+owned_personal_scheme_success_chance_growth_add = 1000
+owned_personal_scheme_success_chance_max_add = 1000
+owned_political_scheme_success_chance_add = 1000
+owned_political_scheme_success_chance_growth_add = 1000
+owned_political_scheme_success_chance_max_add = 1000
+owned_contract_scheme_success_chance_add = 1000
+owned_contract_scheme_success_chance_growth_add = 1000
+owned_contract_scheme_success_chance_max_add = 1000
+levy_size = 1
+build_speed = -1000
+build_gold_cost = -1000
+holding_build_speed = -1000
+holding_build_gold_cost = -1000
+tax_mult = 10
+development_growth = 1000
+monthly_county_control_growth_add = 100
+county_opinion_add = 100
+min_combat_roll = 20
+max_combat_roll = 40
+naval_movement_speed_mult = 1000
+siege_phase_time = -100
+siege_morale_loss = 10
+movement_speed = 1000
+retreat_losses = -1
+hard_casualty_modifier = -1
+enemy_hard_casualty_modifier = 10
+advantage = 100
+enemy_terrain_advantage = -1
+no_water_crossing_penalty = yes
+raid_speed = 10
+hostile_county_attrition = -1
+supply_duration = 10
+supply_limit_mult = 10
+supply_capacity_mult = 10
+siege_weapon_max_size_mult = 3
+}

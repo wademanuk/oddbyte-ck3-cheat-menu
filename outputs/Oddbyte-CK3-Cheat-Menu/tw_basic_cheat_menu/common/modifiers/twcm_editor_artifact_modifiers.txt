@@ -1,0 +1,4 @@
+﻿twcm_editor_artifact_basic = { prowess = 2 monthly_prestige = 0.25 }
+ twcm_editor_artifact_fine = { prowess = 4 diplomacy = 1 monthly_prestige = 0.5 }
+ twcm_editor_artifact_great = { prowess = 6 diplomacy = 2 monthly_prestige = 1 }
+ twcm_editor_artifact_best = { prowess = 10 diplomacy = 3 monthly_prestige = 2 }

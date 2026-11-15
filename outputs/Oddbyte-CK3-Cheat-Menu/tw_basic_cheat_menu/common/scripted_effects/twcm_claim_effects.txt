@@ -1,0 +1,25 @@
+﻿twcm_add_pressed_claim_effect = {
+    if = {
+        limit = { tier >= tier_county is_landless_type_title = no exists = holder holder != scope:twcm_target }
+        save_scope_as = twcm_claim_title_work
+        scope:twcm_target = {
+            if = {
+                limit = { NOT = { any_claim = { this = scope:twcm_claim_title_work pressed = yes } } }
+                add_pressed_claim = scope:twcm_claim_title_work
+            }
+        }
+    }
+}
+
+twcm_add_unpressed_claim_effect = {
+    if = {
+        limit = { tier >= tier_county is_landless_type_title = no exists = holder holder != scope:twcm_target }
+        save_scope_as = twcm_claim_title_work
+        scope:twcm_target = {
+            if = {
+                limit = { NOT = { any_claim = { this = scope:twcm_claim_title_work explicit = yes } } }
+                add_unpressed_claim = scope:twcm_claim_title_work
+            }
+        }
+    }
+}

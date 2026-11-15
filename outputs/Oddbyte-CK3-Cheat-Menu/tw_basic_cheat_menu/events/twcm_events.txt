@@ -1,0 +1,5633 @@
+﻿namespace = twcm
+
+twcm.0001 = {
+    type = character_event
+    title = twcm_1_title
+    desc = twcm_1_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_resources
+        hidden_effect = { trigger_event = { id = twcm.0010 } }
+    }
+    option = {
+        name = twcm_stress
+        scope:twcm_target = {
+        add_stress = -1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0001 } }
+    }
+    option = {
+        name = twcm_skills
+        hidden_effect = { trigger_event = { id = twcm.0020 } }
+    }
+    option = {
+        name = twcm_traits
+        hidden_effect = { trigger_event = { id = twcm.0030 } }
+    }
+    option = {
+        name = twcm_construction
+        hidden_effect = { trigger_event = { id = twcm.0040 } }
+    }
+    option = {
+        name = twcm_more
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+    option = {
+        name = twcm_close
+        is_cancel_option = yes
+    }
+}
+
+twcm.0010 = {
+    type = character_event
+    title = twcm_10_title
+    desc = twcm_10_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_gold
+        hidden_effect = { trigger_event = { id = twcm.0011 } }
+    }
+    option = {
+        name = twcm_prestige
+        hidden_effect = { trigger_event = { id = twcm.0012 } }
+    }
+    option = {
+        name = twcm_piety
+        hidden_effect = { trigger_event = { id = twcm.0013 } }
+    }
+    option = {
+        name = twcm_renown_bundle
+        hidden_effect = { trigger_event = { id = twcm.0014 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0001 } }
+    }
+}
+
+twcm.0011 = {
+    type = character_event
+    title = twcm_11_title
+    desc = twcm_11_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_gold_100
+        scope:twcm_target = {
+        add_gold = 100
+        }
+        hidden_effect = { trigger_event = { id = twcm.0011 } }
+    }
+    option = {
+        name = twcm_gold_1000
+        scope:twcm_target = {
+        add_gold = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0011 } }
+    }
+    option = {
+        name = twcm_gold_10000
+        scope:twcm_target = {
+        add_gold = 10000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0011 } }
+    }
+    option = {
+        name = twcm_gold_100000
+        scope:twcm_target = {
+        add_gold = 100000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0011 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0010 } }
+    }
+}
+
+twcm.0012 = {
+    type = character_event
+    title = twcm_12_title
+    desc = twcm_12_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_prestige_100
+        scope:twcm_target = {
+        add_prestige = 100
+        }
+        hidden_effect = { trigger_event = { id = twcm.0012 } }
+    }
+    option = {
+        name = twcm_prestige_1000
+        scope:twcm_target = {
+        add_prestige = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0012 } }
+    }
+    option = {
+        name = twcm_prestige_10000
+        scope:twcm_target = {
+        add_prestige = 10000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0012 } }
+    }
+    option = {
+        name = twcm_prestige_100000
+        scope:twcm_target = {
+        add_prestige = 100000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0012 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0010 } }
+    }
+}
+
+twcm.0013 = {
+    type = character_event
+    title = twcm_13_title
+    desc = twcm_13_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_piety_100
+        scope:twcm_target = {
+        add_piety = 100
+        }
+        hidden_effect = { trigger_event = { id = twcm.0013 } }
+    }
+    option = {
+        name = twcm_piety_1000
+        scope:twcm_target = {
+        add_piety = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0013 } }
+    }
+    option = {
+        name = twcm_piety_10000
+        scope:twcm_target = {
+        add_piety = 10000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0013 } }
+    }
+    option = {
+        name = twcm_piety_100000
+        scope:twcm_target = {
+        add_piety = 100000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0013 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0010 } }
+    }
+}
+
+twcm.0020 = {
+    type = character_event
+    title = twcm_20_title
+    desc = twcm_20_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_all_skills_1
+        scope:twcm_target = {
+        add_diplomacy_skill = 1
+        add_martial_skill = 1
+        add_stewardship_skill = 1
+        add_intrigue_skill = 1
+        add_learning_skill = 1
+        add_prowess_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0020 } }
+    }
+    option = {
+        name = twcm_all_skills_5
+        scope:twcm_target = {
+        add_diplomacy_skill = 5
+        add_martial_skill = 5
+        add_stewardship_skill = 5
+        add_intrigue_skill = 5
+        add_learning_skill = 5
+        add_prowess_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0020 } }
+    }
+    option = {
+        name = twcm_individual_skills
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0001 } }
+    }
+}
+
+twcm.0021 = {
+    type = character_event
+    title = twcm_21_title
+    desc = twcm_21_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_skill_diplomacy
+        hidden_effect = { trigger_event = { id = twcm.0022 } }
+    }
+    option = {
+        name = twcm_skill_martial
+        hidden_effect = { trigger_event = { id = twcm.0023 } }
+    }
+    option = {
+        name = twcm_skill_stewardship
+        hidden_effect = { trigger_event = { id = twcm.0024 } }
+    }
+    option = {
+        name = twcm_skill_intrigue
+        hidden_effect = { trigger_event = { id = twcm.0025 } }
+    }
+    option = {
+        name = twcm_skill_learning
+        hidden_effect = { trigger_event = { id = twcm.0026 } }
+    }
+    option = {
+        name = twcm_skill_prowess
+        hidden_effect = { trigger_event = { id = twcm.0027 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0020 } }
+    }
+}
+
+twcm.0022 = {
+    type = character_event
+    title = twcm_22_title
+    desc = twcm_22_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_diplomacy_1
+        scope:twcm_target = {
+        add_diplomacy_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0022 } }
+    }
+    option = {
+        name = twcm_diplomacy_5
+        scope:twcm_target = {
+        add_diplomacy_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0022 } }
+    }
+    option = {
+        name = twcm_diplomacy_10
+        scope:twcm_target = {
+        add_diplomacy_skill = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0022 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+}
+
+twcm.0023 = {
+    type = character_event
+    title = twcm_23_title
+    desc = twcm_23_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_martial_1
+        scope:twcm_target = {
+        add_martial_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0023 } }
+    }
+    option = {
+        name = twcm_martial_5
+        scope:twcm_target = {
+        add_martial_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0023 } }
+    }
+    option = {
+        name = twcm_martial_10
+        scope:twcm_target = {
+        add_martial_skill = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0023 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+}
+
+twcm.0024 = {
+    type = character_event
+    title = twcm_24_title
+    desc = twcm_24_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_stewardship_1
+        scope:twcm_target = {
+        add_stewardship_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0024 } }
+    }
+    option = {
+        name = twcm_stewardship_5
+        scope:twcm_target = {
+        add_stewardship_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0024 } }
+    }
+    option = {
+        name = twcm_stewardship_10
+        scope:twcm_target = {
+        add_stewardship_skill = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0024 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+}
+
+twcm.0025 = {
+    type = character_event
+    title = twcm_25_title
+    desc = twcm_25_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_intrigue_1
+        scope:twcm_target = {
+        add_intrigue_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0025 } }
+    }
+    option = {
+        name = twcm_intrigue_5
+        scope:twcm_target = {
+        add_intrigue_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0025 } }
+    }
+    option = {
+        name = twcm_intrigue_10
+        scope:twcm_target = {
+        add_intrigue_skill = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0025 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+}
+
+twcm.0026 = {
+    type = character_event
+    title = twcm_26_title
+    desc = twcm_26_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_learning_1
+        scope:twcm_target = {
+        add_learning_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0026 } }
+    }
+    option = {
+        name = twcm_learning_5
+        scope:twcm_target = {
+        add_learning_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0026 } }
+    }
+    option = {
+        name = twcm_learning_10
+        scope:twcm_target = {
+        add_learning_skill = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0026 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+}
+
+twcm.0027 = {
+    type = character_event
+    title = twcm_27_title
+    desc = twcm_27_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_prowess_1
+        scope:twcm_target = {
+        add_prowess_skill = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0027 } }
+    }
+    option = {
+        name = twcm_prowess_5
+        scope:twcm_target = {
+        add_prowess_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0027 } }
+    }
+    option = {
+        name = twcm_prowess_10
+        scope:twcm_target = {
+        add_prowess_skill = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0027 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0021 } }
+    }
+}
+
+twcm.0030 = {
+    type = character_event
+    title = twcm_30_title
+    desc = twcm_30_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_congenital
+        hidden_effect = { trigger_event = { id = twcm.0031 } }
+    }
+    option = {
+        name = twcm_personality
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+    option = {
+        name = twcm_other_traits
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0001 } }
+    }
+}
+
+twcm.0100 = {
+    type = character_event
+    title = twcm_100_title
+    desc = twcm_100_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_intellect_good_3
+        trigger = { scope:twcm_target = { NOT = { has_trait = intellect_good_3 } } }
+        scope:twcm_target = {
+        remove_trait = dull
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        remove_trait = intellect_good_1
+        remove_trait = intellect_good_2
+        add_trait = intellect_good_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0100 } }
+    }
+    option = {
+        name = twcm_remove_intellect_good_3
+        trigger = { scope:twcm_target = { has_trait = intellect_good_3 } }
+        scope:twcm_target = {
+        remove_trait = intellect_good_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0100 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0031 } }
+    }
+}
+
+twcm.0101 = {
+    type = character_event
+    title = twcm_101_title
+    desc = twcm_101_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_physique_good_3
+        trigger = { scope:twcm_target = { NOT = { has_trait = physique_good_3 } } }
+        scope:twcm_target = {
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = physique_good_1
+        remove_trait = physique_good_2
+        remove_trait = spindly
+        remove_trait = weak
+        add_trait = physique_good_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0101 } }
+    }
+    option = {
+        name = twcm_remove_physique_good_3
+        trigger = { scope:twcm_target = { has_trait = physique_good_3 } }
+        scope:twcm_target = {
+        remove_trait = physique_good_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0101 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0031 } }
+    }
+}
+
+twcm.0102 = {
+    type = character_event
+    title = twcm_102_title
+    desc = twcm_102_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_beauty_good_3
+        trigger = { scope:twcm_target = { NOT = { has_trait = beauty_good_3 } } }
+        scope:twcm_target = {
+        remove_trait = beauty_bad_1
+        remove_trait = beauty_bad_2
+        remove_trait = beauty_bad_3
+        remove_trait = beauty_good_1
+        remove_trait = beauty_good_2
+        add_trait = beauty_good_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0102 } }
+    }
+    option = {
+        name = twcm_remove_beauty_good_3
+        trigger = { scope:twcm_target = { has_trait = beauty_good_3 } }
+        scope:twcm_target = {
+        remove_trait = beauty_good_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0102 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0031 } }
+    }
+}
+
+twcm.0103 = {
+    type = character_event
+    title = twcm_103_title
+    desc = twcm_103_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_fecund
+        trigger = { scope:twcm_target = { NOT = { has_trait = fecund } } }
+        scope:twcm_target = {
+        remove_trait = infertile
+        add_trait = fecund
+        }
+        hidden_effect = { trigger_event = { id = twcm.0103 } }
+    }
+    option = {
+        name = twcm_remove_fecund
+        trigger = { scope:twcm_target = { has_trait = fecund } }
+        scope:twcm_target = {
+        remove_trait = fecund
+        }
+        hidden_effect = { trigger_event = { id = twcm.0103 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0031 } }
+    }
+}
+
+twcm.0104 = {
+    type = character_event
+    title = twcm_104_title
+    desc = twcm_104_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_pure_blooded
+        trigger = { scope:twcm_target = { NOT = { has_trait = pure_blooded } } }
+        scope:twcm_target = {
+        add_trait = pure_blooded
+        }
+        hidden_effect = { trigger_event = { id = twcm.0104 } }
+    }
+    option = {
+        name = twcm_remove_pure_blooded
+        trigger = { scope:twcm_target = { has_trait = pure_blooded } }
+        scope:twcm_target = {
+        remove_trait = pure_blooded
+        }
+        hidden_effect = { trigger_event = { id = twcm.0104 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0031 } }
+    }
+}
+
+twcm.0031 = {
+    type = character_event
+    title = twcm_31_title
+    desc = twcm_31_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_trait_intellect_good_3
+        hidden_effect = { trigger_event = { id = twcm.0100 } }
+    }
+    option = {
+        name = twcm_trait_physique_good_3
+        hidden_effect = { trigger_event = { id = twcm.0101 } }
+    }
+    option = {
+        name = twcm_trait_beauty_good_3
+        hidden_effect = { trigger_event = { id = twcm.0102 } }
+    }
+    option = {
+        name = twcm_trait_fecund
+        hidden_effect = { trigger_event = { id = twcm.0103 } }
+    }
+    option = {
+        name = twcm_trait_pure_blooded
+        hidden_effect = { trigger_event = { id = twcm.0104 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0030 } }
+    }
+}
+
+twcm.0105 = {
+    type = character_event
+    title = twcm_105_title
+    desc = twcm_105_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_brave
+        trigger = { scope:twcm_target = { NOT = { has_trait = brave } } }
+        scope:twcm_target = {
+        remove_trait = craven
+        add_trait = brave
+        }
+        hidden_effect = { trigger_event = { id = twcm.0105 } }
+    }
+    option = {
+        name = twcm_remove_brave
+        trigger = { scope:twcm_target = { has_trait = brave } }
+        scope:twcm_target = {
+        remove_trait = brave
+        }
+        hidden_effect = { trigger_event = { id = twcm.0105 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+}
+
+twcm.0106 = {
+    type = character_event
+    title = twcm_106_title
+    desc = twcm_106_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_diligent
+        trigger = { scope:twcm_target = { NOT = { has_trait = diligent } } }
+        scope:twcm_target = {
+        remove_trait = lazy
+        add_trait = diligent
+        }
+        hidden_effect = { trigger_event = { id = twcm.0106 } }
+    }
+    option = {
+        name = twcm_remove_diligent
+        trigger = { scope:twcm_target = { has_trait = diligent } }
+        scope:twcm_target = {
+        remove_trait = diligent
+        }
+        hidden_effect = { trigger_event = { id = twcm.0106 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+}
+
+twcm.0107 = {
+    type = character_event
+    title = twcm_107_title
+    desc = twcm_107_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_temperate
+        trigger = { scope:twcm_target = { NOT = { has_trait = temperate } } }
+        scope:twcm_target = {
+        remove_trait = gluttonous
+        add_trait = temperate
+        }
+        hidden_effect = { trigger_event = { id = twcm.0107 } }
+    }
+    option = {
+        name = twcm_remove_temperate
+        trigger = { scope:twcm_target = { has_trait = temperate } }
+        scope:twcm_target = {
+        remove_trait = temperate
+        }
+        hidden_effect = { trigger_event = { id = twcm.0107 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+}
+
+twcm.0108 = {
+    type = character_event
+    title = twcm_108_title
+    desc = twcm_108_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_patient
+        trigger = { scope:twcm_target = { NOT = { has_trait = patient } } }
+        scope:twcm_target = {
+        remove_trait = impatient
+        add_trait = patient
+        }
+        hidden_effect = { trigger_event = { id = twcm.0108 } }
+    }
+    option = {
+        name = twcm_remove_patient
+        trigger = { scope:twcm_target = { has_trait = patient } }
+        scope:twcm_target = {
+        remove_trait = patient
+        }
+        hidden_effect = { trigger_event = { id = twcm.0108 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+}
+
+twcm.0109 = {
+    type = character_event
+    title = twcm_109_title
+    desc = twcm_109_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_gregarious
+        trigger = { scope:twcm_target = { NOT = { has_trait = gregarious } } }
+        scope:twcm_target = {
+        remove_trait = shy
+        add_trait = gregarious
+        }
+        hidden_effect = { trigger_event = { id = twcm.0109 } }
+    }
+    option = {
+        name = twcm_remove_gregarious
+        trigger = { scope:twcm_target = { has_trait = gregarious } }
+        scope:twcm_target = {
+        remove_trait = gregarious
+        }
+        hidden_effect = { trigger_event = { id = twcm.0109 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+}
+
+twcm.0110 = {
+    type = character_event
+    title = twcm_110_title
+    desc = twcm_110_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_ambitious
+        trigger = { scope:twcm_target = { NOT = { has_trait = ambitious } } }
+        scope:twcm_target = {
+        remove_trait = content
+        add_trait = ambitious
+        }
+        hidden_effect = { trigger_event = { id = twcm.0110 } }
+    }
+    option = {
+        name = twcm_remove_ambitious
+        trigger = { scope:twcm_target = { has_trait = ambitious } }
+        scope:twcm_target = {
+        remove_trait = ambitious
+        }
+        hidden_effect = { trigger_event = { id = twcm.0110 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0032 } }
+    }
+}
+
+twcm.0032 = {
+    type = character_event
+    title = twcm_32_title
+    desc = twcm_32_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_trait_brave
+        hidden_effect = { trigger_event = { id = twcm.0105 } }
+    }
+    option = {
+        name = twcm_trait_diligent
+        hidden_effect = { trigger_event = { id = twcm.0106 } }
+    }
+    option = {
+        name = twcm_trait_temperate
+        hidden_effect = { trigger_event = { id = twcm.0107 } }
+    }
+    option = {
+        name = twcm_trait_patient
+        hidden_effect = { trigger_event = { id = twcm.0108 } }
+    }
+    option = {
+        name = twcm_trait_gregarious
+        hidden_effect = { trigger_event = { id = twcm.0109 } }
+    }
+    option = {
+        name = twcm_trait_ambitious
+        hidden_effect = { trigger_event = { id = twcm.0110 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0030 } }
+    }
+}
+
+twcm.0111 = {
+    type = character_event
+    title = twcm_111_title
+    desc = twcm_111_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_strong
+        trigger = { scope:twcm_target = { NOT = { has_trait = strong } } }
+        scope:twcm_target = {
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = weak
+        add_trait = strong
+        }
+        hidden_effect = { trigger_event = { id = twcm.0111 } }
+    }
+    option = {
+        name = twcm_remove_strong
+        trigger = { scope:twcm_target = { has_trait = strong } }
+        scope:twcm_target = {
+        remove_trait = strong
+        }
+        hidden_effect = { trigger_event = { id = twcm.0111 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+}
+
+twcm.0112 = {
+    type = character_event
+    title = twcm_112_title
+    desc = twcm_112_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_shrewd
+        trigger = { scope:twcm_target = { NOT = { has_trait = shrewd } } }
+        scope:twcm_target = {
+        remove_trait = dull
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        add_trait = shrewd
+        }
+        hidden_effect = { trigger_event = { id = twcm.0112 } }
+    }
+    option = {
+        name = twcm_remove_shrewd
+        trigger = { scope:twcm_target = { has_trait = shrewd } }
+        scope:twcm_target = {
+        remove_trait = shrewd
+        }
+        hidden_effect = { trigger_event = { id = twcm.0112 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+}
+
+twcm.0113 = {
+    type = character_event
+    title = twcm_113_title
+    desc = twcm_113_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_athletic
+        trigger = { scope:twcm_target = { NOT = { has_trait = athletic } } }
+        scope:twcm_target = {
+        add_trait = athletic
+        }
+        hidden_effect = { trigger_event = { id = twcm.0113 } }
+    }
+    option = {
+        name = twcm_remove_athletic
+        trigger = { scope:twcm_target = { has_trait = athletic } }
+        scope:twcm_target = {
+        remove_trait = athletic
+        }
+        hidden_effect = { trigger_event = { id = twcm.0113 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+}
+
+twcm.0114 = {
+    type = character_event
+    title = twcm_114_title
+    desc = twcm_114_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_immortal
+        trigger = { scope:twcm_target = { NOT = { has_trait = immortal } } }
+        scope:twcm_target = {
+        remove_trait = incapable
+        add_trait = immortal
+        if = { limit = { age >= 16 } set_immortal_age = 25 }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0114 } }
+    }
+    option = {
+        name = twcm_remove_immortal
+        trigger = { scope:twcm_target = { has_trait = immortal } }
+        scope:twcm_target = {
+        remove_trait = immortal
+        }
+        hidden_effect = { trigger_event = { id = twcm.0114 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+}
+
+twcm.0033 = {
+    type = character_event
+    title = twcm_33_title
+    desc = twcm_33_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_trait_strong
+        hidden_effect = { trigger_event = { id = twcm.0111 } }
+    }
+    option = {
+        name = twcm_trait_shrewd
+        hidden_effect = { trigger_event = { id = twcm.0112 } }
+    }
+    option = {
+        name = twcm_trait_athletic
+        hidden_effect = { trigger_event = { id = twcm.0113 } }
+    }
+    option = {
+        name = twcm_trait_immortal
+        hidden_effect = { trigger_event = { id = twcm.0114 } }
+    }
+    option = {
+        name = twcm_ailments
+        hidden_effect = { trigger_event = { id = twcm.0034 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0030 } }
+    }
+}
+
+twcm.0034 = {
+    type = character_event
+    title = twcm_34_title
+    desc = twcm_34_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_clear_ailments
+        scope:twcm_target = {
+        remove_trait = ill
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        remove_trait = infirm
+        remove_trait = incapable
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        }
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0033 } }
+    }
+}
+
+twcm.0040 = {
+    type = character_event
+    title = twcm_40_title
+    desc = twcm_40_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_on
+        trigger = { scope:twcm_target = { NOT = { has_character_modifier = twcm_near_instant_construction } } }
+        scope:twcm_target = {
+        add_character_modifier = { modifier = twcm_near_instant_construction }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0040 } }
+    }
+    option = {
+        name = twcm_build_off
+        trigger = { scope:twcm_target = { has_character_modifier = twcm_near_instant_construction } }
+        scope:twcm_target = {
+        remove_character_modifier = twcm_near_instant_construction
+        }
+        hidden_effect = { trigger_event = { id = twcm.0040 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0001 } }
+    }
+}
+
+twcm.0002 = {
+    type = character_event
+    title = twcm_2_title
+    desc = twcm_2_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_lifestyles
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+    option = {
+        name = twcm_vitals
+        hidden_effect = { trigger_event = { id = twcm.0060 } }
+    }
+    option = {
+        name = twcm_counties
+        hidden_effect = { trigger_event = { id = twcm.0070 } }
+    }
+    option = {
+        name = twcm_military
+        hidden_effect = { trigger_event = { id = twcm.0080 } }
+    }
+    option = {
+        name = twcm_power_tools
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+    option = {
+        name = twcm_select_self
+        save_scope_as = twcm_target
+        set_variable = { name = twcm_ui_target value = root }
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0001 } }
+    }
+}
+
+twcm.0050 = {
+    type = character_event
+    title = twcm_50_title
+    desc = twcm_50_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_lifestyle_diplomacy
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_lifestyle_martial
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_lifestyle_stewardship
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_lifestyle_intrigue
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_lifestyle_learning
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_lifestyle_wanderer
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+}
+
+twcm.0051 = {
+    type = character_event
+    title = twcm_51_title
+    desc = twcm_51_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_xp_diplomacy_250
+        scope:twcm_target = {
+        add_diplomacy_lifestyle_xp = 250
+        }
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_xp_diplomacy_1000
+        scope:twcm_target = {
+        add_diplomacy_lifestyle_xp = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_xp_diplomacy_5000
+        scope:twcm_target = {
+        add_diplomacy_lifestyle_xp = 5000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_perks_diplomacy_1
+        scope:twcm_target = {
+        add_diplomacy_lifestyle_perk_points = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_perks_diplomacy_5
+        scope:twcm_target = {
+        add_diplomacy_lifestyle_perk_points = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_perks_diplomacy_10
+        scope:twcm_target = {
+        add_diplomacy_lifestyle_perk_points = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0051 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+}
+
+twcm.0052 = {
+    type = character_event
+    title = twcm_52_title
+    desc = twcm_52_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_xp_martial_250
+        scope:twcm_target = {
+        add_martial_lifestyle_xp = 250
+        }
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_xp_martial_1000
+        scope:twcm_target = {
+        add_martial_lifestyle_xp = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_xp_martial_5000
+        scope:twcm_target = {
+        add_martial_lifestyle_xp = 5000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_perks_martial_1
+        scope:twcm_target = {
+        add_martial_lifestyle_perk_points = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_perks_martial_5
+        scope:twcm_target = {
+        add_martial_lifestyle_perk_points = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_perks_martial_10
+        scope:twcm_target = {
+        add_martial_lifestyle_perk_points = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0052 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+}
+
+twcm.0053 = {
+    type = character_event
+    title = twcm_53_title
+    desc = twcm_53_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_xp_stewardship_250
+        scope:twcm_target = {
+        add_stewardship_lifestyle_xp = 250
+        }
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_xp_stewardship_1000
+        scope:twcm_target = {
+        add_stewardship_lifestyle_xp = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_xp_stewardship_5000
+        scope:twcm_target = {
+        add_stewardship_lifestyle_xp = 5000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_perks_stewardship_1
+        scope:twcm_target = {
+        add_stewardship_lifestyle_perk_points = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_perks_stewardship_5
+        scope:twcm_target = {
+        add_stewardship_lifestyle_perk_points = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_perks_stewardship_10
+        scope:twcm_target = {
+        add_stewardship_lifestyle_perk_points = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0053 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+}
+
+twcm.0054 = {
+    type = character_event
+    title = twcm_54_title
+    desc = twcm_54_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_xp_intrigue_250
+        scope:twcm_target = {
+        add_intrigue_lifestyle_xp = 250
+        }
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_xp_intrigue_1000
+        scope:twcm_target = {
+        add_intrigue_lifestyle_xp = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_xp_intrigue_5000
+        scope:twcm_target = {
+        add_intrigue_lifestyle_xp = 5000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_perks_intrigue_1
+        scope:twcm_target = {
+        add_intrigue_lifestyle_perk_points = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_perks_intrigue_5
+        scope:twcm_target = {
+        add_intrigue_lifestyle_perk_points = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_perks_intrigue_10
+        scope:twcm_target = {
+        add_intrigue_lifestyle_perk_points = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0054 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+}
+
+twcm.0055 = {
+    type = character_event
+    title = twcm_55_title
+    desc = twcm_55_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_xp_learning_250
+        scope:twcm_target = {
+        add_learning_lifestyle_xp = 250
+        }
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_xp_learning_1000
+        scope:twcm_target = {
+        add_learning_lifestyle_xp = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_xp_learning_5000
+        scope:twcm_target = {
+        add_learning_lifestyle_xp = 5000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_perks_learning_1
+        scope:twcm_target = {
+        add_learning_lifestyle_perk_points = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_perks_learning_5
+        scope:twcm_target = {
+        add_learning_lifestyle_perk_points = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_perks_learning_10
+        scope:twcm_target = {
+        add_learning_lifestyle_perk_points = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0055 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+}
+
+twcm.0056 = {
+    type = character_event
+    title = twcm_56_title
+    desc = twcm_56_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_xp_wanderer_250
+        scope:twcm_target = {
+        add_wanderer_lifestyle_xp = 250
+        }
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_xp_wanderer_1000
+        scope:twcm_target = {
+        add_wanderer_lifestyle_xp = 1000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_xp_wanderer_5000
+        scope:twcm_target = {
+        add_wanderer_lifestyle_xp = 5000
+        }
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_perks_wanderer_1
+        scope:twcm_target = {
+        add_wanderer_lifestyle_perk_points = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_perks_wanderer_5
+        scope:twcm_target = {
+        add_wanderer_lifestyle_perk_points = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_perks_wanderer_10
+        scope:twcm_target = {
+        add_wanderer_lifestyle_perk_points = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0056 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0050 } }
+    }
+}
+
+twcm.0060 = {
+    type = character_event
+    title = twcm_60_title
+    desc = twcm_60_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_age
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_health
+        hidden_effect = { trigger_event = { id = twcm.0062 } }
+    }
+    option = {
+        name = twcm_fertility
+        hidden_effect = { trigger_event = { id = twcm.0063 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+}
+
+twcm.0061 = {
+    type = character_event
+    title = twcm_61_title
+    desc = twcm_61_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_age_younger_1
+        trigger = { scope:twcm_target = { age >= 17 } }
+        scope:twcm_target = {
+        change_age = -1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_age_younger_5
+        trigger = { scope:twcm_target = { age >= 21 } }
+        scope:twcm_target = {
+        change_age = -5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_age_younger_10
+        trigger = { scope:twcm_target = { age >= 26 } }
+        scope:twcm_target = {
+        change_age = -10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_age_older_1
+        scope:twcm_target = {
+        change_age = 1
+        }
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_age_older_5
+        scope:twcm_target = {
+        change_age = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_age_older_10
+        scope:twcm_target = {
+        change_age = 10
+        }
+        hidden_effect = { trigger_event = { id = twcm.0061 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0060 } }
+    }
+}
+
+twcm.0062 = {
+    type = character_event
+    title = twcm_62_title
+    desc = twcm_62_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_health_on
+        trigger = { scope:twcm_target = { NOT = { has_character_modifier = twcm_health_boost } } }
+        scope:twcm_target = {
+        add_character_modifier = { modifier = twcm_health_boost }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0062 } }
+    }
+    option = {
+        name = twcm_health_off
+        trigger = { scope:twcm_target = { has_character_modifier = twcm_health_boost } }
+        scope:twcm_target = {
+        remove_character_modifier = twcm_health_boost
+        }
+        hidden_effect = { trigger_event = { id = twcm.0062 } }
+    }
+    option = {
+        name = twcm_heal_now
+        scope:twcm_target = {
+        remove_trait = ill
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        remove_trait = infirm
+        remove_trait = incapable
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        }
+        hidden_effect = { trigger_event = { id = twcm.0062 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0060 } }
+    }
+}
+
+twcm.0063 = {
+    type = character_event
+    title = twcm_63_title
+    desc = twcm_63_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_fertility_high
+        trigger = { scope:twcm_target = { NOT = { has_character_modifier = twcm_high_fertility } } }
+        scope:twcm_target = {
+        remove_character_modifier = twcm_low_fertility
+        add_character_modifier = { modifier = twcm_high_fertility }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0063 } }
+    }
+    option = {
+        name = twcm_fertility_low
+        trigger = { scope:twcm_target = { NOT = { has_character_modifier = twcm_low_fertility } } }
+        scope:twcm_target = {
+        remove_character_modifier = twcm_high_fertility
+        add_character_modifier = { modifier = twcm_low_fertility }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0063 } }
+    }
+    option = {
+        name = twcm_fertility_reset
+        scope:twcm_target = {
+        remove_character_modifier = twcm_high_fertility
+        remove_character_modifier = twcm_low_fertility
+        }
+        hidden_effect = { trigger_event = { id = twcm.0063 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0060 } }
+    }
+}
+
+twcm.0070 = {
+    type = character_event
+    title = twcm_70_title
+    desc = twcm_70_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_county_capital
+        trigger = { scope:twcm_target = { is_landed = yes exists = capital_province } }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_county_domain
+        trigger = { scope:twcm_target = { any_held_title = { tier = tier_county } } }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+}
+
+twcm.0071 = {
+    type = character_event
+    title = twcm_71_title
+    desc = twcm_71_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_dev_71_1
+        scope:twcm_target = {
+        capital_province.county = {
+        change_development_level = 1
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_dev_71_5
+        scope:twcm_target = {
+        capital_province.county = {
+        change_development_level = 5
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_dev_71_10
+        scope:twcm_target = {
+        capital_province.county = {
+        change_development_level = 10
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_control_71
+        scope:twcm_target = {
+        capital_province.county = {
+        change_county_control = 100
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_pop_on_71
+        scope:twcm_target = {
+        capital_province.county = {
+        add_county_modifier = { modifier = twcm_popular_support }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_pop_off_71
+        scope:twcm_target = {
+        capital_province.county = {
+        remove_county_modifier = twcm_popular_support
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0071 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0070 } }
+    }
+}
+
+twcm.0072 = {
+    type = character_event
+    title = twcm_72_title
+    desc = twcm_72_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_dev_72_1
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_county }
+        change_development_level = 1
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_dev_72_5
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_county }
+        change_development_level = 5
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_dev_72_10
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_county }
+        change_development_level = 10
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_control_72
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_county }
+        change_county_control = 100
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_pop_on_72
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_county }
+        add_county_modifier = { modifier = twcm_popular_support }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_pop_off_72
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_county }
+        remove_county_modifier = twcm_popular_support
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0072 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0070 } }
+    }
+}
+
+twcm.0080 = {
+    type = character_event
+    title = twcm_80_title
+    desc = twcm_80_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_refill_maa
+        trigger = { scope:twcm_target = { any_maa_regiment = { always = yes } } }
+        scope:twcm_target = {
+        every_maa_regiment = { change_maa_troops_count = { value = maa_max_troops_count subtract = maa_current_troops_count min = 0 } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0080 } }
+    }
+    option = {
+        name = twcm_refill_levies
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        scope:twcm_target = {
+        every_held_title = { limit = { tier = tier_barony } title_province = { refill_levy = yes refill_garrison = yes } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0080 } }
+    }
+    option = {
+        name = twcm_commanders
+        hidden_effect = { trigger_event = { id = twcm.0081 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+}
+
+twcm.0081 = {
+    type = character_event
+    title = twcm_81_title
+    desc = twcm_81_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_commander_martial
+        scope:twcm_target = {
+        add_martial_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0081 } }
+    }
+    option = {
+        name = twcm_commander_prowess
+        scope:twcm_target = {
+        add_prowess_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0081 } }
+    }
+    option = {
+        name = twcm_commander_both
+        scope:twcm_target = {
+        add_martial_skill = 5
+        add_prowess_skill = 5
+        }
+        hidden_effect = { trigger_event = { id = twcm.0081 } }
+    }
+    option = {
+        name = twcm_commander_traits
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0080 } }
+    }
+}
+
+twcm.0083 = {
+    type = character_event
+    title = twcm_83_title
+    desc = twcm_83_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_commander_aggressive_attacker
+        hidden_effect = { trigger_event = { id = twcm.0200 } }
+    }
+    option = {
+        name = twcm_commander_unyielding_defender
+        hidden_effect = { trigger_event = { id = twcm.0201 } }
+    }
+    option = {
+        name = twcm_commander_logistician
+        hidden_effect = { trigger_event = { id = twcm.0202 } }
+    }
+    option = {
+        name = twcm_commander_military_engineer
+        hidden_effect = { trigger_event = { id = twcm.0203 } }
+    }
+    option = {
+        name = twcm_commander_organizer
+        hidden_effect = { trigger_event = { id = twcm.0204 } }
+    }
+    option = {
+        name = twcm_commander_flexible_leader
+        hidden_effect = { trigger_event = { id = twcm.0205 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0081 } }
+    }
+}
+
+twcm.0200 = {
+    type = character_event
+    title = twcm_200_title
+    desc = twcm_200_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_aggressive_attacker
+        trigger = { scope:twcm_target = { NOT = { has_trait = aggressive_attacker } } }
+        scope:twcm_target = {
+        add_trait = aggressive_attacker
+        }
+        hidden_effect = { trigger_event = { id = twcm.0200 } }
+    }
+    option = {
+        name = twcm_remove_aggressive_attacker
+        trigger = { scope:twcm_target = { has_trait = aggressive_attacker } }
+        scope:twcm_target = {
+        remove_trait = aggressive_attacker
+        }
+        hidden_effect = { trigger_event = { id = twcm.0200 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+}
+
+twcm.0201 = {
+    type = character_event
+    title = twcm_201_title
+    desc = twcm_201_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_unyielding_defender
+        trigger = { scope:twcm_target = { NOT = { has_trait = unyielding_defender } } }
+        scope:twcm_target = {
+        add_trait = unyielding_defender
+        }
+        hidden_effect = { trigger_event = { id = twcm.0201 } }
+    }
+    option = {
+        name = twcm_remove_unyielding_defender
+        trigger = { scope:twcm_target = { has_trait = unyielding_defender } }
+        scope:twcm_target = {
+        remove_trait = unyielding_defender
+        }
+        hidden_effect = { trigger_event = { id = twcm.0201 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+}
+
+twcm.0202 = {
+    type = character_event
+    title = twcm_202_title
+    desc = twcm_202_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_logistician
+        trigger = { scope:twcm_target = { NOT = { has_trait = logistician } } }
+        scope:twcm_target = {
+        add_trait = logistician
+        }
+        hidden_effect = { trigger_event = { id = twcm.0202 } }
+    }
+    option = {
+        name = twcm_remove_logistician
+        trigger = { scope:twcm_target = { has_trait = logistician } }
+        scope:twcm_target = {
+        remove_trait = logistician
+        }
+        hidden_effect = { trigger_event = { id = twcm.0202 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+}
+
+twcm.0203 = {
+    type = character_event
+    title = twcm_203_title
+    desc = twcm_203_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_military_engineer
+        trigger = { scope:twcm_target = { NOT = { has_trait = military_engineer } } }
+        scope:twcm_target = {
+        add_trait = military_engineer
+        }
+        hidden_effect = { trigger_event = { id = twcm.0203 } }
+    }
+    option = {
+        name = twcm_remove_military_engineer
+        trigger = { scope:twcm_target = { has_trait = military_engineer } }
+        scope:twcm_target = {
+        remove_trait = military_engineer
+        }
+        hidden_effect = { trigger_event = { id = twcm.0203 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+}
+
+twcm.0204 = {
+    type = character_event
+    title = twcm_204_title
+    desc = twcm_204_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_organizer
+        trigger = { scope:twcm_target = { NOT = { has_trait = organizer } } }
+        scope:twcm_target = {
+        add_trait = organizer
+        }
+        hidden_effect = { trigger_event = { id = twcm.0204 } }
+    }
+    option = {
+        name = twcm_remove_organizer
+        trigger = { scope:twcm_target = { has_trait = organizer } }
+        scope:twcm_target = {
+        remove_trait = organizer
+        }
+        hidden_effect = { trigger_event = { id = twcm.0204 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+}
+
+twcm.0205 = {
+    type = character_event
+    title = twcm_205_title
+    desc = twcm_205_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_add_flexible_leader
+        trigger = { scope:twcm_target = { NOT = { has_trait = flexible_leader } } }
+        scope:twcm_target = {
+        add_trait = flexible_leader
+        }
+        hidden_effect = { trigger_event = { id = twcm.0205 } }
+    }
+    option = {
+        name = twcm_remove_flexible_leader
+        trigger = { scope:twcm_target = { has_trait = flexible_leader } }
+        scope:twcm_target = {
+        remove_trait = flexible_leader
+        }
+        hidden_effect = { trigger_event = { id = twcm.0205 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0083 } }
+    }
+}
+
+twcm.0090 = {
+    type = character_event
+    title = twcm_90_title
+    desc = twcm_90_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_presets
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+    option = {
+        name = twcm_diplomacy
+        hidden_effect = { trigger_event = { id = twcm.0500 } }
+    }
+    option = {
+        name = twcm_conversion
+        hidden_effect = { trigger_event = { id = twcm.0095 } }
+    }
+    option = {
+        name = twcm_bulk_building
+        hidden_effect = { trigger_event = { id = twcm.0300 } }
+    }
+    option = {
+        name = twcm_full_healing
+        hidden_effect = { trigger_event = { id = twcm.0098 } }
+    }
+    option = {
+        name = twcm_claim_tools
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0002 } }
+    }
+}
+
+twcm.0091 = {
+    type = character_event
+    title = twcm_91_title
+    desc = twcm_91_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_preset_twcm_super_character
+        hidden_effect = { trigger_event = { id = twcm.0092 } }
+    }
+    option = {
+        name = twcm_preset_twcm_super_governor
+        hidden_effect = { trigger_event = { id = twcm.0093 } }
+    }
+    option = {
+        name = twcm_preset_twcm_super_commander
+        hidden_effect = { trigger_event = { id = twcm.0094 } }
+    }
+    option = {
+        name = twcm_preset_twcm_super_all
+        hidden_effect = { trigger_event = { id = twcm.0096 } }
+    }
+    option = {
+        name = twcm_family_presets
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+    option = {
+        name = twcm_clear_presets
+        scope:twcm_target = {
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        remove_trait = twcm_super_all
+        }
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+}
+
+twcm.0092 = {
+    type = character_event
+    title = twcm_92_title
+    desc = twcm_92_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_enable_twcm_super_character
+        trigger = { scope:twcm_target = { NOT = { has_trait = twcm_super_character } } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_character
+        }
+        hidden_effect = { trigger_event = { id = twcm.0092 } }
+    }
+    option = {
+        name = twcm_disable_twcm_super_character
+        trigger = { scope:twcm_target = { has_trait = twcm_super_character } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_character
+        }
+        hidden_effect = { trigger_event = { id = twcm.0092 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+}
+
+twcm.0093 = {
+    type = character_event
+    title = twcm_93_title
+    desc = twcm_93_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_enable_twcm_super_governor
+        trigger = { scope:twcm_target = { NOT = { has_trait = twcm_super_governor } } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_governor
+        }
+        hidden_effect = { trigger_event = { id = twcm.0093 } }
+    }
+    option = {
+        name = twcm_disable_twcm_super_governor
+        trigger = { scope:twcm_target = { has_trait = twcm_super_governor } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_governor
+        }
+        hidden_effect = { trigger_event = { id = twcm.0093 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+}
+
+twcm.0094 = {
+    type = character_event
+    title = twcm_94_title
+    desc = twcm_94_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_enable_twcm_super_commander
+        trigger = { scope:twcm_target = { NOT = { has_trait = twcm_super_commander } } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_commander
+        }
+        hidden_effect = { trigger_event = { id = twcm.0094 } }
+    }
+    option = {
+        name = twcm_disable_twcm_super_commander
+        trigger = { scope:twcm_target = { has_trait = twcm_super_commander } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_commander
+        }
+        hidden_effect = { trigger_event = { id = twcm.0094 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+}
+
+twcm.0096 = {
+    type = character_event
+    title = twcm_96_title
+    desc = twcm_96_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_enable_twcm_super_all
+        trigger = { scope:twcm_target = { NOT = { has_trait = twcm_super_all } } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        add_trait = twcm_super_all
+        }
+        hidden_effect = { trigger_event = { id = twcm.0096 } }
+    }
+    option = {
+        name = twcm_disable_twcm_super_all
+        trigger = { scope:twcm_target = { has_trait = twcm_super_all } }
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        }
+        hidden_effect = { trigger_event = { id = twcm.0096 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+}
+
+twcm.0097 = {
+    type = character_event
+    title = twcm_97_title
+    desc = twcm_97_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_family_twcm_super_character
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_character
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_character
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_character
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+    option = {
+        name = twcm_family_twcm_super_governor
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_governor
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_governor
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_governor
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+    option = {
+        name = twcm_family_twcm_super_commander
+        scope:twcm_target = {
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_commander
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_commander
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = twcm_super_all
+        add_trait = twcm_super_commander
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+    option = {
+        name = twcm_family_twcm_super_all
+        scope:twcm_target = {
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        add_trait = twcm_super_all
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        add_trait = twcm_super_all
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        add_trait = twcm_super_all
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+    option = {
+        name = twcm_family_immortal
+        hidden_effect = { trigger_event = { id = twcm.0099 } }
+    }
+    option = {
+        name = twcm_family_remove
+        scope:twcm_target = {
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        remove_trait = twcm_super_all
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        remove_trait = twcm_super_all
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = twcm_super_character
+        remove_trait = twcm_super_governor
+        remove_trait = twcm_super_commander
+        remove_trait = twcm_super_all
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0091 } }
+    }
+}
+
+twcm.0099 = {
+    type = character_event
+    title = twcm_99_title
+    desc = twcm_99_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_family_immortal_on
+        scope:twcm_target = {
+        add_trait = immortal
+        if = { limit = { age >= 16 } set_immortal_age = 25 }
+        every_close_family_member = { limit = { is_alive = yes }
+        add_trait = immortal
+        if = { limit = { age >= 16 } set_immortal_age = 25 }
+        }
+        every_spouse = { limit = { is_alive = yes }
+        add_trait = immortal
+        if = { limit = { age >= 16 } set_immortal_age = 25 }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0099 } }
+    }
+    option = {
+        name = twcm_family_immortal_off
+        scope:twcm_target = {
+        remove_trait = immortal
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = immortal
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = immortal
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0099 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0097 } }
+    }
+}
+
+twcm.0014 = {
+    type = character_event
+    title = twcm_14_title
+    desc = twcm_14_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_renown_1000
+        trigger = { scope:twcm_target = { exists = dynasty } }
+        scope:twcm_target = {
+        dynasty = { add_dynasty_prestige = 1000 }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0014 } }
+    }
+    option = {
+        name = twcm_renown_10000
+        trigger = { scope:twcm_target = { exists = dynasty } }
+        scope:twcm_target = {
+        dynasty = { add_dynasty_prestige = 10000 }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0014 } }
+    }
+    option = {
+        name = twcm_renown_100000
+        trigger = { scope:twcm_target = { exists = dynasty } }
+        scope:twcm_target = {
+        dynasty = { add_dynasty_prestige = 100000 }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0014 } }
+    }
+    option = {
+        name = twcm_bundle_100k
+        scope:twcm_target = {
+        add_gold = 100000
+        add_prestige = 100000
+        add_piety = 100000
+        if = { limit = { exists = dynasty } dynasty = { add_dynasty_prestige = 100000 } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0014 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0010 } }
+    }
+}
+
+twcm.0095 = {
+    type = character_event
+    title = twcm_95_title
+    desc = twcm_95_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_convert_domain
+        trigger = { scope:twcm_target = { any_held_title = { tier = tier_county } } }
+        hidden_effect = { trigger_event = { id = twcm.0350 } }
+    }
+    option = {
+        name = twcm_convert_subrealm
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        hidden_effect = { trigger_event = { id = twcm.0351 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+}
+
+twcm.0350 = {
+    type = character_event
+    title = twcm_350_title
+    desc = twcm_350_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_conversion_350_faith
+        scope:twcm_target = {
+        custom_tooltip = twcm_conversion_350_faith_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_county }
+        set_county_faith = scope:twcm_target.faith
+        }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0350 } }
+    }
+    option = {
+        name = twcm_conversion_350_culture
+        scope:twcm_target = {
+        custom_tooltip = twcm_conversion_350_culture_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_county }
+        set_county_culture = scope:twcm_target.culture
+        }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0350 } }
+    }
+    option = {
+        name = twcm_conversion_350_both
+        scope:twcm_target = {
+        custom_tooltip = twcm_conversion_350_both_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_county }
+        set_county_faith = scope:twcm_target.faith
+        set_county_culture = scope:twcm_target.culture
+        }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0350 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0095 } }
+    }
+}
+
+twcm.0351 = {
+    type = character_event
+    title = twcm_351_title
+    desc = twcm_351_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_conversion_351_faith
+        scope:twcm_target = {
+        custom_tooltip = twcm_conversion_351_faith_effect
+        hidden_effect = {
+        every_sub_realm_county = {
+        set_county_faith = scope:twcm_target.faith
+        }
+        every_vassal_or_below = {
+        set_character_faith = scope:twcm_target.faith
+        }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0351 } }
+    }
+    option = {
+        name = twcm_conversion_351_culture
+        scope:twcm_target = {
+        custom_tooltip = twcm_conversion_351_culture_effect
+        hidden_effect = {
+        every_sub_realm_county = {
+        set_county_culture = scope:twcm_target.culture
+        }
+        every_vassal_or_below = {
+        set_culture = scope:twcm_target.culture
+        }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0351 } }
+    }
+    option = {
+        name = twcm_conversion_351_both
+        scope:twcm_target = {
+        custom_tooltip = twcm_conversion_351_both_effect
+        hidden_effect = {
+        every_sub_realm_county = {
+        set_county_faith = scope:twcm_target.faith
+        set_county_culture = scope:twcm_target.culture
+        }
+        every_vassal_or_below = {
+        set_character_faith = scope:twcm_target.faith
+        set_culture = scope:twcm_target.culture
+        }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0351 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0095 } }
+    }
+}
+
+twcm.0098 = {
+    type = character_event
+    title = twcm_98_title
+    desc = twcm_98_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_heal_diseases
+        scope:twcm_target = {
+        remove_trait = bubonic_plague
+        remove_trait = cancer
+        remove_trait = consumption
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = dysentery
+        remove_trait = early_great_pox
+        remove_trait = ergotism
+        remove_trait = gout_ridden
+        remove_trait = great_pox
+        remove_trait = ill
+        remove_trait = incapable
+        remove_trait = infirm
+        remove_trait = leper
+        remove_trait = lovers_pox
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = measles
+        remove_trait = pneumonic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        remove_trait = sickly
+        remove_trait = smallpox
+        remove_trait = typhus
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0098 } }
+    }
+    option = {
+        name = twcm_heal_genetic
+        scope:twcm_target = {
+        remove_trait = albino
+        remove_trait = beauty_bad_1
+        remove_trait = beauty_bad_2
+        remove_trait = beauty_bad_3
+        remove_trait = bleeder
+        remove_trait = clubfooted
+        remove_trait = depressed_genetic
+        remove_trait = dwarf
+        remove_trait = hunchbacked
+        remove_trait = inbred
+        remove_trait = infertile
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        remove_trait = lisping
+        remove_trait = lunatic_genetic
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = possessed_genetic
+        remove_trait = scaly
+        remove_trait = spindly
+        remove_trait = stuttering
+        remove_trait = wheezing
+        }
+        hidden_effect = { trigger_event = { id = twcm.0098 } }
+    }
+    option = {
+        name = twcm_heal_everything
+        scope:twcm_target = {
+        remove_trait = albino
+        remove_trait = beauty_bad_1
+        remove_trait = beauty_bad_2
+        remove_trait = beauty_bad_3
+        remove_trait = bleeder
+        remove_trait = bubonic_plague
+        remove_trait = cancer
+        remove_trait = clubfooted
+        remove_trait = consumption
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = dwarf
+        remove_trait = dysentery
+        remove_trait = early_great_pox
+        remove_trait = ergotism
+        remove_trait = gout_ridden
+        remove_trait = great_pox
+        remove_trait = hunchbacked
+        remove_trait = ill
+        remove_trait = inbred
+        remove_trait = incapable
+        remove_trait = infertile
+        remove_trait = infirm
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        remove_trait = leper
+        remove_trait = lisping
+        remove_trait = lovers_pox
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = measles
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = pneumonic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        remove_trait = scaly
+        remove_trait = sickly
+        remove_trait = smallpox
+        remove_trait = spindly
+        remove_trait = stuttering
+        remove_trait = typhus
+        remove_trait = wheezing
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        }
+        hidden_effect = { trigger_event = { id = twcm.0098 } }
+    }
+    option = {
+        name = twcm_heal_family
+        scope:twcm_target = {
+        remove_trait = albino
+        remove_trait = beauty_bad_1
+        remove_trait = beauty_bad_2
+        remove_trait = beauty_bad_3
+        remove_trait = bleeder
+        remove_trait = bubonic_plague
+        remove_trait = cancer
+        remove_trait = clubfooted
+        remove_trait = consumption
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = dwarf
+        remove_trait = dysentery
+        remove_trait = early_great_pox
+        remove_trait = ergotism
+        remove_trait = gout_ridden
+        remove_trait = great_pox
+        remove_trait = hunchbacked
+        remove_trait = ill
+        remove_trait = inbred
+        remove_trait = incapable
+        remove_trait = infertile
+        remove_trait = infirm
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        remove_trait = leper
+        remove_trait = lisping
+        remove_trait = lovers_pox
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = measles
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = pneumonic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        remove_trait = scaly
+        remove_trait = sickly
+        remove_trait = smallpox
+        remove_trait = spindly
+        remove_trait = stuttering
+        remove_trait = typhus
+        remove_trait = wheezing
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        every_close_family_member = { limit = { is_alive = yes }
+        remove_trait = albino
+        remove_trait = beauty_bad_1
+        remove_trait = beauty_bad_2
+        remove_trait = beauty_bad_3
+        remove_trait = bleeder
+        remove_trait = bubonic_plague
+        remove_trait = cancer
+        remove_trait = clubfooted
+        remove_trait = consumption
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = dwarf
+        remove_trait = dysentery
+        remove_trait = early_great_pox
+        remove_trait = ergotism
+        remove_trait = gout_ridden
+        remove_trait = great_pox
+        remove_trait = hunchbacked
+        remove_trait = ill
+        remove_trait = inbred
+        remove_trait = incapable
+        remove_trait = infertile
+        remove_trait = infirm
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        remove_trait = leper
+        remove_trait = lisping
+        remove_trait = lovers_pox
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = measles
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = pneumonic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        remove_trait = scaly
+        remove_trait = sickly
+        remove_trait = smallpox
+        remove_trait = spindly
+        remove_trait = stuttering
+        remove_trait = typhus
+        remove_trait = wheezing
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        }
+        every_spouse = { limit = { is_alive = yes }
+        remove_trait = albino
+        remove_trait = beauty_bad_1
+        remove_trait = beauty_bad_2
+        remove_trait = beauty_bad_3
+        remove_trait = bleeder
+        remove_trait = bubonic_plague
+        remove_trait = cancer
+        remove_trait = clubfooted
+        remove_trait = consumption
+        remove_trait = depressed_1
+        remove_trait = depressed_genetic
+        remove_trait = dwarf
+        remove_trait = dysentery
+        remove_trait = early_great_pox
+        remove_trait = ergotism
+        remove_trait = gout_ridden
+        remove_trait = great_pox
+        remove_trait = hunchbacked
+        remove_trait = ill
+        remove_trait = inbred
+        remove_trait = incapable
+        remove_trait = infertile
+        remove_trait = infirm
+        remove_trait = intellect_bad_1
+        remove_trait = intellect_bad_2
+        remove_trait = intellect_bad_3
+        remove_trait = leper
+        remove_trait = lisping
+        remove_trait = lovers_pox
+        remove_trait = lunatic_1
+        remove_trait = lunatic_genetic
+        remove_trait = measles
+        remove_trait = physique_bad_1
+        remove_trait = physique_bad_2
+        remove_trait = physique_bad_3
+        remove_trait = pneumonic
+        remove_trait = possessed_1
+        remove_trait = possessed_genetic
+        remove_trait = scaly
+        remove_trait = sickly
+        remove_trait = smallpox
+        remove_trait = spindly
+        remove_trait = stuttering
+        remove_trait = typhus
+        remove_trait = wheezing
+        remove_trait = wounded_1
+        remove_trait = wounded_2
+        remove_trait = wounded_3
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0098 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+}
+
+twcm.0300 = {
+    type = character_event
+    title = twcm_300_title
+    desc = twcm_300_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_personal
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+    option = {
+        name = twcm_build_realm
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+}
+
+twcm.0310 = {
+    type = character_event
+    title = twcm_310_title
+    desc = twcm_310_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_301_slots
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_301_slots_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_barony } title_province = {
+        twcm_expand_slots_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+}
+
+twcm.0311 = {
+    type = character_event
+    title = twcm_311_title
+    desc = twcm_311_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_301_upgrade
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_301_upgrade_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_barony } title_province = {
+        twcm_upgrade_buildings_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+}
+
+twcm.0312 = {
+    type = character_event
+    title = twcm_312_title
+    desc = twcm_312_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_301_fill
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_301_fill_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_barony } title_province = {
+        twcm_fill_buildings_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+}
+
+twcm.0313 = {
+    type = character_event
+    title = twcm_313_title
+    desc = twcm_313_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_301_all
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_301_all_effect
+        hidden_effect = {
+        every_held_title = { limit = { tier = tier_barony } title_province = {
+        twcm_expand_slots_effect = yes
+        twcm_upgrade_buildings_effect = yes
+        twcm_fill_buildings_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0301 } }
+    }
+}
+
+twcm.0301 = {
+    type = character_event
+    title = twcm_301_title
+    desc = twcm_301_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_choice_301_slots
+        hidden_effect = { trigger_event = { id = twcm.0310 } }
+    }
+    option = {
+        name = twcm_build_choice_301_upgrade
+        hidden_effect = { trigger_event = { id = twcm.0311 } }
+    }
+    option = {
+        name = twcm_build_choice_301_fill
+        hidden_effect = { trigger_event = { id = twcm.0312 } }
+    }
+    option = {
+        name = twcm_build_choice_301_all
+        hidden_effect = { trigger_event = { id = twcm.0313 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0300 } }
+    }
+}
+
+twcm.0320 = {
+    type = character_event
+    title = twcm_320_title
+    desc = twcm_320_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_302_slots
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_302_slots_effect
+        hidden_effect = {
+        every_sub_realm_county = { every_county_province = { limit = { has_holding = yes exists = barony.holder }
+        twcm_expand_slots_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+}
+
+twcm.0321 = {
+    type = character_event
+    title = twcm_321_title
+    desc = twcm_321_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_302_upgrade
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_302_upgrade_effect
+        hidden_effect = {
+        every_sub_realm_county = { every_county_province = { limit = { has_holding = yes exists = barony.holder }
+        twcm_upgrade_buildings_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+}
+
+twcm.0322 = {
+    type = character_event
+    title = twcm_322_title
+    desc = twcm_322_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_302_fill
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_302_fill_effect
+        hidden_effect = {
+        every_sub_realm_county = { every_county_province = { limit = { has_holding = yes exists = barony.holder }
+        twcm_fill_buildings_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+}
+
+twcm.0323 = {
+    type = character_event
+    title = twcm_323_title
+    desc = twcm_323_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_confirm_302_all
+        scope:twcm_target = {
+        custom_tooltip = twcm_build_confirm_302_all_effect
+        hidden_effect = {
+        every_sub_realm_county = { every_county_province = { limit = { has_holding = yes exists = barony.holder }
+        twcm_expand_slots_effect = yes
+        twcm_upgrade_buildings_effect = yes
+        twcm_fill_buildings_effect = yes
+        } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0302 } }
+    }
+}
+
+twcm.0302 = {
+    type = character_event
+    title = twcm_302_title
+    desc = twcm_302_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_build_choice_302_slots
+        hidden_effect = { trigger_event = { id = twcm.0320 } }
+    }
+    option = {
+        name = twcm_build_choice_302_upgrade
+        hidden_effect = { trigger_event = { id = twcm.0321 } }
+    }
+    option = {
+        name = twcm_build_choice_302_fill
+        hidden_effect = { trigger_event = { id = twcm.0322 } }
+    }
+    option = {
+        name = twcm_build_choice_302_all
+        hidden_effect = { trigger_event = { id = twcm.0323 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0300 } }
+    }
+}
+
+twcm.0400 = {
+    type = character_event
+    title = twcm_400_title
+    desc = twcm_400_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claimant_settings
+        hidden_effect = { trigger_event = { id = twcm.0403 } }
+    }
+    option = {
+        name = twcm_claim_picker_help
+        hidden_effect = { trigger_event = { id = twcm.0404 } }
+    }
+    option = {
+        name = twcm_claim_liege
+        trigger = { scope:twcm_target = { exists = liege } }
+        hidden_effect = { trigger_event = { id = twcm.0401 } }
+    }
+    option = {
+        name = twcm_claim_neighbors
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        hidden_effect = { trigger_event = { id = twcm.0402 } }
+    }
+    option = {
+        name = twcm_claim_existing
+        hidden_effect = { trigger_event = { id = twcm.0405 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+}
+
+twcm.0403 = {
+    type = character_event
+    title = twcm_403_title
+    desc = twcm_403_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_pin
+        set_variable = { name = twcm_claim_beneficiary value = scope:twcm_target }
+        hidden_effect = { trigger_event = { id = twcm.0403 } }
+    }
+    option = {
+        name = twcm_claim_reset
+        remove_variable = twcm_claim_beneficiary
+        save_scope_as = twcm_target
+        set_variable = { name = twcm_ui_target value = root }
+        hidden_effect = { trigger_event = { id = twcm.0403 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0404 = {
+    type = character_event
+    title = twcm_404_title
+    desc = twcm_404_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_last_title
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_title } }
+        hidden_effect = { trigger_event = { id = twcm.0420 } }
+    }
+    option = {
+        name = twcm_claim_last_ruler
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_ruler scope:twcm_claim_ruler = { is_alive = yes } } }
+        hidden_effect = { trigger_event = { id = twcm.0410 } }
+    }
+    option = {
+        name = twcm_claim_close_picker
+        is_cancel_option = yes
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0401 = {
+    type = character_event
+    title = twcm_401_title
+    desc = twcm_401_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_bulk_401_primary_pressed
+        trigger = { scope:twcm_target = { exists = liege } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_401_primary_pressed_effect
+        hidden_effect = { liege = { primary_title = { twcm_add_pressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0401 } }
+    }
+    option = {
+        name = twcm_claim_bulk_401_primary_unpressed
+        trigger = { scope:twcm_target = { exists = liege } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_401_primary_unpressed_effect
+        hidden_effect = { liege = { primary_title = { twcm_add_unpressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0401 } }
+    }
+    option = {
+        name = twcm_claim_bulk_401_all_pressed
+        trigger = { scope:twcm_target = { exists = liege } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_401_all_pressed_effect
+        hidden_effect = { liege = { every_held_title = { twcm_add_pressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0401 } }
+    }
+    option = {
+        name = twcm_claim_bulk_401_all_unpressed
+        trigger = { scope:twcm_target = { exists = liege } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_401_all_unpressed_effect
+        hidden_effect = { liege = { every_held_title = { twcm_add_unpressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0401 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0402 = {
+    type = character_event
+    title = twcm_402_title
+    desc = twcm_402_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_bulk_402_primary_pressed
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_402_primary_pressed_effect
+        hidden_effect = { every_neighboring_top_liege_realm_owner = { primary_title = { twcm_add_pressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0402 } }
+    }
+    option = {
+        name = twcm_claim_bulk_402_primary_unpressed
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_402_primary_unpressed_effect
+        hidden_effect = { every_neighboring_top_liege_realm_owner = { primary_title = { twcm_add_unpressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0402 } }
+    }
+    option = {
+        name = twcm_claim_bulk_402_all_pressed
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_402_all_pressed_effect
+        hidden_effect = { every_neighboring_top_liege_realm_owner = { every_held_title = { twcm_add_pressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0402 } }
+    }
+    option = {
+        name = twcm_claim_bulk_402_all_unpressed
+        trigger = { scope:twcm_target = { is_landed = yes } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_402_all_unpressed_effect
+        hidden_effect = { every_neighboring_top_liege_realm_owner = { every_held_title = { twcm_add_unpressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0402 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0410 = {
+    type = character_event
+    title = twcm_410_title
+    desc = twcm_410_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_bulk_410_primary_pressed
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_ruler scope:twcm_claim_ruler = { is_alive = yes } } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_410_primary_pressed_effect
+        hidden_effect = { scope:twcm_claim_ruler = { primary_title = { twcm_add_pressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0410 } }
+    }
+    option = {
+        name = twcm_claim_bulk_410_primary_unpressed
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_ruler scope:twcm_claim_ruler = { is_alive = yes } } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_410_primary_unpressed_effect
+        hidden_effect = { scope:twcm_claim_ruler = { primary_title = { twcm_add_unpressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0410 } }
+    }
+    option = {
+        name = twcm_claim_bulk_410_all_pressed
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_ruler scope:twcm_claim_ruler = { is_alive = yes } } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_410_all_pressed_effect
+        hidden_effect = { scope:twcm_claim_ruler = { every_held_title = { twcm_add_pressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0410 } }
+    }
+    option = {
+        name = twcm_claim_bulk_410_all_unpressed
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_ruler scope:twcm_claim_ruler = { is_alive = yes } } }
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_bulk_410_all_unpressed_effect
+        hidden_effect = { scope:twcm_claim_ruler = { every_held_title = { twcm_add_unpressed_claim_effect = yes } } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0410 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0420 = {
+    type = character_event
+    title = twcm_420_title
+    desc = twcm_420_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_title_pressed
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_title scope:twcm_claim_title = { tier >= tier_county is_landless_type_title = no exists = holder holder != scope:twcm_target } } }
+        scope:twcm_target = {
+        scope:twcm_claim_title = { twcm_add_pressed_claim_effect = yes }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0420 } }
+    }
+    option = {
+        name = twcm_claim_title_unpressed
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_title scope:twcm_claim_title = { tier >= tier_county is_landless_type_title = no exists = holder holder != scope:twcm_target } } }
+        scope:twcm_target = {
+        scope:twcm_claim_title = { twcm_add_unpressed_claim_effect = yes }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0420 } }
+    }
+    option = {
+        name = twcm_claim_title_remove
+        trigger = { scope:twcm_target = { exists = scope:twcm_claim_title any_claim = { explicit = yes this = scope:twcm_claim_title } } }
+        scope:twcm_target = {
+        remove_claim = scope:twcm_claim_title
+        }
+        hidden_effect = { trigger_event = { id = twcm.0420 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0405 = {
+    type = character_event
+    title = twcm_405_title
+    desc = twcm_405_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_upgrade_all
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_upgrade_all_effect
+        hidden_effect = {
+        every_claim = { explicit = yes pressed = no save_scope_as = twcm_claim_upgrade_title scope:twcm_target = { add_pressed_claim = scope:twcm_claim_upgrade_title } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0405 } }
+    }
+    option = {
+        name = twcm_claim_remove_review
+        hidden_effect = { trigger_event = { id = twcm.0406 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0400 } }
+    }
+}
+
+twcm.0406 = {
+    type = character_event
+    title = twcm_406_title
+    desc = twcm_406_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_claim_remove_all
+        scope:twcm_target = {
+        custom_tooltip = twcm_claim_remove_all_effect
+        hidden_effect = {
+        every_claim = { explicit = yes save_scope_as = twcm_claim_remove_title scope:twcm_target = { remove_claim = scope:twcm_claim_remove_title } }
+        }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0405 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0405 } }
+    }
+}
+
+twcm.0500 = {
+    type = character_event
+    title = twcm_500_title
+    desc = twcm_500_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_dip_hooks
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        hidden_effect = { trigger_event = { id = twcm.0501 } }
+    }
+    option = {
+        name = twcm_dip_opinion
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        hidden_effect = { trigger_event = { id = twcm.0502 } }
+    }
+    option = {
+        name = twcm_dip_relationships
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+    option = {
+        name = twcm_dip_swap
+        scope:twcm_target = { save_scope_as = twcm_dip_temp }
+        scope:twcm_other = { save_scope_as = twcm_target }
+        scope:twcm_dip_temp = { save_scope_as = twcm_other }
+        set_variable = { name = twcm_ui_target value = scope:twcm_target }
+        set_variable = { name = twcm_ui_other value = scope:twcm_other }
+        hidden_effect = { trigger_event = { id = twcm.0500 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0090 } }
+    }
+}
+
+twcm.0501 = {
+    type = character_event
+    title = twcm_501_title
+    desc = twcm_501_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_hook_weak
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { NOT = { has_hook = scope:twcm_other } } add_hook = { target = scope:twcm_other type = twcm_weak_hook } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0501 } }
+    }
+    option = {
+        name = twcm_hook_strong
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { NOT = { has_strong_hook = scope:twcm_other } } if = { limit = { has_hook = scope:twcm_other } remove_hook = { target = scope:twcm_other } } add_hook = { target = scope:twcm_other type = twcm_strong_hook } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0501 } }
+    }
+    option = {
+        name = twcm_hook_remove
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { has_hook = scope:twcm_other } remove_hook = { target = scope:twcm_other } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0501 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0500 } }
+    }
+}
+
+twcm.0502 = {
+    type = character_event
+    title = twcm_502_title
+    desc = twcm_502_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_opinion_plus_100
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        scope:twcm_other = { remove_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion } add_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion opinion = 100 } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0502 } }
+    }
+    option = {
+        name = twcm_opinion_plus_50
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        scope:twcm_other = { remove_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion } add_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion opinion = 50 } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0502 } }
+    }
+    option = {
+        name = twcm_opinion_minus_50
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        scope:twcm_other = { remove_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion } add_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion opinion = -50 } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0502 } }
+    }
+    option = {
+        name = twcm_opinion_minus_100
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        scope:twcm_other = { remove_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion } add_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion opinion = -100 } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0502 } }
+    }
+    option = {
+        name = twcm_opinion_remove
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } } }
+        scope:twcm_target = {
+        scope:twcm_other = { remove_opinion = { target = scope:twcm_target modifier = twcm_cheat_opinion } }
+        }
+        hidden_effect = { trigger_event = { id = twcm.0502 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0500 } }
+    }
+}
+
+twcm.0503 = {
+    type = character_event
+    title = twcm_503_title
+    desc = twcm_503_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_friend
+        hidden_effect = { trigger_event = { id = twcm.0510 } }
+    }
+    option = {
+        name = twcm_relation_best_friend
+        hidden_effect = { trigger_event = { id = twcm.0511 } }
+    }
+    option = {
+        name = twcm_relation_rival
+        hidden_effect = { trigger_event = { id = twcm.0512 } }
+    }
+    option = {
+        name = twcm_relation_nemesis
+        hidden_effect = { trigger_event = { id = twcm.0513 } }
+    }
+    option = {
+        name = twcm_relation_lover
+        hidden_effect = { trigger_event = { id = twcm.0514 } }
+    }
+    option = {
+        name = twcm_relation_soulmate
+        hidden_effect = { trigger_event = { id = twcm.0515 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0500 } }
+    }
+}
+
+twcm.0510 = {
+    type = character_event
+    title = twcm_510_title
+    desc = twcm_510_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_add_friend
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } NOT = { has_relation_friend = scope:twcm_other } NOT = { has_relation_best_friend = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { has_relation_nemesis = scope:twcm_other } remove_relation_nemesis = scope:twcm_other }
+        if = { limit = { has_relation_rival = scope:twcm_other } remove_relation_rival = scope:twcm_other }
+        set_relation_friend = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0510 } }
+    }
+    option = {
+        name = twcm_relation_remove_friend
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } has_relation_friend = scope:twcm_other NOT = { has_relation_best_friend = scope:twcm_other } } }
+        scope:twcm_target = {
+        remove_relation_friend = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0510 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+}
+
+twcm.0511 = {
+    type = character_event
+    title = twcm_511_title
+    desc = twcm_511_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_add_best_friend
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } NOT = { has_relation_best_friend = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { has_relation_nemesis = scope:twcm_other } remove_relation_nemesis = scope:twcm_other }
+        if = { limit = { has_relation_rival = scope:twcm_other } remove_relation_rival = scope:twcm_other }
+        set_relation_best_friend = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0511 } }
+    }
+    option = {
+        name = twcm_relation_remove_best_friend
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } has_relation_best_friend = scope:twcm_other } }
+        scope:twcm_target = {
+        remove_relation_best_friend = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0511 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+}
+
+twcm.0512 = {
+    type = character_event
+    title = twcm_512_title
+    desc = twcm_512_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_add_rival
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } NOT = { has_relation_rival = scope:twcm_other } NOT = { has_relation_nemesis = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { has_relation_best_friend = scope:twcm_other } remove_relation_best_friend = scope:twcm_other }
+        if = { limit = { has_relation_friend = scope:twcm_other } remove_relation_friend = scope:twcm_other }
+        set_relation_rival = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0512 } }
+    }
+    option = {
+        name = twcm_relation_remove_rival
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } has_relation_rival = scope:twcm_other NOT = { has_relation_nemesis = scope:twcm_other } } }
+        scope:twcm_target = {
+        remove_relation_rival = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0512 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+}
+
+twcm.0513 = {
+    type = character_event
+    title = twcm_513_title
+    desc = twcm_513_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_add_nemesis
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } NOT = { has_relation_nemesis = scope:twcm_other } } }
+        scope:twcm_target = {
+        if = { limit = { has_relation_best_friend = scope:twcm_other } remove_relation_best_friend = scope:twcm_other }
+        if = { limit = { has_relation_friend = scope:twcm_other } remove_relation_friend = scope:twcm_other }
+        set_relation_nemesis = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0513 } }
+    }
+    option = {
+        name = twcm_relation_remove_nemesis
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } has_relation_nemesis = scope:twcm_other } }
+        scope:twcm_target = {
+        remove_relation_nemesis = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0513 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+}
+
+twcm.0514 = {
+    type = character_event
+    title = twcm_514_title
+    desc = twcm_514_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_add_lover
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } NOT = { has_relation_lover = scope:twcm_other } NOT = { has_relation_soulmate = scope:twcm_other } age >= 18 scope:twcm_other = { age >= 18 } NOT = { is_close_or_extended_family_of = scope:twcm_other } } }
+        scope:twcm_target = {
+        set_relation_lover = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0514 } }
+    }
+    option = {
+        name = twcm_relation_remove_lover
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } has_relation_lover = scope:twcm_other NOT = { has_relation_soulmate = scope:twcm_other } } }
+        scope:twcm_target = {
+        remove_relation_lover = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0514 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+}
+
+twcm.0515 = {
+    type = character_event
+    title = twcm_515_title
+    desc = twcm_515_desc
+    theme = stewardship
+    left_portrait = scope:twcm_target
+    trigger = { is_ai = no }
+    soundeffect = none
+    immediate = {
+        if = {
+            limit = { has_variable = twcm_ui_other exists = var:twcm_ui_other var:twcm_ui_other ?= { is_alive = yes } }
+            var:twcm_ui_other = { save_scope_as = twcm_other }
+        }
+        else = { save_scope_as = twcm_other }
+        if = {
+            limit = { NOT = { exists = scope:twcm_target } }
+            save_scope_as = twcm_target
+        }
+        if = {
+            limit = { scope:twcm_target = { is_alive = no } }
+            save_scope_as = twcm_target
+        }
+    }
+    option = {
+        name = twcm_relation_add_soulmate
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } NOT = { has_relation_soulmate = scope:twcm_other } age >= 18 scope:twcm_other = { age >= 18 } NOT = { is_close_or_extended_family_of = scope:twcm_other } } }
+        scope:twcm_target = {
+        set_relation_soulmate = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0515 } }
+    }
+    option = {
+        name = twcm_relation_remove_soulmate
+        trigger = { scope:twcm_target = { is_alive = yes scope:twcm_other = { is_alive = yes } NOT = { this = scope:twcm_other } has_relation_soulmate = scope:twcm_other } }
+        scope:twcm_target = {
+        remove_relation_soulmate = scope:twcm_other
+        }
+        hidden_effect = { trigger_event = { id = twcm.0515 } }
+    }
+    option = {
+        name = twcm_back
+        is_cancel_option = yes
+        hidden_effect = { trigger_event = { id = twcm.0503 } }
+    }
+}

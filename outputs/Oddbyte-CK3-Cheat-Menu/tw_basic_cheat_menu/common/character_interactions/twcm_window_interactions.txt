@@ -1,0 +1,19 @@
+﻿twcm_window_edit_interaction = {
+ category = interaction_category_friendly common_interaction = yes interface_priority = 110
+ icon = icon_contract_modification_single desc = twcm_window_edit_interaction_desc use_diplomatic_range = no ignores_pending_interaction_block = yes auto_accept = yes
+ is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_alive = yes } }
+ on_accept = {
+  scope:actor = { set_variable = { name = twcm_ui_target value = scope:recipient } twcm_ui_open_effect = yes  }
+ }
+ ai_will_do = { base = 0 }
+}
+
+twcm_window_other_interaction = {
+ category = interaction_category_friendly common_interaction = yes interface_priority = 110
+ icon = icon_contract_modification_single desc = twcm_window_other_interaction_desc use_diplomatic_range = no ignores_pending_interaction_block = yes auto_accept = yes
+ is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_alive = yes } }
+ on_accept = {
+  scope:actor = { set_variable = { name = twcm_ui_other value = scope:recipient } twcm_ui_open_effect = yes set_variable = { name = twcm_ui_page value = 500 } }
+ }
+ ai_will_do = { base = 0 }
+}

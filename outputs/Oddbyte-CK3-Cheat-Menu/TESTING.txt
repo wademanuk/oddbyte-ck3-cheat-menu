@@ -1,0 +1,12 @@
+ODDBYTE — CK3 CHEAT MENU: TESTING
+
+Gameplay baseline: CK3 1.20.1.2 on macOS; 93 regression tests and 5,520 native checks.
+Coverage includes targets, reviews, catalogs, titles, contracts, artifacts and war outcomes.
+This is not exhaustive campaign or other-mod validation. Knight preference display, UI
+scales, long campaigns and multiplayer remain outside the full automated coverage.
+
+Before a playtest, make a separate save. Check selections, Cancel/Apply, long panels,
+war/artifact/title pickers and save/reload with your normal playset.
+
+Report bugs: https://github.com/wademanuk/oddbyte-ck3-cheat-menu/issues
+See the repository docs/TESTING.md for the methodology and reporting checklist.

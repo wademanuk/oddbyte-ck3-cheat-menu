@@ -1,0 +1,95 @@
+﻿twcm_ui_prepare_effect = {
+    save_scope_as = twcm_view_player
+    if = { limit = { NOT = { has_variable = twcm_ui_target } } set_variable = { name = twcm_ui_target value = this } }
+    else_if = { limit = { NOT = { exists = var:twcm_ui_target } } set_variable = { name = twcm_ui_target value = this } }
+    else_if = { limit = { var:twcm_ui_target = { is_alive = no } } set_variable = { name = twcm_ui_target value = this } }
+    if = { limit = { NOT = { has_variable = twcm_ui_other } } set_variable = { name = twcm_ui_other value = this } }
+    else_if = { limit = { NOT = { exists = var:twcm_ui_other } } set_variable = { name = twcm_ui_other value = this } }
+    else_if = { limit = { var:twcm_ui_other = { is_alive = no } } set_variable = { name = twcm_ui_other value = this } }
+    if = { limit = { NOT = { has_variable = twcm_ui_page } } set_variable = { name = twcm_ui_page value = 10 } }
+    if = { limit = { NOT = { has_variable = twcm_ui_step } } set_variable = { name = twcm_ui_step value = 1000 } }
+    if = { limit = { NOT = { has_variable = twcm_ui_skill_step } } set_variable = { name = twcm_ui_skill_step value = 1 } }
+    var:twcm_ui_target = { save_scope_as = twcm_target }
+    var:twcm_ui_other = { save_scope_as = twcm_other }
+    twcm_editor_prepare_effect = yes
+    if = { limit = { has_variable = twcm_ui_claim_title exists = var:twcm_ui_claim_title } var:twcm_ui_claim_title = { save_scope_as = twcm_claim_title } }
+    else = { remove_variable = twcm_ui_claim_title }
+    if = { limit = { has_variable = twcm_ui_claim_ruler exists = var:twcm_ui_claim_ruler } var:twcm_ui_claim_ruler = { save_scope_as = twcm_claim_ruler } }
+    else = { remove_variable = twcm_ui_claim_ruler }
+}
+twcm_ui_open_effect = {
+    twcm_ui_prepare_effect = yes
+    set_variable = { name = twcm_ui_open value = 1 }
+}
+twcm_editor_prepare_effect = {
+ if = { limit = { NOT = { has_variable = twcm_editor_number } } set_variable = { name = twcm_editor_number value = 25 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_age } } set_variable = { name = twcm_editor_spawn_age value = 25 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_female } } set_variable = { name = twcm_editor_spawn_female value = 0 } }
+ if = { limit = { exists = scope:twcm_target.culture } set_variable = { name = twcm_editor_culture value = scope:twcm_target.culture } }
+ else = { remove_variable = twcm_editor_culture }
+ if = { limit = { exists = scope:twcm_target.faith } set_variable = { name = twcm_editor_faith value = scope:twcm_target.faith } }
+ else = { remove_variable = twcm_editor_faith }
+ if = { limit = { exists = scope:twcm_target.rite } set_variable = { name = twcm_editor_rite value = scope:twcm_target.rite } }
+ else = { remove_variable = twcm_editor_rite }
+ if = { limit = { exists = scope:twcm_other.culture } set_variable = { name = twcm_editor_other_culture value = scope:twcm_other.culture } }
+ else = { remove_variable = twcm_editor_other_culture }
+ if = { limit = { exists = scope:twcm_other.faith } set_variable = { name = twcm_editor_other_faith value = scope:twcm_other.faith } }
+ else = { remove_variable = twcm_editor_other_faith }
+ if = { limit = { exists = scope:twcm_other.rite } set_variable = { name = twcm_editor_other_rite value = scope:twcm_other.rite } }
+ else = { remove_variable = twcm_editor_other_rite }
+ if = { limit = { exists = scope:twcm_target.dynasty } set_variable = { name = twcm_editor_dynasty value = scope:twcm_target.dynasty } }
+ else = { remove_variable = twcm_editor_dynasty }
+ if = { limit = { exists = scope:twcm_target.capital_province.county } set_variable = { name = twcm_editor_capital_county value = scope:twcm_target.capital_province.county } }
+ else = { remove_variable = twcm_editor_capital_county }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_diplomacy } } set_variable = { name = twcm_editor_spawn_diplomacy value = 10 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_martial } } set_variable = { name = twcm_editor_spawn_martial value = 10 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_stewardship } } set_variable = { name = twcm_editor_spawn_stewardship value = 10 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_intrigue } } set_variable = { name = twcm_editor_spawn_intrigue value = 10 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_learning } } set_variable = { name = twcm_editor_spawn_learning value = 10 } }
+ if = { limit = { NOT = { has_variable = twcm_editor_spawn_prowess } } set_variable = { name = twcm_editor_spawn_prowess value = 10 } }
+ clear_saved_scope = twcm_editor_title
+ if = { limit = { has_variable = twcm_editor_title exists = var:twcm_editor_title } var:twcm_editor_title = { save_scope_as = twcm_editor_title } }
+ else = { remove_variable = twcm_editor_title }
+ clear_saved_scope = twcm_editor_title_owner
+ if = { limit = { has_variable = twcm_editor_title_owner exists = var:twcm_editor_title_owner } var:twcm_editor_title_owner = { save_scope_as = twcm_editor_title_owner } }
+ else = { remove_variable = twcm_editor_title_owner }
+ clear_saved_scope = twcm_editor_war
+ if = { limit = { has_variable = twcm_editor_war exists = var:twcm_editor_war } var:twcm_editor_war = { save_scope_as = twcm_editor_war } }
+ else = { remove_variable = twcm_editor_war }
+ clear_saved_scope = twcm_editor_artifact
+ if = { limit = { has_variable = twcm_editor_artifact exists = var:twcm_editor_artifact } var:twcm_editor_artifact = { save_scope_as = twcm_editor_artifact } }
+ else = { remove_variable = twcm_editor_artifact }
+ clear_saved_scope = twcm_editor_culture
+ if = { limit = { has_variable = twcm_editor_culture exists = var:twcm_editor_culture } var:twcm_editor_culture = { save_scope_as = twcm_editor_culture } }
+ else = { remove_variable = twcm_editor_culture }
+ clear_saved_scope = twcm_editor_faith
+ if = { limit = { has_variable = twcm_editor_faith exists = var:twcm_editor_faith } var:twcm_editor_faith = { save_scope_as = twcm_editor_faith } }
+ else = { remove_variable = twcm_editor_faith }
+ clear_saved_scope = twcm_editor_rite
+ if = { limit = { has_variable = twcm_editor_rite exists = var:twcm_editor_rite } var:twcm_editor_rite = { save_scope_as = twcm_editor_rite } }
+ else = { remove_variable = twcm_editor_rite }
+ clear_saved_scope = twcm_editor_other_culture
+ if = { limit = { has_variable = twcm_editor_other_culture exists = var:twcm_editor_other_culture } var:twcm_editor_other_culture = { save_scope_as = twcm_editor_other_culture } }
+ else = { remove_variable = twcm_editor_other_culture }
+ clear_saved_scope = twcm_editor_other_faith
+ if = { limit = { has_variable = twcm_editor_other_faith exists = var:twcm_editor_other_faith } var:twcm_editor_other_faith = { save_scope_as = twcm_editor_other_faith } }
+ else = { remove_variable = twcm_editor_other_faith }
+ clear_saved_scope = twcm_editor_other_rite
+ if = { limit = { has_variable = twcm_editor_other_rite exists = var:twcm_editor_other_rite } var:twcm_editor_other_rite = { save_scope_as = twcm_editor_other_rite } }
+ else = { remove_variable = twcm_editor_other_rite }
+ clear_saved_scope = twcm_editor_dynasty
+ if = { limit = { has_variable = twcm_editor_dynasty exists = var:twcm_editor_dynasty } var:twcm_editor_dynasty = { save_scope_as = twcm_editor_dynasty } }
+ else = { remove_variable = twcm_editor_dynasty }
+ clear_saved_scope = twcm_editor_capital_county
+ if = { limit = { has_variable = twcm_editor_capital_county exists = var:twcm_editor_capital_county } var:twcm_editor_capital_county = { save_scope_as = twcm_editor_capital_county } }
+ else = { remove_variable = twcm_editor_capital_county }
+ save_scope_value_as = { name = twcm_editor_number value = var:twcm_editor_number }
+ save_scope_value_as = { name = twcm_editor_spawn_age value = var:twcm_editor_spawn_age }
+ save_scope_value_as = { name = twcm_editor_spawn_female value = var:twcm_editor_spawn_female }
+ save_scope_value_as = { name = twcm_editor_spawn_diplomacy value = var:twcm_editor_spawn_diplomacy }
+ save_scope_value_as = { name = twcm_editor_spawn_martial value = var:twcm_editor_spawn_martial }
+ save_scope_value_as = { name = twcm_editor_spawn_stewardship value = var:twcm_editor_spawn_stewardship }
+ save_scope_value_as = { name = twcm_editor_spawn_intrigue value = var:twcm_editor_spawn_intrigue }
+ save_scope_value_as = { name = twcm_editor_spawn_learning value = var:twcm_editor_spawn_learning }
+ save_scope_value_as = { name = twcm_editor_spawn_prowess value = var:twcm_editor_spawn_prowess }
+}

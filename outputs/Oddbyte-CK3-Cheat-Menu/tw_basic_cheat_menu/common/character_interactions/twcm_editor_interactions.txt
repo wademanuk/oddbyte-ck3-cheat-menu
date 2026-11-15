@@ -1,0 +1,13 @@
+﻿twcm_editor_title_interaction = {
+ category = interaction_category_friendly common_interaction = yes interface_priority = 109 icon = vassal_claim_liege_title_interaction
+ desc = twcm_editor_title_interaction_desc use_diplomatic_range = no ignores_pending_interaction_block = yes auto_accept = yes
+ target_type = title target_filter = recipient_domain_titles show_all_targets = no
+ can_be_picked_title = { scope:target = { tier >= tier_county is_landless_type_title = no exists = holder } }
+ is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_alive = yes is_landed = yes } }
+ on_accept = { scope:actor = {
+  set_variable = { name = twcm_editor_title value = scope:target }
+  set_variable = { name = twcm_editor_title_owner value = scope:recipient }
+  twcm_ui_open_effect = yes set_variable = { name = twcm_ui_page value = 630 }
+ } }
+ ai_will_do = { base = 0 }
+}

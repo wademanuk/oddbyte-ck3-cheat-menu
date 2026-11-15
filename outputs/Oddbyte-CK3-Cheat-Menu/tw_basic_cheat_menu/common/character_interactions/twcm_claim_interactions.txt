@@ -1,0 +1,65 @@
+﻿twcm_claim_title_interaction = {
+    category = interaction_category_friendly
+    common_interaction = yes
+    interface_priority = 99
+    icon = vassal_claim_liege_title_interaction
+    desc = twcm_claim_title_interaction_desc
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+    auto_accept = yes
+    target_type = title
+    target_filter = recipient_domain_titles
+    show_all_targets = no
+    can_be_picked_title = { scope:target = { tier >= tier_county is_landless_type_title = no exists = holder } }
+
+    is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_alive = yes is_landed = yes } }
+    on_accept = {
+        scope:actor = {
+    if = {
+        limit = { has_variable = twcm_claim_beneficiary exists = var:twcm_claim_beneficiary var:twcm_claim_beneficiary ?= { is_alive = yes } }
+        var:twcm_claim_beneficiary = { save_scope_as = twcm_target }
+    }
+    else = { save_scope_as = twcm_target }
+}
+
+        scope:target = { save_scope_as = twcm_claim_title }
+        scope:actor = {
+            set_variable = { name = twcm_ui_target value = scope:twcm_target }
+            set_variable = { name = twcm_ui_claim_title value = scope:twcm_claim_title }
+            set_variable = { name = twcm_ui_page value = 420 }
+            twcm_ui_open_effect = yes
+        }
+    }
+    ai_will_do = { base = 0 }
+}
+
+twcm_claim_ruler_interaction = {
+    category = interaction_category_friendly
+    common_interaction = yes
+    interface_priority = 98
+    icon = vassal_claim_liege_title_interaction
+    desc = twcm_claim_ruler_interaction_desc
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+    auto_accept = yes
+
+    is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_alive = yes is_landed = yes } }
+    on_accept = {
+        scope:actor = {
+    if = {
+        limit = { has_variable = twcm_claim_beneficiary exists = var:twcm_claim_beneficiary var:twcm_claim_beneficiary ?= { is_alive = yes } }
+        var:twcm_claim_beneficiary = { save_scope_as = twcm_target }
+    }
+    else = { save_scope_as = twcm_target }
+}
+
+        scope:recipient = { save_scope_as = twcm_claim_ruler }
+        scope:actor = {
+            set_variable = { name = twcm_ui_target value = scope:twcm_target }
+            set_variable = { name = twcm_ui_claim_ruler value = scope:twcm_claim_ruler }
+            set_variable = { name = twcm_ui_page value = 410 }
+            twcm_ui_open_effect = yes
+        }
+    }
+    ai_will_do = { base = 0 }
+}

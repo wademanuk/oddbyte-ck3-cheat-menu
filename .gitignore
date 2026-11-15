@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+*.log
+backups/
+work/
+research/
+PROJECT_STATUS.txt
+installation.json
+releases/*.zip

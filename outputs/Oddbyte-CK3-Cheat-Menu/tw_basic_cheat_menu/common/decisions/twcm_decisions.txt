@@ -1,0 +1,18 @@
+﻿twcm_open_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_castle_view.dds" }
+    desc = twcm_open_decision_desc
+    selection_tooltip = twcm_open_decision_tooltip
+    confirm_text = twcm_open_decision_confirm
+    ai_check_interval = 0
+    sort_order = 1
+    is_shown = { is_ai = no }
+    effect = {
+        custom_tooltip = twcm_open_decision_effect
+        hidden_effect = {
+            save_scope_as = twcm_target
+            trigger_event = { id = twcm.0001 }
+        }
+    }
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}

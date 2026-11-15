@@ -1,0 +1,8 @@
+ODDBYTE — CK3 CHEAT MENU 1.5.2
+
+Oddbyte branding, refreshed public guides and configurable development paths.
+Gameplay and saved identifiers are retained from 1.5.1.
+
+The gameplay baseline includes fixes for expired references, faith/rite copying, creator
+rite inheritance, trait ages, tenet DLC requirements, artifact visuals, higher-title
+recipients, original-context reviews and named trait XP actions.
