@@ -131,18 +131,19 @@ def append_review_cases(add,action,expect,subjects,number,make,guard,guis,meta,d
    action('artifact_create_'+kind+'_'+rarity)
  expect('artifact_catalog_count','scope:twcm_review_catalog = { any_character_artifact = { count = 20 } }')
  # Each removable boost leaves permanent base edits and unrelated boosts alone.
- subjects('scope:twcm_smoke_subject');number(37);action('exact_diplomacy')
- add('scope:twcm_smoke_subject = { '+' '.join('remove_trait = '+t for t in catalog['traits'])+' force_character_skill_recalculation = yes }')
+ # Isolate removable-boost checks from earlier destructive catalog fixtures.
+ make('twcm_review_boost_subject');subjects('scope:twcm_review_boost_subject');number(37);action('exact_diplomacy')
+ expect('active_boost_baseline','scope:twcm_review_boost_subject = { diplomacy = 37 }')
  for modifier in ['twcm_near_instant_construction','twcm_health_boost','twcm_high_fertility','twcm_low_fertility']:
-  add('scope:twcm_smoke_subject = { add_character_modifier = { modifier = '+modifier+' } }')
+  add('scope:twcm_review_boost_subject = { add_character_modifier = { modifier = '+modifier+' } }')
   action('remove_'+modifier)
-  expect('active_remove_'+modifier,'scope:twcm_smoke_subject = { diplomacy = 37 NOT = { has_character_modifier = '+modifier+' } }')
+  expect('active_remove_'+modifier,'scope:twcm_review_boost_subject = { diplomacy = 37 NOT = { has_character_modifier = '+modifier+' } }')
  for trait in ['twcm_super_character','twcm_super_governor','twcm_super_commander','twcm_super_all']:
-  add('scope:twcm_smoke_subject = { add_trait = '+trait+' force_character_skill_recalculation = yes }')
+  add('scope:twcm_review_boost_subject = { add_trait = '+trait+' force_character_skill_recalculation = yes }')
   action('remove_'+trait)
-  expect('active_remove_'+trait,'scope:twcm_smoke_subject = { diplomacy = 37 NOT = { has_trait = '+trait+' } }')
+  expect('active_remove_'+trait,'scope:twcm_review_boost_subject = { diplomacy = 37 NOT = { has_trait = '+trait+' } }')
  # Cancel, original-person death, and other-person death must not apply a pending edit.
- number(123);action('exact_gold');number(999)
+ subjects('scope:twcm_smoke_subject');number(123);action('exact_gold');number(999)
  add(dump(get(guis['twcm_editor_exact_gold'],'effect')))
  expect('review_cancel_valid',guard('twcm_ui_confirm'))
  add(dump(get(guis['twcm_ui_cancel'],'effect')))
@@ -197,7 +198,7 @@ def append_review_cases(add,action,expect,subjects,number,make,guard,guis,meta,d
  expect('title_owner_changed_disables_apply','NOT = { '+guard('twcm_ui_confirm')+' }')
  add(dump(get(guis['twcm_ui_cancel'],'effect')))
  # Test-only wars have no settlement effects. Native war on-actions record the real outcome.
- (destination/'common/casus_belli_types/twcm_review_war.txt').write_text('twcm_review_cb = { icon = claim_cb group = claim name = twcm_review_cb_name war_name = twcm_review_cb_name allowed_for_character = { always = yes } allowed_against_character = { always = yes } is_valid = { always = yes } on_victory = { } on_defeat = { } on_white_peace = { } on_victory_desc = twcm_review_cb_name on_defeat_desc = twcm_review_cb_name on_white_peace_desc = twcm_review_cb_name on_invalidated_desc = twcm_review_cb_name }',encoding='utf-8-sig')
+ (destination/'common/casus_belli_types/twcm_review_war.txt').write_text('twcm_review_cb = { icon = claim_cb group = claim war_name = twcm_review_cb_name allowed_for_character = { always = yes } allowed_against_character = { always = yes } on_victory = { } on_defeat = { } on_white_peace = { } on_victory_desc = twcm_review_cb_name on_defeat_desc = twcm_review_cb_name on_white_peace_desc = twcm_review_cb_name on_invalidated_desc = twcm_review_cb_name }',encoding='utf-8-sig')
  (destination/'localization/english/twcm_review_l_english.yml').write_text('l_english:\n twcm_review_cb_name:0 "Editor review test war"\n',encoding='utf-8-sig')
  on_actions=[]
  for native,value in [('on_war_won_attacker',1),('on_war_won_defender',2),('on_war_white_peace',3)]:
@@ -222,3 +223,5 @@ def append_review_cases(add,action,expect,subjects,number,make,guard,guis,meta,d
    expect('war_result_'+side+'_'+outcome,'var:twcm_review_war_result = '+str(expected))
    expect('other_war_survives_'+side+'_'+outcome,'any_character_war = { this = scope:twcm_review_spare_war }')
  add('scope:twcm_review_spare_war = { end_war = white_peace }')
+ from review_ruler_cases import append_ruler_cases
+ append_ruler_cases(add,action,expect,subjects,number,make,guard,guis,meta,grant)

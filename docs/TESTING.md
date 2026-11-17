@@ -2,7 +2,7 @@
 
 ## Verified coverage
 
-The **1.5.2 release** passed **93 Python regression tests** and **5,520 native engine checks** against CK3 **1.20.1.2 on macOS**. It retains the reviewed gameplay effects while updating the branding, documentation and build configuration.
+The **1.6.0 build** passed **107 Python regression tests** and **5,943 native engine checks** against CK3 **1.20.1.2 on macOS**, with no mod-specific script errors or GUI warnings. The checks include the five new ruler-tool groups and the existing gameplay regression suite.
 
 The release mod is designed for **Windows, macOS and Linux**, using the same ZIP on all three. It contains CK3 scripts, GUI definitions and localisation files, with no platform-specific executable. Windows and Linux have not been playtested by us. The optional developer engine-check harness currently runs on macOS only; players do not need that harness or Python.
 
@@ -15,12 +15,22 @@ Coverage includes:
 - Twelve controlled war outcomes for both primary leaders and both ally sides, with an unrelated war left active.
 - Changed ownership, dynasty or capital during review; Cancel and death of either party.
 - Script/localization references, all 424 classic action adapters, building placement and packaging rollback.
+- Legitimacy adjustments, ruler-only dread controls, dread limits and tyranny removal.
+- Language learning, shared acceptance limits, campaign-created cultures and changed-culture review rejection.
+- All 110 native legacy definitions, available trait choices, prerequisite order, duplicate/eligibility checks,
+  renown balance and dynasty-level preservation, and changed-dynasty review rejection. DLC-specific actions
+  are exercised when eligible in the test configuration; otherwise their disabled state is checked.
+- Reciprocal guardianship, guardian replacement/removal protection, the two-ward limit, pending offers,
+  age bounds and all five native education-focus callbacks.
+- Reciprocal alliance creation/breaking, recreation after a break, Cancel, liege-chain/unlanded exclusions
+  and death of Other while a review is open.
+- Local Workshop ID preservation during installation, portable-package isolation and rollback.
 
 The final gameplay review recorded no mod-specific script errors or GUI warnings. Engine checks use fresh test profiles and generated campaigns; they do not load player saves. Test fixtures are not included in the release mod.
 
 ## Limits and manual checks
 
-These checks do not cover every campaign state, DLC combination, screen size, other-mod combination or long-term succession. Saved Force/Forbid knight preference should still be inspected in the normal Knights window; command execution and native values are checked by the harness. Multiplayer is not verified.
+These checks do not cover every campaign state, DLC combination, screen size, other-mod combination or long-term succession. The native harness checks effects, eligibility and parsed GUI definitions; it does not click through the rendered window or perform save/reload playtests. Saved Force/Forbid knight preference should still be inspected in the normal Knights window; command execution and native values are checked by the harness. Multiplayer is not verified.
 
 For a release playtest, use a separate save and check:
 

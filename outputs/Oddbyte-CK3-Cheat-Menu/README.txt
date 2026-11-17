@@ -1,4 +1,4 @@
-ODDBYTE — CK3 CHEAT MENU 1.5.2
+ODDBYTE — CK3 CHEAT MENU 1.6.0
 For CK3 1.20.x. English. Single-player. Tested gameplay baseline: 1.20.1.2 on macOS.
 
 INSTALLATION
@@ -7,6 +7,7 @@ https://github.com/wademanuk/oddbyte-ck3-cheat-menu/releases/latest
 Copy tw_basic_cheat_menu and the adjacent tw_basic_cheat_menu.mod into the CK3 user-data
 mod folder, then enable Oddbyte — CK3 Cheat Menu in the playset you launch. Restart CK3.
 The standard Windows/macOS folder is Documents/Paradox Interactive/Crusader Kings III/mod.
+Native Linux uses ~/.local/share/Paradox Interactive/Crusader Kings III/mod.
 Use your actual Documents location. Keep the folder and .mod filename as supplied.
 When updating, close CK3 and back up/replace both items. Enable only one copy.
 
@@ -22,6 +23,22 @@ Classic menu keeps the original event interface. No debug mode or console is req
 Make a separate save before major edits. Many permanent changes have no undo button.
 Relevant DLC is still required. Other game versions, multiplayer, other-mod combinations
 and long campaigns are not fully verified. The catalog does not index added third-party traits.
+
+NEW IN 1.6.0
+- Ruler standing: add/remove legitimacy, add/remove or set dread, and clear tyranny.
+  Native limits apply. Dread and tyranny need a ruler; legitimacy needs a playable ruler.
+- Languages: Selected learns the language of Other's actual culture. Requires age 6+.
+- Cultural acceptance: add 10/25 points or set 100 between two different cultures.
+  Everyone of both cultures is affected. Changing a culture invalidates an open review.
+- Dynasty legacies: unlock a chosen perk without spending renown. Earlier perks and
+  native eligibility are required. Trait-choice perks offer one button per choice.
+- Education: assign/remove Other as a child's guardian when both are home at the same
+  court. Remove an existing guardian first. Guardians need age 18+ and fewer than two wards.
+  Choose any of five education focuses for age 6–15; native progress adjustments apply.
+- Alliances: create/break the named pair's alliance. Creation requires different free,
+  landed rulers who are not war enemies or in each other's liege chain.
+Open these pages from Tools & editors. All actions are searchable, can be starred,
+and open a review that retains the original people and shared objects.
 
 SEARCH, FAVOURITES AND TARGETS
 - Search: click letters to find the start of a word, for example GEN, COURT or GOLD.

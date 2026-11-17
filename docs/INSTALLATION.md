@@ -6,7 +6,7 @@ Built for CK3 **1.20.x** and tested on **1.20.1.2 on macOS**. Windows and Linux 
 
 ## 1. Download and extract
 
-Download **Oddbyte-CK3-Cheat-Menu-v1.5.2.zip** from the [latest release](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/releases/latest), then extract it. On Windows, right-click the ZIP and choose **Extract All**; on macOS, double-click it; on Linux, use your archive manager's **Extract** action.
+Download the named **Oddbyte-CK3-Cheat-Menu-vVERSION.zip** from the [latest release](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/releases/latest), then extract it. On Windows, right-click the ZIP and choose **Extract All**; on macOS, double-click it; on Linux, use your archive manager's **Extract** action. `VERSION` is the release number shown on the download page.
 
 Use the named mod ZIP. GitHub's automatically generated “Source code” downloads are development snapshots.
 

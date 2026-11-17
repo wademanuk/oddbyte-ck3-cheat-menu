@@ -74,7 +74,7 @@ def add_page(page, title, content):
 
 
 hub = editor_note('hub','Choose a focused editor. Use Selected character and Other character above for two-person tools. Large changes open a review before they happen.',70)
-for dest, title in [(601,'Browse all traits'),(605,'Set exact values'),(610,'Court and prisoners'),(620,'Family and dynasty'),(630,'Titles, vassals and contracts'),(640,'Wars and truces'),(650,'Culture picker'),(651,'Faith picker'),(652,'Discover innovations'),(653,'Culture traditions'),(654,'Rite doctrines'),(655,'Rite tenets'),(660,'Artifacts'),(670,'Create a character')]:
+for dest, title in [(700,'Legitimacy, dread and tyranny'),(710,'Languages and cultural acceptance'),(720,'Dynasty legacies'),(730,'Education and guardians'),(740,'Alliances'),(601,'Browse all traits'),(605,'Set exact values'),(610,'Court and prisoners'),(620,'Family and dynasty'),(630,'Titles, vassals and contracts'),(640,'Wars and truces'),(650,'Culture picker'),(651,'Faith picker'),(652,'Discover innovations'),(653,'Culture traditions'),(654,'Rite doctrines'),(655,'Rite tenets'),(660,'Artifacts'),(670,'Create a character')]:
  hub += link(dest, title)
 add_page(600,'Tools & editors',hub)
 
@@ -145,7 +145,7 @@ for index,amount in enumerate([0,1,5,10,25,50,100,1000,10000]):
 keypad += '}\n'
 add_page(605,'Set exact values',keypad + group_rows('exact'))
 add_page(610,'Court and prisoners',editor_note('court','Selected character is the ruler or jailer. Other character is the person to recruit, appoint, imprison or release. Choose Other by portrait or from Pinned characters.',84)+group_rows('court'))
-add_page(620,'Family and dynasty',editor_note('family','These tools act on the two named characters. Marriage, adoption and dynasty changes can alter inheritance. Read the review before applying.',75)+group_rows('family'))
+add_page(620,'Family and dynasty',link(720,'Dynasty legacies')+link(730,'Education and guardians')+editor_note('family','These tools act on the two named characters. Marriage, adoption and dynasty changes can alter inheritance. Read the review before applying.',75)+group_rows('family'))
 add_page(630,'Titles and vassals',editor_note('titles','Right-click a title owner > Cheat Menu: Edit a Title. Pick a county-or-higher title, then review a transfer here. These buttons change actual ownership; the existing claim tools remain separate.',104)+textline(label('twcm_editor_chosen_title','Chosen title: '+title_text),h=42)+group_rows('titles')+editor_note('contracts','Contracts below belong to the selected feudal vassal and their own liege. Other character is not used.',60)+group_rows('contracts'))
 
 
@@ -164,6 +164,7 @@ for page, title, group in [(650,'Choose culture','cultures'),(651,'Choose faith'
  scope_text = 'Only the selected character changes.' if group in ['cultures','faiths'] else ('Shared culture: '+culture_text+'. Everyone of this culture is affected.' if group in ['innovations','traditions'] else 'Rite: '+rite_text+'. Followers of this rite are affected; other rites keep their own rules.')
  content = editor_note('scope_'+group,scope_text,76)+note('twcm_editor_search_help',68)+search_box()
  if group=='cultures':content+=group_rows('culture_match')
+ if group=='cultures':content+=link(710,'Languages and cultural acceptance')
  if group=='faiths':content+=group_rows('faith_match')
  if group=='innovations':content+=group_rows('innovation_bulk')
  if group=='tenets':
@@ -190,3 +191,34 @@ for value, title in [(0,'Male'),(1,'Female')]:
  spawn += button('spawn_sex_' + str(value),label('twcm_editor_spawn_sex_label_' + str(value),title),'twcm_editor_spawn_sex_' + str(value),down="[EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('twcm_editor_spawn_female').GetValue,'(CFixedPoint)" + str(value) + "')]")
 spawn += group_rows('spawn')+button('select_created',label('twcm_editor_select_created_label','Select the last created character'),'twcm_editor_select_created')
 add_page(670,'Create a character',spawn)
+
+standing=editor_note('standing','Adjust the selected ruler’s standing. Legitimacy needs a playable ruler; dread and tyranny need a ruler. Native limits apply.',80)
+for stat in ['legitimacy','dread','tyranny']:
+ standing+=textline(label('twcm_editor_current_'+stat,stat.title()+": ["+subject+".MakeScope.ScriptValue('twcm_editor_"+stat+"_value')|0]"),h=30)
+standing+=group_rows('standing')+keypad
+add_page(700,'Legitimacy, dread and tyranny',standing)
+add_page(710,'Languages and cultural acceptance',
+ editor_note('languages','Selected learns the language of Other’s actual culture, including campaign-created cultures. Acceptance affects the two whole cultures, not just these characters.',95)+
+ textline(label('twcm_editor_culture_pair','Cultures: '+culture_text+' / '+other_culture_text),size=17,h=48)+group_rows('languages'))
+legacies=editor_note('legacies','Unlock perks for the selected character’s whole dynasty without spending renown. Track order and the dynasty head’s normal eligibility still apply. Trait-choice perks offer a separate button for each choice.',108)
+legacies+=textline(label('twcm_editor_legacy_dynasty','Dynasty: '+dynasty_text),h=38)+note('twcm_editor_search_help',50)+search_box('twcm_legacy_search')
+legacy_markers=set()
+for track,entries in legacy_entries.items():
+ legacies+=textline(label('twcm_editor_legacy_track_'+track,catalog['name'](track)),size=21,h=36)
+ for data in entries:
+  entry=data['entry'];perk=data['perk']
+  # ScriptedGui eligibility is used for actions. The owned marker uses the same
+  # native dynasty trigger via a read-only GUI, avoiding an assumed data binding.
+  marker='twcm_editor_legacy_owned_'+perk
+  if marker not in legacy_markers:
+   sgui(marker,'',trigger='exists = scope:twcm_editor_dynasty scope:twcm_editor_dynasty = { has_dynasty_perk = '+perk+' }')
+   legacy_markers.add(marker)
+  row=action_row(entry,search=False)
+  row=row.replace('size = { 610 39 }','size = { 610 39 } visible = "['+search_expression(entry['title'],'twcm_legacy_search')+']"',1)
+  legacies+=row
+  if data['trait'] is None or data==entries[-1]:
+   legacies+='widget = { size = { 610 25 } visible = "'+ui_expr(marker,'IsValid')+'" '+textline(label('twcm_editor_legacy_unlocked','Unlocked for this dynasty'),size=15,h=23)+' }\n'
+add_page(720,'Dynasty legacies',legacies)
+add_page(730,'Education and guardians',
+ editor_note('education','Selected is the child; Other is the guardian. To replace a guardian, select that guardian as Other and remove them first. Guardianship edits require both people at home at the same court. Education focus needs age 6–15.',124)+group_rows('education'))
+add_page(740,'Alliances',editor_note('alliances','Selected and Other are the two rulers. Create an alliance without negotiation or marriage, or break their existing alliance. Reviews keep the original pair. Existing wars are unchanged.',105)+group_rows('alliances'))

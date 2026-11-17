@@ -369,6 +369,8 @@ for kind, fields, variable in [('resource',['gold','prestige','piety','renown'],
 name='twcm_ui_clear_stress'
 editor_actions[name]={'id':name,'key':label('twcm_editor_quick_stress','Remove all stress'),'title':'Remove all stress','group':'quick','help':None}
 
+exec((ROOT/'tools/ruler_tools.py').read_text(),globals())
+
 # A shared star toggle works for every catalogued action, including legacy adapters.
 for action in list(editor_actions.values()):
  field = 'twcm_fav_' + action['id']
@@ -400,9 +402,10 @@ write('common/character_interactions/twcm_editor_interactions.txt', '''twcm_edit
  ai_will_do = { base = 0 }
 }
 ''')
-editor_meta = {'pages': [600,601,602,603,604,605,610,620,630,640,650,651,652,653,654,655,660,670,680],
+editor_meta = {'pages': [600,601,602,603,604,605,610,620,630,640,650,651,652,653,654,655,660,670,680,700,710,720,730,740],
  'traits': len(editor_traits), 'cultures': len(catalog['cultures']), 'faiths': len(catalog['faiths']),
  'innovations': len(catalog['innovations']), 'traditions': len(catalog['traditions']),
  'doctrines': sum(len(v['choices']) for v in catalog['doctrine_groups'].values()), 'tenets': len(catalog['tenets']),
  'pin_slots': editor_pins, 'actions': {k: {'group':v['group'], 'title':v['title']} for k,v in editor_actions.items()},
- 'snapshot_scopes': editor_scope_fields, 'snapshot_values': editor_number_fields}
+ 'snapshot_scopes': editor_scope_fields, 'snapshot_values': editor_number_fields,
+ 'ruler_tools': ruler_tools_meta}

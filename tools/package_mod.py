@@ -60,7 +60,18 @@ def install_mod(source,usermod,backup_root):
  installed=usermod/source.name;external=usermod/(source.name+'.mod')
  if installed.is_symlink():raise ValueError('Installed mod directory is a symlink; refusing to replace its target')
  expected=hashes(source)
- descriptor=(source/'descriptor.mod').read_text(encoding='utf-8-sig')+'path='+json.dumps(str(installed.resolve()))+'\n'
+ content_descriptor=(source/'descriptor.mod').read_text(encoding='utf-8-sig')
+ # Launcher publication IDs belong to this local installation. Keep an existing
+ # Workshop association when replacing a portable package that omits that ID.
+ if not re.search(r'^\s*remote_file_id\s*=',content_descriptor,re.M):
+  for prior_descriptor in [installed/'descriptor.mod',external]:
+   if not prior_descriptor.is_file():continue
+   remote=re.search(r'^\s*remote_file_id\s*=\s*"?(\d+)"?\s*$',prior_descriptor.read_text(encoding='utf-8-sig'),re.M)
+   if remote:
+    content_descriptor+='remote_file_id="'+remote[1]+'"\n'
+    break
+ expected['descriptor.mod']=hashlib.sha256(content_descriptor.encode('utf-8')).hexdigest()
+ descriptor=content_descriptor+'path='+json.dumps(str(installed.resolve()))+'\n'
  stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d-%H%M%S-UTC-')
  backup=Path(tempfile.mkdtemp(prefix=stamp,dir=backup_root))
  if installed.exists():shutil.copytree(installed,backup/installed.name)
@@ -69,6 +80,7 @@ def install_mod(source,usermod,backup_root):
  with tempfile.TemporaryDirectory(prefix='.twcm-install-',dir=usermod) as temporary:
   stage=Path(temporary);new_mod=stage/source.name;new_descriptor=stage/external.name
   shutil.copytree(source,new_mod)
+  (new_mod/'descriptor.mod').write_text(content_descriptor)
   if hashes(new_mod)!=expected:raise ValueError('Staged mod differs from generated source')
   new_descriptor.write_text(descriptor)
   retired_mod=stage/'previous-mod';retired_descriptor=stage/'previous.mod'
@@ -86,7 +98,7 @@ def install_mod(source,usermod,backup_root):
    if retired_mod.exists():os.replace(retired_mod,installed)
    if retired_descriptor.exists() or retired_descriptor.is_symlink():os.replace(retired_descriptor,external)
    raise
- return {'installed_mod':str(installed),'descriptor':str(external),'backup':str(backup)}
+ return {'installed_mod':str(installed),'descriptor':str(external),'backup':str(backup),'installed_files':expected}
 
 
 def main():
@@ -96,6 +108,6 @@ def main():
  if args.install:
   report.update(install_mod(package/'tw_basic_cheat_menu',USERMOD,root/'backups'))
  (root/'installation.json').write_text(json.dumps(report,indent=2)+'\n')
- print(json.dumps({k:v for k,v in report.items() if k!='files'},indent=2))
+ print(json.dumps({k:v for k,v in report.items() if k not in ['files','installed_files']},indent=2))
 
 if __name__=='__main__':main()

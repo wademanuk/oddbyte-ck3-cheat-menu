@@ -1,1 +1,4 @@
 ﻿twcm_ui_stress_value = { value = stress }
+twcm_editor_legitimacy_value = { value = legitimacy }
+twcm_editor_dread_value = { value = dread }
+twcm_editor_tyranny_value = { value = tyranny }

@@ -6,9 +6,11 @@
 
 A single-player cheat menu and character editor for **Crusader Kings III**. Change your ruler, edit other characters and shape your realm from a movable in-game window.
 
-**[Download the latest release](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/releases/latest)** · [Installation](docs/INSTALLATION.md) · [Feature guide](docs/FEATURES.md) · [Report a bug](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/issues)
+**[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3840619967)** · **[Paradox Mods](https://mods.paradoxplaza.com/mods/167826/Any)** · **[Manual download](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/releases/latest)**
 
-**Version 1.5.2 · CK3 1.20.x · English · Single-player**
+[Installation](docs/INSTALLATION.md) · [Feature guide](docs/FEATURES.md) · [Report a bug](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/issues)
+
+**Version 1.6.0 · CK3 1.20.x · English · Single-player**
 
 **Designed for Windows, macOS and Linux — one release ZIP for all three.**
 
@@ -18,12 +20,13 @@ A single-player cheat menu and character editor for **Crusader Kings III**. Chan
 
 | Tools | Examples |
 | --- | --- |
-| Resources and character | Gold, prestige, piety, renown, stress, skills, age, health and fertility |
+| Resources and character | Gold, prestige, piety, renown, legitimacy, dread, tyranny, stress, skills, age, health and fertility |
 | Traits and lifestyles | Trait browser, trait experience, lifestyle experience and perk points |
-| Diplomacy and family | Hooks, opinions, relationships, marriage, adoption and house changes |
+| Diplomacy and family | Alliances, hooks, opinions, relationships, guardians, education, marriage, adoption and house changes |
+| Dynasty | Individual legacy unlocks, with normal track order and required trait choices |
 | Realm and titles | Claims, title transfers, vassals, contracts, counties and fast construction |
 | Military | Refill existing troops, improve commanders and resolve a selected war |
-| Culture and religion | Culture, faith and rite changes; innovations, traditions, doctrines and tenets |
+| Culture and religion | Languages, cultural acceptance, culture/faith/rite changes, innovations, traditions, doctrines and tenets |
 | Court and artifacts | Recruitment, council appointments, character creation and artifact tools |
 
 Pin up to eight characters, save favourite actions, search by word start and remove active boosts. Major changes open a confirmation naming the affected people and objects.

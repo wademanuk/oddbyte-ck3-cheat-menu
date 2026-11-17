@@ -71,6 +71,8 @@ def load_catalog(game):
             'faiths': faiths, 'innovations': definitions(game / 'common/culture/innovations'),
             'traditions': definitions(game / 'common/culture/traditions'),
             'doctrine_groups': doctrine_groups,
+            'dynasty_perks': definitions(game / 'common/dynasty_perks'),
+            'dynasty_legacies': definitions(game / 'common/dynasty_legacies'),
             'tenets': definitions(game / 'common/religion/tenet_types')}
 
 

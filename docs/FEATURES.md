@@ -2,6 +2,54 @@
 
 Use the names in the header to check who will be affected. The selected character receives character edits; Other is used by two-person tools. Major actions open a review.
 
+## Ruler standing
+
+- Tools & editors > Legitimacy, dread and tyranny, also linked from Character.
+- Add/remove 100 or 500 legitimacy points for a playable ruler. Native limits apply;
+  these are points, not a chosen number of legitimacy levels.
+- Add/remove 10 dread, or use the number pad to set dread to 0–100. Requires a ruler.
+  Traits and active boosts can raise dread again.
+- Clear tyranny removes the selected ruler's current tyranny. Other opinion penalties,
+  rivalries and grievances remain.
+
+## Languages and cultural acceptance
+
+- Selected learns the language of Other's actual culture, including campaign-created cultures.
+  Requires age 6+ and an unknown language; no learning scheme or culture conversion is created.
+- Add 10/25 acceptance points, or set acceptance to 100, between the two characters' cultures.
+  This affects the shared relationship between both whole cultures. Identical cultures are excluded.
+- Reviews name the original cultures. Apply is disabled if either character changes culture.
+
+## Dynasty legacies
+
+- Open from Tools & editors or Family and dynasty. Unlock an individual perk without spending renown.
+- Earlier perks in the same track must be unlocked first. Normal DLC and dynasty-head eligibility apply.
+- The whole selected dynasty benefits. A review is invalidated if the selected character changes dynasty.
+- Perks requiring a trait choice offer one button per choice, including Architected Ancestry.
+  The choice is stored for the native legacy effects; it does not immediately grant that trait to everyone.
+- Already unlocked perks are marked and cannot be granted again. No removal or undo is provided.
+
+## Education and guardians
+
+- Selected is the child; Other is the guardian. Assign Other to a child under 16 with no guardian.
+  The guardian must be free, capable, aged 18+ and have fewer than two wards.
+- Guardian assignment/removal requires both people at home at the same court, with no pending
+  education offer or travel. Use the normal game interaction for education in another court.
+- To replace a guardian, select that guardian as Other and remove them, then select the replacement.
+  Other guardianships stay. No forced faith/culture conversion is added.
+- Choose diplomacy, martial, stewardship, intrigue or learning education for a child aged 6–15.
+  Native focus-change effects run and can adjust existing education progress. This does not grant
+  a completed education trait. Use the trait browser to change a finished education.
+
+## Alliances
+
+- Open from Tools & editors or Diplomacy. Selected and Other are the two named rulers.
+- Create an alliance between different free, landed rulers who are not enemies in a war
+  or in each other's liege chain. Negotiation and marriage requirements are bypassed.
+- The alliance is tied to these rulers and follows native death/succession rules.
+  No war is joined automatically. A deliberately broken alliance can be created again.
+- Break alliance affects only that pair. Native consequences apply; current wars are not ended.
+
 ## Search, favourites and targets
 
 - Search: click letters to find the start of a word, for example GEN, COURT or GOLD.

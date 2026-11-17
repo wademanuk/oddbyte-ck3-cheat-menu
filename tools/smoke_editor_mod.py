@@ -159,6 +159,18 @@ def build_overlay(destination,review=False):
  return tests
 
 
+def classify_errors(errors):
+ """Classify each entry by its originating file, not an outer test callback."""
+ mod_errors=[];native_errors=[]
+ for block in re.split(r'(?=^\[[^\n]*\]\[E\])',errors,flags=re.M):
+  location=re.search(r'in file: "([^"]+)"|Script location: file: ([^ \n]+)',block)
+  origin=next((value for value in location.groups() if value),None) if location else None
+  if not block.strip():continue
+  if (origin and 'twcm' in origin) or (not origin and 'twcm' in block.lower()):mod_errors.append(block)
+  else:native_errors.append(block)
+ return mod_errors,native_errors
+
+
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--timeout',type=int,default=180);parser.add_argument('--review',action='store_true');args=parser.parse_args()
  work=ROOT/('work/editor-review' if args.review else 'work/expansion');work.mkdir(parents=True,exist_ok=True)
@@ -180,12 +192,7 @@ def main():
  text=(logs/'debug.log').read_text(errors='replace')
  passed=re.findall(r'TWCM_PASS (\w+)',text);failed=re.findall(r'TWCM_FAIL (\w+)',text)
  errors=(logs/'error.log').read_text(errors='replace')
- mod_errors=[];native_errors=[]
- for block in errors.split('\n\n'):
-  location=re.search(r'Script location: file: ([^ \n]+)',block)
-  if not block.strip():continue
-  if (location and 'twcm' in location[1]) or (not location and 'twcm' in block.lower()):mod_errors.append(block)
-  else:native_errors.append(block)
+ mod_errors,native_errors=classify_errors(errors)
  gui_warnings=(logs/'gui_warnings.log').read_text(errors='replace')
  report={'manual_only':['Knight preference saved-state inspection in the Knights window'],'mod_errors':mod_errors,'native_errors':native_errors,'gui_warnings':gui_warnings,'exit':code,'profile':str(profile),'expected':tests,'passed':passed,'failed':failed,'completed':'TWCM_SMOKE_END' in text}
  (work/'effect-smoke-results.json').write_text(json.dumps(report,indent=2))

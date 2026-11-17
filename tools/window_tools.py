@@ -294,6 +294,7 @@ for n,data in ui_pages.items():
   content+=button('resource_bundle','twcm_14_title','twcm_ui_nav_14')
   content+=button('resource_exact','twcm_editor_page_605','twcm_editor_nav_605')
  elif n==20:
+  content+=button('standing_tools','twcm_editor_page_700','twcm_editor_nav_700')+button('education_tools','twcm_editor_page_730','twcm_editor_nav_730')
   content+=note('twcm_ui_character_help',45)
   step_buttons=''
   for i,step in enumerate([1,5,10]):
@@ -314,6 +315,7 @@ for n,data in ui_pages.items():
    sgui(f'twcm_ui_nav_realm_{dest}',f'set_variable = {{ name = twcm_ui_page value = {dest} }}')
    content+=button('realm_sub_'+str(dest),ui_pages[dest]['title'],f'twcm_ui_nav_realm_{dest}')
  elif n==500:
+  content+=button('alliance_tools','twcm_editor_page_740','twcm_editor_nav_740')
   content+=note('twcm_ui_diplomacy_help',88)+textline('twcm_ui_dip_current',w=610,size=17,h=35)
   content+=actions_for(500)
   for dest in [501,502,503]:

@@ -1,4 +1,12 @@
-ODDBYTE — CK3 CHEAT MENU 1.5.2
+ODDBYTE — CK3 CHEAT MENU 1.6.0
+
+Adds ruler standing, languages/cultural acceptance, dynasty legacies, education/
+guardians and alliance tools. New actions use Search, Favourites and original-target
+reviews. Legacy unlocks preserve renown and store required trait choices. Native
+eligibility and track order still apply. Guardian editing is limited to available
+people at the same court. Local installation preserves the Steam Workshop ID.
+
+1.5.2
 
 Oddbyte branding, refreshed public guides and configurable development paths.
 Gameplay and saved identifiers are retained from 1.5.1.

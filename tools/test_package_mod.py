@@ -41,6 +41,21 @@ class PackageTests(unittest.TestCase):
   self.assertEqual(hashes(installed),hashes(self.source))
   self.assertEqual((Path(info['backup'])/installed.name/'retired-effect.txt').read_text(),'must not remain active')
   self.assertIn(str(installed.resolve()),external.read_text())
+ def test_upgrade_preserves_local_workshop_id_without_adding_it_to_the_portable_source(self):
+  installed,external,_,_=self.installed_fixture()
+  for path in [installed/'descriptor.mod',external]:
+   path.write_text(path.read_text()+'remote_file_id="3840619967"\n')
+  info=install_mod(self.source,self.usermod,self.backups)
+  for path in [installed/'descriptor.mod',external]:self.assertIn('remote_file_id="3840619967"',path.read_text())
+  self.assertNotIn('remote_file_id',(self.source/'descriptor.mod').read_text())
+  self.assertIn('remote_file_id',(Path(info['backup'])/installed.name/'descriptor.mod').read_text())
+ def test_explicit_source_publication_id_takes_precedence(self):
+  installed,external,_,_=self.installed_fixture()
+  (installed/'descriptor.mod').write_text((installed/'descriptor.mod').read_text()+'remote_file_id="111"\n')
+  (self.source/'descriptor.mod').write_text((self.source/'descriptor.mod').read_text()+'remote_file_id="222"\n')
+  install_mod(self.source,self.usermod,self.backups)
+  self.assertIn('remote_file_id="222"',(installed/'descriptor.mod').read_text())
+  self.assertNotIn('remote_file_id="111"',external.read_text())
  def test_staging_failure_leaves_active_files_and_descriptor_untouched(self):
   installed,external,before,descriptor=self.installed_fixture()
   from shutil import copytree as real_copytree
