@@ -2,7 +2,7 @@
 
 **Designed for Windows, macOS and Linux. Use the same release ZIP on all three platforms.** The mod uses CK3 scripts, GUI definitions and localisation files. No Python, console commands or platform-specific installer are needed to play.
 
-Built for CK3 **1.20.x** and tested on **1.20.1.2 on macOS**. Windows and Linux have not been playtested by us; this describes testing coverage, not a macOS-only restriction.
+Built for CK3 **1.21.x** and tested on **1.21.0 on macOS**. Windows and Linux have not been playtested by us. Back up a campaign separately before upgrading it across CK3 versions.
 
 ## 1. Download and extract
 
@@ -93,4 +93,4 @@ The installation folder and script identifiers are retained from earlier version
 
 Make a separate save before trying major cheats. Resources, skills, age, claims, family links, ownership and other permanent edits stay when saved. Removing the mod does not reverse them.
 
-Remove unwanted character/county boosts using their removal buttons before disabling the mod. Custom traits and expanded building-slot capacity depend on the mod's definitions. Keep an unchanged save if you want to return to a campaign without the mod.
+Remove unwanted character/county boosts using their removal buttons before disabling the mod. Custom traits and expanded district capacity depend on the mod's definitions. Keep an unchanged save if you want to return to a campaign without the mod.

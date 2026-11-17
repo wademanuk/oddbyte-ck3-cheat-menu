@@ -19,6 +19,24 @@ building_holding_level = { has_holding_type = castle_holding has_building_or_hig
  def test_parser_keeps_comments_out_of_strings_and_round_trips(self):
   original=parse('x = { label = "#not comment" #comment\n scope:a ?= { value >= 3 } values = { a b } }')
   self.assertEqual(original,parse(dump(original)))
+ def test_florin_placement_retains_holding_type_prerequisite_and_native_guard(self):
+  game=self.fixture('village_primary = {} port_primary = {}')
+  (game/'common/districts').mkdir();(game/'common/holdings').mkdir()
+  (game/'common/districts/test.txt').write_text('''villages_district = { primary_building = village_primary }
+port_district = { primary_building = port_primary unlocked_by = villages_district is_enabled = { is_coastal = yes } }
+special_district = { type = special primary_building = port_primary }''')
+  (game/'common/holdings/test.txt').write_text('castle_holding = { districts = { villages_district port_district } } tribal_holding = { districts = { villages_district } }')
+  script,metadata=generate(game)
+  self.assertEqual(metadata['regular_districts'],['villages_district','port_district'])
+  fill=get(parse(script),'twcm_fill_buildings_effect')
+  place=get(fill,'while')
+  port=next(entry.value for entry in place if entry.key=='if' and get(entry.value,'add_regular_district')=='port_district')
+  guard=get(port,'limit')
+  self.assertEqual(get(guard,'has_free_district_slot'),'yes')
+  self.assertEqual(get(guard,'province_has_district'),'villages_district')
+  self.assertEqual(get(get(guard,'NOT'),'province_has_district'),'port_district')
+  self.assertEqual(list(get(guard,'OR')),[parse('has_holding_type = castle_holding')[0]])
+  self.assertEqual(get(guard,'is_coastal'),'yes')
  def test_expands_helpers_and_bypasses_only_intended_requirements(self):
   game=self.fixture('''
 castle_01 = { next_building = castle_02 }

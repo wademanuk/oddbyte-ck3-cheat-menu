@@ -4,11 +4,12 @@ twcm_near_instant_construction = {
     build_speed = -10
     holding_build_speed = -10
     domicile_build_speed = -10
+    district_build_speed = -10
 }
 
 twcm_health_boost = { health = 5 }
 twcm_high_fertility = { fertility = 1 }
 twcm_low_fertility = { fertility = -1 }
-twcm_popular_support = { county_opinion_add = 100 }
+twcm_popular_support = { popular_opinion_add = 100 }
 
-twcm_extra_building_slot = { stacking = yes building_slot_add = 1 }
+twcm_extra_building_slot = { stacking = yes district_slot_add = 1 }

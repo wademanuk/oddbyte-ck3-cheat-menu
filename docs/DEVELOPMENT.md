@@ -3,7 +3,7 @@
 ## Requirements
 
 - Python 3.
-- A CK3 installation matching the supported 1.20.x definitions. The checked-in catalogs were built from 1.20.1.2.
+- A CK3 installation matching the supported 1.21.x definitions. The checked-in catalogs were built from 1.21.0.
 
 Players do not need Python, the generators or a development checkout.
 

@@ -2555,7 +2555,7 @@ twcm.0071 = {
         name = twcm_dev_71_1
         scope:twcm_target = {
         capital_province.county = {
-        change_development_level = 1
+        title_province = { change_province_size = 1 }
         }
         }
         hidden_effect = { trigger_event = { id = twcm.0071 } }
@@ -2564,7 +2564,7 @@ twcm.0071 = {
         name = twcm_dev_71_5
         scope:twcm_target = {
         capital_province.county = {
-        change_development_level = 5
+        title_province = { change_province_size = 5 }
         }
         }
         hidden_effect = { trigger_event = { id = twcm.0071 } }
@@ -2573,7 +2573,7 @@ twcm.0071 = {
         name = twcm_dev_71_10
         scope:twcm_target = {
         capital_province.county = {
-        change_development_level = 10
+        title_province = { change_province_size = 10 }
         }
         }
         hidden_effect = { trigger_event = { id = twcm.0071 } }
@@ -2639,7 +2639,7 @@ twcm.0072 = {
         name = twcm_dev_72_1
         scope:twcm_target = {
         every_held_title = { limit = { tier = tier_county }
-        change_development_level = 1
+        title_province = { change_province_size = 1 }
         }
         }
         hidden_effect = { trigger_event = { id = twcm.0072 } }
@@ -2648,7 +2648,7 @@ twcm.0072 = {
         name = twcm_dev_72_5
         scope:twcm_target = {
         every_held_title = { limit = { tier = tier_county }
-        change_development_level = 5
+        title_province = { change_province_size = 5 }
         }
         }
         hidden_effect = { trigger_event = { id = twcm.0072 } }
@@ -2657,7 +2657,7 @@ twcm.0072 = {
         name = twcm_dev_72_10
         scope:twcm_target = {
         every_held_title = { limit = { tier = tier_county }
-        change_development_level = 10
+        title_province = { change_province_size = 10 }
         }
         }
         hidden_effect = { trigger_event = { id = twcm.0072 } }

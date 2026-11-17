@@ -39,8 +39,8 @@ twcm_editor_prepare_effect = {
  else = { remove_variable = twcm_editor_other_rite }
  if = { limit = { exists = scope:twcm_target.dynasty } set_variable = { name = twcm_editor_dynasty value = scope:twcm_target.dynasty } }
  else = { remove_variable = twcm_editor_dynasty }
- if = { limit = { exists = scope:twcm_target.capital_province.county } set_variable = { name = twcm_editor_capital_county value = scope:twcm_target.capital_province.county } }
- else = { remove_variable = twcm_editor_capital_county }
+ if = { limit = { exists = scope:twcm_target.capital_province } set_variable = { name = twcm_editor_capital_province value = scope:twcm_target.capital_province } }
+ else = { remove_variable = twcm_editor_capital_province }
  if = { limit = { NOT = { has_variable = twcm_editor_spawn_diplomacy } } set_variable = { name = twcm_editor_spawn_diplomacy value = 10 } }
  if = { limit = { NOT = { has_variable = twcm_editor_spawn_martial } } set_variable = { name = twcm_editor_spawn_martial value = 10 } }
  if = { limit = { NOT = { has_variable = twcm_editor_spawn_stewardship } } set_variable = { name = twcm_editor_spawn_stewardship value = 10 } }
@@ -80,9 +80,9 @@ twcm_editor_prepare_effect = {
  clear_saved_scope = twcm_editor_dynasty
  if = { limit = { has_variable = twcm_editor_dynasty exists = var:twcm_editor_dynasty } var:twcm_editor_dynasty = { save_scope_as = twcm_editor_dynasty } }
  else = { remove_variable = twcm_editor_dynasty }
- clear_saved_scope = twcm_editor_capital_county
- if = { limit = { has_variable = twcm_editor_capital_county exists = var:twcm_editor_capital_county } var:twcm_editor_capital_county = { save_scope_as = twcm_editor_capital_county } }
- else = { remove_variable = twcm_editor_capital_county }
+ clear_saved_scope = twcm_editor_capital_province
+ if = { limit = { has_variable = twcm_editor_capital_province exists = var:twcm_editor_capital_province } var:twcm_editor_capital_province = { save_scope_as = twcm_editor_capital_province } }
+ else = { remove_variable = twcm_editor_capital_province }
  save_scope_value_as = { name = twcm_editor_number value = var:twcm_editor_number }
  save_scope_value_as = { name = twcm_editor_spawn_age value = var:twcm_editor_spawn_age }
  save_scope_value_as = { name = twcm_editor_spawn_female value = var:twcm_editor_spawn_female }

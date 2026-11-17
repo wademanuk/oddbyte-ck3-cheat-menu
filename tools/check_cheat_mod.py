@@ -81,11 +81,15 @@ if parity:
  building_script=(m/'common/scripted_effects/twcm_building_effects.txt').read_text(encoding='utf-8-sig')
  building_ast=parse(building_script)
  assert parse(__import__('pdx_script').dump(building_ast))==building_ast
- native_buildings={e.key for p in (game/'common/buildings').glob('*.txt') for e in parse(p.read_text(encoding='utf-8-sig')) if isinstance(e.value,list)}
+ native_buildings={e.key for p in (game/'common/buildings').rglob('*.txt') for e in parse(p.read_text(encoding='utf-8-sig')) if isinstance(e.value,list)}
+ native_districts={e.key for p in (game/'common/districts').glob('*.txt') for e in parse(p.read_text(encoding='utf-8-sig')) if isinstance(e.value,list)}
  for e in walk(building_ast):
-  if e.key in ['add_building','add_special_building','has_building','has_building_or_higher']:
+  if e.key in ['add_building','add_special_building','has_building','has_building_or_higher','can_start_building_construction_for_owner']:
    assert e.value in native_buildings,('Unknown building',e.value)
-  assert e.key not in ['has_innovation','add_building_slot','remove_building','remove_special_building'],e.key
+  if e.key in ['add_regular_district','province_has_district']:
+   assert e.value in native_districts,('Unknown district',e.value)
+  assert e.key not in ['add_building_slot','remove_building','remove_special_building','remove_district_type'],e.key
+  if 'regular_districts' not in parity['building_tools']:assert e.key!='has_innovation',e.key
  assert not re.search(r'\broot\b|\$[A-Z_]+\$',building_script)
  # Else branches must directly follow a conditional branch in their own block.
  def branches(entries):
@@ -99,7 +103,7 @@ if parity:
  all_effects='\n'.join(p.read_text(encoding='utf-8-sig') for p in (m/'common/scripted_effects').glob('*.txt'))
  defined_effects=set(re.findall(r'^(twcm_\w+)\s*=',all_effects,re.M))
  for ref in re.findall(r'\b(twcm_\w+_effect)\s*=\s*yes',event_text):assert ref in defined_effects,ref
- print(f"PASS: four preset traits, current modifier IDs and icons; {len(parity['building_tools']['fill_roots'])} construction and {len(parity['building_tools']['upgrade_chains'])} upgrade chains; valid native building IDs and conditional branches.")
+ print(f"PASS: four preset traits, current modifier IDs and icons; {len(parity['building_tools']['fill_roots'])} construction candidates; valid native building/district IDs and conditional branches.")
 print(f"PASS: balanced scripts; {len(ids)} unique reachable menus with back paths; {len(keys)} valid localized strings; <=7 options per menu; UTF-8 BOM.")
 print('PASS: custom modifier references, all 12 native lifestyle effects, selected-character entry points and player-owned event chains.')
 

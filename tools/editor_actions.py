@@ -4,7 +4,7 @@ catalog = load_catalog(GAME)
 editor_actions = {}
 editor_groups = {}
 editor_pages = {}
-editor_scope_fields = ['title', 'title_owner', 'war', 'artifact', 'culture', 'faith', 'rite', 'other_culture', 'other_faith', 'other_rite', 'dynasty', 'capital_county']
+editor_scope_fields = ['title', 'title_owner', 'war', 'artifact', 'culture', 'faith', 'rite', 'other_culture', 'other_faith', 'other_rite', 'dynasty', 'capital_province']
 editor_number_fields = ['number', 'spawn_age', 'spawn_female'] + ['spawn_' + skill for skill in skills]
 editor_traits = {}
 editor_pins = 8
@@ -28,8 +28,8 @@ editor_prepare = '''twcm_editor_prepare_effect = {
  else = { remove_variable = twcm_editor_other_rite }
  if = { limit = { exists = scope:twcm_target.dynasty } set_variable = { name = twcm_editor_dynasty value = scope:twcm_target.dynasty } }
  else = { remove_variable = twcm_editor_dynasty }
- if = { limit = { exists = scope:twcm_target.capital_province.county } set_variable = { name = twcm_editor_capital_county value = scope:twcm_target.capital_province.county } }
- else = { remove_variable = twcm_editor_capital_county }
+ if = { limit = { exists = scope:twcm_target.capital_province } set_variable = { name = twcm_editor_capital_province value = scope:twcm_target.capital_province } }
+ else = { remove_variable = twcm_editor_capital_province }
 '''
 for skill in skills:
  editor_prepare += f' if = {{ limit = {{ NOT = {{ has_variable = twcm_editor_spawn_{skill} }} }} set_variable = {{ name = twcm_editor_spawn_{skill} value = 10 }} }}\n'
@@ -325,9 +325,9 @@ for skill in skills:
  single('exact_' + skill, 'Set base ' + skill + ' to chosen number', f'add_{skill}_skill = -1000 add_{skill}_skill = scope:twcm_editor_number force_character_skill_recalculation = yes',
  'scope:twcm_editor_number >= 0 scope:twcm_editor_number <= 100', group='exact',
  help_text='Replace the selected character\'s base ' + skill + ' with ' + number_text + ' (0–100). Trait and modifier bonuses remain, so the displayed total can be higher. Previous base edits are replaced; no undo.')
-editor_action('exact_development', 'Set capital development to chosen number', 'scope:twcm_editor_capital_county = { change_development_level = { value = scope:twcm_editor_number subtract = development_level } }',
- 'exists = scope:twcm_editor_capital_county scope:twcm_target = { is_landed = yes capital_province.county = scope:twcm_editor_capital_county } scope:twcm_editor_number >= 0 scope:twcm_editor_number <= 100', group='exact',
- help_text="Set [GetPlayer.MakeScope.Var('twcm_editor_capital_county').Title.GetName] development to " + number_text + ' (0–100). Other counties remain unchanged. Apply is disabled if the selected ruler moves their capital during review.')
+editor_action('exact_development', 'Set capital settlement size', 'scope:twcm_editor_capital_province = { change_province_size = { value = scope:twcm_editor_number subtract = province_size_level } }',
+ 'exists = scope:twcm_editor_capital_province scope:twcm_target = { is_landed = yes capital_province = scope:twcm_editor_capital_province } scope:twcm_editor_number >= 0 scope:twcm_editor_number <= 10', group='exact',
+ help_text="Set [GetPlayer.MakeScope.Var('twcm_editor_capital_province').Province.GetName] settlement size to " + number_text + ' (0–10). Apply is disabled if the selected ruler moves their capital during review.')
 sgui('twcm_editor_spawn_age_set', 'twcm_ui_prepare_effect = yes set_variable = { name = twcm_editor_spawn_age value = var:twcm_editor_number }', 'root.var:twcm_editor_number >= 18 root.var:twcm_editor_number <= 80')
 for value in [0, 1]:
  sgui('twcm_editor_spawn_sex_' + str(value), f'set_variable = {{ name = twcm_editor_spawn_female value = {value} }}')

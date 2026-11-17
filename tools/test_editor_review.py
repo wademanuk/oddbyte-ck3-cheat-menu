@@ -71,8 +71,8 @@ class EditorReviewTests(unittest.TestCase):
   self.assertNotIn('twcm_claim_ruler',script.scopes)
   self.assertNotIn('twcm_ui_claim_title',script.root.variables)
   self.assertNotIn('twcm_ui_claim_ruler',script.root.variables)
- def test_exact_shared_values_keep_the_original_dynasty_and_county(self):
-  for action,field in [('exact_renown','dynasty'),('exact_development','capital_county')]:
+ def test_exact_shared_values_keep_the_original_dynasty_and_capital(self):
+  for action,field in [('exact_renown','dynasty'),('exact_development','capital_province')]:
    entries=list(walk(self.effects['twcm_editor_'+action]))
    self.assertTrue(any(e.key=='scope:twcm_editor_'+field for e in entries),action)
    self.assertIn(field,self.meta['editor']['snapshot_scopes'])

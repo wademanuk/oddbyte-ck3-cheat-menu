@@ -2,7 +2,7 @@
 
 ## Verified coverage
 
-The **1.6.0 build** passed **107 Python regression tests** and **5,943 native engine checks** against CK3 **1.20.1.2 on macOS**, with no mod-specific script errors or GUI warnings. The checks include the five new ruler-tool groups and the existing gameplay regression suite.
+The **1.6.1 build** passed **108 Python regression tests** and **6,248 native engine checks** against CK3 **1.21.0 on macOS**, with no mod-specific script errors or GUI warnings. The checks include the ruler tools, Florin compatibility changes and the existing gameplay regression suite.
 
 The release mod is designed for **Windows, macOS and Linux**, using the same ZIP on all three. It contains CK3 scripts, GUI definitions and localisation files, with no platform-specific executable. Windows and Linux have not been playtested by us. The optional developer engine-check harness currently runs on macOS only; players do not need that harness or Python.
 
@@ -15,9 +15,12 @@ Coverage includes:
 - Twelve controlled war outcomes for both primary leaders and both ally sides, with an unrelated war left active.
 - Changed ownership, dynasty or capital during review; Cancel and death of either party.
 - Script/localization references, all 424 classic action adapters, building placement and packaging rollback.
+- Settlement size increases and decreases, seven district slots without repeat stacking, free district
+  construction and eligible upgrades through the confirmation flow, and a removable popular-opinion boost.
+- An open confirmation from an older mod build cannot apply after an update.
 - Legitimacy adjustments, ruler-only dread controls, dread limits and tyranny removal.
 - Language learning, shared acceptance limits, campaign-created cultures and changed-culture review rejection.
-- All 110 native legacy definitions, available trait choices, prerequisite order, duplicate/eligibility checks,
+- All 120 native legacy definitions, available trait choices, prerequisite order, duplicate/eligibility checks,
   renown balance and dynasty-level preservation, and changed-dynasty review rejection. DLC-specific actions
   are exercised when eligible in the test configuration; otherwise their disabled state is checked.
 - Reciprocal guardianship, guardian replacement/removal protection, the two-ward limit, pending offers,

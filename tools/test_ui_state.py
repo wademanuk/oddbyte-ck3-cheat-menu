@@ -130,11 +130,14 @@ class SelectionStateTests(unittest.TestCase):
   self.assertNotIn('twcm_claim_beneficiary',self.player.variables)
   self.assertIs(self.script.scopes['twcm_target'],self.player)
  def test_confirmation_validity_uses_the_original_subject(self):
-  self.player.variables.update(twcm_ui_pending=1,twcm_ui_pending_target=self.edited,twcm_ui_target=Character('other selection',False))
+  self.script.click('twcm_ui_97_0')
+  self.player.variables['twcm_ui_target']=Character('other selection',False)
   self.script.assert_valid('twcm_ui_confirm')
  def test_confirmation_is_disabled_if_the_original_subject_dies(self):
+  self.script.click('twcm_ui_97_0')
+  self.script.assert_valid('twcm_ui_confirm')
   self.edited.alive=False
-  self.player.variables.update(twcm_ui_pending=1,twcm_ui_pending_target=self.edited,twcm_ui_target=self.player)
+  self.player.variables['twcm_ui_target']=self.player
   self.assertFalse(self.script.condition(get(self.script.guis['twcm_ui_confirm'],'is_valid')))
  def test_swap_persists_both_sides_for_the_next_action(self):
   self.script.click('twcm_ui_500_3')

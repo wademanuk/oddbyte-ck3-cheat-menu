@@ -8,13 +8,15 @@ PRIMARY={'castle_01','city_01','temple_01','temple_citadel_01','tribe_01','nomad
 
 def load_buildings(game):
     result={}
-    for path in sorted((game/'common/buildings').glob('*.txt')):
+    for path in sorted((game/'common/buildings').rglob('*.txt')):
         for entry in parse(path.read_text(encoding='utf-8-sig')):
             if isinstance(entry.value,list):result[entry.key]=entry.value
     return result
 
 def generate(game):
     buildings=load_buildings(game)
+    if (game/'common/districts').is_dir():
+        return generate_district_tools(game,buildings)
     helpers={}
     for path in sorted((game/'common/scripted_triggers').glob('*.txt')):
         for e in parse(path.read_text(encoding='utf-8-sig')):
@@ -121,3 +123,74 @@ twcm_fill_buildings_effect = {
     assert not re.search(r'\$(?:[A-Z_]+)\$',text), 'Unexpanded building helper parameter'
     meta={'definitions':len(buildings),'fill_roots':fill_roots,'upgrade_chains':{r:chains[r] for r in upgrade_roots},'removed_gates':sorted(removed),'placement_rules':'All four native construction/enabled trigger groups; technology and holding-level thresholds bypassed. Regular empty slots only; existing special/duchy chains upgraded in place; great projects excluded.'}
     return text,meta
+
+
+def generate_district_tools(game,buildings):
+    districts={entry.key:entry.value for path in sorted((game/'common/districts').glob('*.txt'))
+               for entry in parse(path.read_text(encoding='utf-8-sig')) if isinstance(entry.value,list)}
+    priority=['villages_district','military_district','urban_housing_district','market_district']
+    regular=sorted((key for key,body in districts.items() if get(body,'type','regular')=='regular'),
+                   key=lambda key:(priority.index(key) if key in priority else len(priority),key))
+    primary={key:get(districts[key],'primary_building') for key in regular}
+    assert set(primary.values())<=buildings.keys(),('Missing district primary buildings',set(primary.values())-buildings.keys())
+    holdings={entry.key:entry.value for path in sorted((game/'common/holdings').glob('*.txt'))
+              for entry in parse(path.read_text(encoding='utf-8-sig')) if isinstance(entry.value,list)}
+    visits=['holding_district ?=', 'resource_district ?=', 'special_district ?=',
+            'duchy_capital_district ?=', 'every_built_regular_district =']
+    def placement(key):
+        types=[Entry('has_holding_type','=',holding) for holding,body in holdings.items()
+               if any(item.key==key for item in get(body,'districts',[]))]
+        if not types:return ''
+        allowed=[Entry('OR','=',types)]
+        prerequisite=get(districts[key],'unlocked_by')
+        if prerequisite:allowed.append(Entry('province_has_district','=',prerequisite))
+        for body in (districts[key],buildings[primary[key]]):
+            for field in GUARDS:allowed.extend(get(body,field,[]))
+        guards=re.sub(r'\broot\b','scope:twcm_build_province',dump(allowed),flags=re.I)
+        return f'''if = {{
+    limit = {{ has_free_district_slot = yes NOT = {{ province_has_district = {key} }} {guards} }}
+    add_regular_district = {key}
+}}'''
+    place='\n'.join(filter(None,map(placement,regular)))
+    eligible='can_building_be_upgraded = yes is_building_being_upgraded = no'
+    text=f'''twcm_expand_slots_effect = {{
+    while = {{
+        count = 7
+        limit = {{ district_slots < 7 }}
+        add_province_modifier = twcm_extra_building_slot
+    }}
+}}
+twcm_upgrade_district_effect = {{
+    while = {{
+        count = 64
+        limit = {{ any_district_building = {{ {eligible} }} }}
+        random_district_building = {{ limit = {{ {eligible} }} upgrade_this_building = yes }}
+    }}
+}}
+twcm_upgrade_buildings_effect = {{
+    {' '.join(scope+' { twcm_upgrade_district_effect = yes }' for scope in visits)}
+}}
+twcm_fill_buildings_effect = {{
+    save_scope_as = twcm_build_province
+    barony.holder = {{ save_scope_as = holder save_scope_as = build_owner }}
+    county = {{ save_scope_as = county }}
+    while = {{
+        count = 7
+        limit = {{ has_free_district_slot = yes }}
+        {place}
+    }}
+    every_built_regular_district = {{
+        twcm_upgrade_district_effect = yes
+        save_scope_as = twcm_build_district
+        while = {{
+            count = 12
+            limit = {{ free_building_slots > 0 }}
+            scope:twcm_build_province = {{ build_random_district_building = {{ district = scope:twcm_build_district }} }}
+        }}
+        twcm_upgrade_district_effect = yes
+    }}
+}}
+'''
+    return text,{'definitions':len(buildings),'fill_roots':list(primary.values()),'upgrade_chains':{},
+                 'regular_districts':regular,'removed_gates':[],
+                 'placement_rules':'Native district and building eligibility; free instant construction and upgrades. Great projects excluded.'}

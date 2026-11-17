@@ -4,6 +4,8 @@ import copy
 from pdx_script import parse,dump,get,Entry,walk
 
 ui_sguis=[];ui_actions={};ui_pending={};ui_pages={};ui_option_ids={}
+confirmation_revision=int(''.join(part.zfill(2) for part in VERSION.split('.')))
+confirmation_guard=f'has_variable = twcm_ui_pending_revision var:twcm_ui_pending_revision = {confirmation_revision}'
 player="GetPlayer"
 subject="GetPlayer.MakeScope.Var('twcm_ui_target').Char"
 other="GetPlayer.MakeScope.Var('twcm_ui_other').Char"
@@ -73,6 +75,7 @@ def register(name,body,trigger='',page=None,confirm=False,description=None):
 remove_variable = twcm_ui_pending_ruler
 twcm_ui_prepare_effect = yes
 set_variable = {{ name = twcm_ui_pending value = {ident} }}
+set_variable = {{ name = twcm_ui_pending_revision value = {confirmation_revision} }}
 set_variable = {{ name = twcm_ui_pending_target value = var:twcm_ui_target }}
 set_variable = {{ name = twcm_ui_pending_other value = var:twcm_ui_other }}
 if = {{ limit = {{ has_variable = twcm_ui_claim_title exists = var:twcm_ui_claim_title }} set_variable = {{ name = twcm_ui_pending_title value = var:twcm_ui_claim_title }} }}
@@ -178,8 +181,9 @@ for ident,action in ui_pending.items():
  limit = {{ var:twcm_ui_pending = {ident} }}
  {guarded}
 }}''')
+pending_guard='has_variable = twcm_ui_pending '+confirmation_guard+' has_variable = twcm_ui_pending_target exists = var:twcm_ui_pending_target var:twcm_ui_pending_target ?= { is_alive = yes }'
 confirm_effect='''if = {
- limit = { has_variable = twcm_ui_pending has_variable = twcm_ui_pending_target exists = var:twcm_ui_pending_target var:twcm_ui_pending_target ?= { is_alive = yes } }
+ limit = { '''+pending_guard+''' }
  var:twcm_ui_pending_target = { save_scope_as = twcm_target }
  if = { limit = { exists = var:twcm_ui_pending_other } var:twcm_ui_pending_other = { save_scope_as = twcm_other } }
  if = { limit = { has_variable = twcm_ui_pending_title exists = var:twcm_ui_pending_title } var:twcm_ui_pending_title = { save_scope_as = twcm_claim_title } }
@@ -198,7 +202,7 @@ for ident,action in ui_pending.items():
  for normal,snapshot in [('twcm_ui_target','twcm_ui_pending_target'),('twcm_ui_other','twcm_ui_pending_other')]+[('twcm_editor_'+f,'twcm_ui_pending_editor_'+f) for f in editor_scope_fields+editor_number_fields]:
   trigger=re.sub(r'root\.var:'+re.escape(normal)+r'\b','root.var:'+snapshot,trigger)
  pending_valid.append(f'AND = {{ var:twcm_ui_pending = {ident} {trigger} }}')
-sgui('twcm_ui_confirm',confirm_effect,trigger='has_variable = twcm_ui_pending has_variable = twcm_ui_pending_target exists = var:twcm_ui_pending_target var:twcm_ui_pending_target ?= { is_alive = yes } OR = { '+'\n'.join(pending_valid)+' }',require_subject=False,allow_pending=True)
+sgui('twcm_ui_confirm',confirm_effect,trigger=pending_guard+' OR = { '+'\n'.join(pending_valid)+' }',require_subject=False,allow_pending=True)
 
 def button(name,text,action,x=0,y=0,w=600,h=38,down=None,tooltip=None):
  hint=tooltip

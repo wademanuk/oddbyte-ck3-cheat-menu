@@ -20,8 +20,9 @@ for scheme_kind in ['hostile','personal','political','contract']:
  for suffix in ['add','growth_add','max_add']:
   character[f'owned_{scheme_kind}_scheme_success_chance_{suffix}']=1000
 governor={**stats,'levy_size':1,'build_speed':-1000,'build_gold_cost':-1000,
- 'holding_build_speed':-1000,'holding_build_gold_cost':-1000,'tax_mult':10,
- 'development_growth':1000,'monthly_county_control_growth_add':100,'county_opinion_add':100}
+ 'holding_build_speed':-1000,'holding_build_gold_cost':-1000,'district_build_speed':-1000,
+ 'district_build_gold_cost':-1000,'all_tax_mult':10,'monthly_province_size_change':1000,
+ 'monthly_control_change':100,'popular_opinion_add':100}
 commander={**stats,'min_combat_roll':20,'max_combat_roll':40,'naval_movement_speed_mult':1000,
  'siege_phase_time':-100,'siege_morale_loss':10,'movement_speed':1000,'retreat_losses':-1,
  'hard_casualty_modifier':-1,'enemy_hard_casualty_modifier':10,'advantage':100,
@@ -56,10 +57,10 @@ clear_presets='\n'.join('remove_trait = '+x[0] for x in presets)
 def family(body):
  return body+'\nevery_close_family_member = { limit = { is_alive = yes }\n'+body+'\n}\nevery_spouse = { limit = { is_alive = yes }\n'+body+'\n}'
 building_action_help={
- 'slots':'Add regular building slots up to seven. Larger holdings stay unchanged. Added slots need this mod enabled.',
- 'upgrade':'Upgrade existing buildings, including existing special and duchy buildings, to their highest level. Free and instant; no undo button.',
- 'fill':'Fill empty regular slots with fully upgraded, eligible buildings. Existing buildings stay. Free and instant; no undo button.',
- 'all':'Expand regular slots to seven, upgrade existing buildings and fill empty slots. Free and instant; no undo button. Added slots need this mod enabled.',
+ 'slots':'Add regular district slots up to seven. Larger holdings stay unchanged. Added slots need this mod enabled.',
+ 'upgrade':'Apply available upgrades in existing holding, regular, resource, special and duchy districts. Free and instant; no undo button.',
+ 'fill':'Build eligible regular districts and fill available slots inside them. Existing buildings stay. Free and instant; no undo button.',
+ 'all':'Expand to seven regular district slots, upgrade existing buildings and fill eligible slots. Free and instant; no undo button. Added slots need this mod enabled.',
 }
 def bulk_help(target,key):
  if target in [301,302]:
@@ -127,19 +128,19 @@ event(98,'Diseases and Inherited Traits','Cure diseases or remove harmful inheri
 
 building_text,building_meta=generate_buildings(GAME)
 write('common/scripted_effects/twcm_building_effects.txt',building_text)
-extra_modifiers+='\ntwcm_extra_building_slot = { stacking = yes building_slot_add = 1 }\n'
-label('twcm_extra_building_slot','Cheat: Additional Building Slot')
-label('twcm_extra_building_slot_desc','One extra regular building slot. Keep this mod enabled to retain added slots.')
-event(300,'Instant Building Upgrades','Upgrade buildings or add slots, free and instantly. Choose directly owned holdings or include vassals. Building placement rules still apply; technology and holding-level requirements are skipped. Great projects and domiciles are excluded.',[
+extra_modifiers+='\ntwcm_extra_building_slot = { stacking = yes district_slot_add = 1 }\n'
+label('twcm_extra_building_slot','Cheat: Additional District Slot')
+label('twcm_extra_building_slot_desc','One extra regular district slot. Keep this mod enabled to retain added slots.')
+event(300,'Instant Building Upgrades','Build or upgrade districts and buildings for free. Choose directly owned holdings or include vassals. Normal placement and unlock rules apply. Great projects, trade posts, entrepôts and domiciles are excluded.',[
  option('twcm_build_personal','Directly owned holdings only',target=301,trigger='is_landed = yes'),
  option('twcm_build_realm','Include vassal holdings',target=302,trigger='is_landed = yes'),back(90)])
 for page,realm in [(301,False),(302,True)]:
  scope=('every_sub_realm_county = { every_county_province = { limit = { has_holding = yes exists = barony.holder }\n%s\n} }' if realm else 'every_held_title = { limit = { tier = tier_barony } title_province = {\n%s\n} }')
  desc=('Affects all existing holdings under this character, including vassals.' if realm else 'Affects only holdings this character owns directly.')
- choices=[('slots','Expand to seven building slots','twcm_expand_slots_effect = yes'),
-  ('upgrade','Fully upgrade existing buildings','twcm_upgrade_buildings_effect = yes'),
-  ('fill','Fill empty building slots','twcm_fill_buildings_effect = yes'),
-  ('all','Expand slots, fill and fully upgrade','twcm_expand_slots_effect = yes\ntwcm_upgrade_buildings_effect = yes\ntwcm_fill_buildings_effect = yes')]
+ choices=[('slots','Expand to seven district slots','twcm_expand_slots_effect = yes'),
+  ('upgrade','Apply available building upgrades','twcm_upgrade_buildings_effect = yes'),
+  ('fill','Fill empty district and building slots','twcm_fill_buildings_effect = yes'),
+  ('all','Expand, fill and upgrade','twcm_expand_slots_effect = yes\ntwcm_upgrade_buildings_effect = yes\ntwcm_fill_buildings_effect = yes')]
  opts=[]
  for i,(key,title,effect) in enumerate(choices):
   confirm=310+(page-301)*10+i

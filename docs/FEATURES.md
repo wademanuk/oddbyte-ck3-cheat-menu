@@ -69,7 +69,7 @@ Use the names in the header to check who will be affected. The selected characte
 
 ## Full trait browser
 
-- Character > Browse all traits: all 306 native traits, with categories, search,
+- Character > Browse all traits: all 311 native traits, with categories, search,
   an Active filter and current-state labels. Add/remove traits directly. Adding respects native age limits and removes
   incompatible traits. Education changes preserve
   separate prowess education.
@@ -85,8 +85,8 @@ Use the names in the header to check who will be affected. The selected characte
 - Set any of six BASE skills to 0–100. Trait and modifier bonuses stay, so totals can be
   higher. Exact skill edits and the window's +/- skill rows refresh totals immediately.
 - Set age to 16–120. This bypasses birthday effects; family links remain and age-related
-  health may not recalculate immediately. Set capital-county development to 0–100.
-  Renown/development reviews name the original dynasty/county and disable Apply if the
+  health may not recalculate immediately. Set capital settlement size to 0–10.
+  Renown/settlement-size reviews name the original dynasty/settlement and disable Apply if the
   character changes dynasty or moves their capital. Exact values have no undo button.
 
 ## Court and prisoners
@@ -136,13 +136,13 @@ Use the names in the header to check who will be affected. The selected characte
 
 ## Culture, faith and rites
 
-- Choose from 244 cultures or 103 faith types to change only the selected person.
+- Choose from 255 cultures or 104 faith types to change only the selected person.
   Match Other copies the person's actual culture, faith and rite, including campaign-created
   cultures and rites. Counties and relatives are not forcibly converted.
-- Discover one or all 108 innovations for the selected person's culture.
-  Add/remove 198 cultural traditions. Adding needs a free tradition slot. These changes
+- Discover one or all 133 innovations for the selected person's culture.
+  Add/remove 207 cultural traditions. Adding needs a free tradition slot. These changes
   affect everyone of that culture; normal technology/adoption costs and time are bypassed.
-- CK3 1.20 uses rites for active religious rules. The doctrine/tenet editors name the selected
+- CK3 uses rites for active religious rules. The doctrine/tenet editors name the selected
   character's actual rite and affect its followers; other rites keep their own rules.
 - Choose among 126 doctrine choices; setting one replaces alternatives in its own group.
   Add/remove 97 tenets. A core tenet needs a free slot (normally three total); remove one
@@ -215,7 +215,7 @@ war, government and religion rules still apply. Claim changes persist when saved
 - Character boost: very large health/fertility, monthly income/piety/prestige/renown,
   stress reduction, dread, capacity, attraction, culture-opinion and modern scheme bonuses.
 - Realm boost: extremely fast/cheap construction, larger levies, higher holding taxes,
-  rapid development/control and +100 county popular opinion.
+  rapid settlement growth/control and +100 popular opinion.
 - Commander boost: battle rolls, advantage, casualty protection, travel, sieges, raiding,
   supply and siege-regiment capacity bonuses.
 - Apply presets to existing living close family and spouses. Family immortality includes
@@ -226,15 +226,13 @@ war, government and religion rules still apply. Claim changes persist when saved
   culture, or both. The sub-realm option also converts vassals at every level.
 - Expanded healing removes illness-tagged disease traits and negative congenital
   conditions. Separate buttons and a family option are supplied. Giant is preserved.
-- Bulk building tools target personal holdings or all sub-realm holdings. Expand regular
-  slots to at least seven, maximize existing chains, fill free slots with eligible top-level
-  buildings, or combine all three. Each action has a scope-review confirmation page.
-  These tools are free and instant. Existing buildings are not demolished or downgraded.
-  Existing larger slot capacities stay larger. New buildings use a fixed priority order.
-  Terrain, holding type, coast, culture and faith placement conditions are retained;
-  innovation and holding-tier requirements are bypassed. Slots are only filled when free.
-  Regular empty slots are used; unique/special and duchy slots are not created. Existing
-  special and duchy chains can be upgraded in place. Great projects and domiciles are excluded.
+- Bulk building tools target personal holdings or all sub-realm holdings. Expand to seven
+  regular district slots, apply available building upgrades, fill eligible regular district
+  and building slots, or combine all three. Review the target scope before applying.
+  These tools are free and instant. Existing buildings stay; larger slot capacities stay larger.
+  Florin's holding, placement and unlock rules still apply, so some slots may remain empty.
+  Existing special and duchy buildings can be upgraded. Great projects, trade posts,
+  entrepôts and domiciles are excluded from bulk building.
 
 ## Character, county and military tools
 
@@ -250,8 +248,8 @@ war, government and religion rules still apply. Claim changes persist when saved
 - Fertility: choose a removable +100% or -100% modifier, or remove both cheats.
   Normal fertility, pregnancy, age and relationship rules still apply.
 - County controls: select the capital county or all county titles personally held by the
-  selected character; vassal counties are excluded. Add 1 / 5 / 10 development, restore
-  control, or enable/remove +100 popular opinion. Development and control use normal caps.
+  selected character; vassal counties are excluded. Add 1 / 5 / 10 settlement size to the
+  county seat, restore control, or enable/remove +100 popular opinion. Size and control use normal caps.
   The opinion modifier does not stack with itself and stays on the county until removed.
 - Military: fill existing men-at-arms to their current troop capacity; replenish personal
   holding levy pools and garrisons. No regiments or additional capacity are created.
@@ -272,8 +270,8 @@ without men-at-arms have no regiments to refill. Ineligible actions are hidden w
 - Common ailment removal: illness, three wound levels, infirmity, incapability,
   depression, lunacy and possession, including genetic variants where applicable.
   Other diseases and physical injuries are unchanged.
-- Near-instant construction: toggle for the selected character's own buildings,
-  new holdings and domicile upgrades. Costs, prerequisites and building slots remain normal.
+- Near-instant construction: toggle for the selected character's own buildings, districts,
+  new holdings and domicile upgrades. Costs, prerequisites and slots remain normal.
   Exact time follows the game's minimum and project. Start a new project after enabling
   the modifier if an existing queue retains its old timer.
 
@@ -281,7 +279,7 @@ without men-at-arms have no regiments to refill. Ineligible actions are hidden w
 
 The menu is intended for single-player. Character changes persist when saved, including
 resources, skills, age, perk points and traits. Adding a trait removes incompatible traits;
-removing it does not restore previously replaced traits. County development/control persist.
+removing it does not restore previously replaced traits. Settlement size and county control edits persist.
 Health, fertility, popular-opinion and construction cheats have removal buttons. Remove
 unwanted modifiers before disabling this mod. Character modifiers stay with the character;
 select a successor and enable them again if desired.

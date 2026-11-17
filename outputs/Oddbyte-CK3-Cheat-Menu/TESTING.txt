@@ -1,10 +1,11 @@
 ODDBYTE — CK3 CHEAT MENU: TESTING
 
-Version 1.6.0: CK3 1.20.1.2 on macOS; 107 regression tests and 5,943 native checks.
+Version 1.6.1: CK3 1.21.0 on macOS; 108 regression tests and 6,248 native checks.
 No mod-specific script errors or GUI warnings in the final native run.
 Coverage includes targets, reviews, catalogs, titles, contracts, artifacts, war outcomes,
 ruler standing, languages/acceptance, legacy choices and renown/level preservation,
-education/guardians, alliances and local Workshop ID preservation during upgrades.
+education/guardians, alliances, Florin settlement size and district construction, stale
+confirmation rejection and local Workshop ID preservation during upgrades.
 Eligible DLC actions are exercised; unavailable actions are checked as disabled.
 This is not exhaustive campaign or other-mod validation. Knight preference display, UI
 scales, save/reload, long campaigns and multiplayer remain outside the full automated coverage.

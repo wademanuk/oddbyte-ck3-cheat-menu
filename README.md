@@ -10,7 +10,7 @@ A single-player cheat menu and character editor for **Crusader Kings III**. Chan
 
 [Installation](docs/INSTALLATION.md) · [Feature guide](docs/FEATURES.md) · [Report a bug](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/issues)
 
-**Version 1.6.0 · CK3 1.20.x · English · Single-player**
+**Version 1.6.1 · CK3 1.21.x · English · Single-player**
 
 **Designed for Windows, macOS and Linux — one release ZIP for all three.**
 
@@ -52,11 +52,11 @@ No debug mode or console commands are required. The **Classic menu** remains ava
 
 ## Compatibility and limits
 
-- Designed for the **Windows, macOS and Linux** desktop versions of CK3 **1.20.x**. The mod uses CK3 scripts, GUI definitions and localisation files; it has no platform-specific executable.
-- Tested on **1.20.1.2 on macOS**. Windows and Linux have not been playtested by us; the macOS testing note is not a platform restriction. Other game versions are not verified.
+- Designed for the **Windows, macOS and Linux** desktop versions of CK3 **1.21.x**. The mod uses CK3 scripts, GUI definitions and localisation files; it has no platform-specific executable.
+- Tested on **1.21.0 on macOS**. Windows and Linux have not been playtested by us. Use a separate save when upgrading a campaign from an earlier CK3 patch.
 - Relevant DLC features still require their DLC. The catalog does not include extra choices added by other mods.
-- Existing saves can load the mod. Make a separate save before changing titles, family links or religious rules: many edits have no undo button.
-- Remove unwanted custom boosts before disabling the mod. Added building-slot capacity depends on the mod remaining enabled.
+- Make a separate save before enabling the mod in an existing campaign or updating CK3. Many changes to titles, family links and religious rules have no undo button.
+- Remove unwanted custom boosts before disabling the mod. Added district-slot capacity depends on the mod remaining enabled.
 - Multiplayer and combinations with other mods are not verified. No vanilla GUI files are replaced.
 
 See the [feature guide](docs/FEATURES.md) for exact targeting, limits and removal options, and [testing notes](docs/TESTING.md) for verified coverage and remaining checks.

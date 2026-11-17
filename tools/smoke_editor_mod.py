@@ -20,7 +20,8 @@ def build_overlay(destination,review=False):
  destination=Path(destination)
  for folder in ['events','common/on_action','common/scripted_effects','common/scripted_triggers','common/casus_belli_types','localization/english']:(destination/folder).mkdir(parents=True,exist_ok=True)
  guis={e.key:e.value for e in parse((MOD/'common/scripted_guis/twcm_window_guis.txt').read_text(encoding='utf-8-sig'))}
- meta=json.loads((ROOT/'tools/cheat_mod_metadata.json').read_text())['window']
+ generated=json.loads((ROOT/'tools/cheat_mod_metadata.json').read_text())
+ meta=generated['window']
  confirmed=set(meta['confirmation_ids'].values())
  apply=get(guis['twcm_ui_confirm'],'effect')
  (destination/'common/scripted_effects/twcm_smoke.txt').write_text('twcm_smoke_apply_effect = {\n'+dump(apply)+'\n}\n',encoding='utf-8-sig')
@@ -93,7 +94,27 @@ def build_overlay(destination,review=False):
  expect('adopt','scope:twcm_smoke_child = { is_child_of = scope:twcm_smoke_root }')
  action('designate_heir');expect('designate_heir','designated_heir = scope:twcm_smoke_child')
  subjects('scope:twcm_smoke_root');number(4321);action('exact_renown');expect('exact_renown','dynasty = { dynasty_prestige = 4321 }')
- number(35);action('exact_development');expect('exact_development','capital_province.county = { development_level = 35 }')
+ number(8);action('exact_development');expect('capital_size_increase','capital_province = { province_size_level = 8 }')
+ number(2);action('exact_development');expect('capital_size_decrease','capital_province = { province_size_level = 2 }')
+ add('capital_province = { change_province_size = 10 twcm_expand_slots_effect = yes }')
+ expect('district_slots_expanded','capital_province = { province_size_level = 10 district_slots >= 7 }')
+ add('save_scope_value_as = { name = twcm_test_slots value = capital_province.district_slots } capital_province = { twcm_expand_slots_effect = yes }')
+ expect('district_expansion_is_idempotent','capital_province = { district_slots = scope:twcm_test_slots }')
+ building_meta=generated['parity']['building_tools']
+ add('capital_province = { '+' '.join('if = { limit = { province_has_district = '+key+' } remove_district_type = '+key+' }' for key in building_meta['regular_districts'])+' }')
+ add('save_scope_value_as = { name = twcm_test_build_gold value = gold } save_scope_value_as = { name = twcm_test_district_count value = capital_province.num_districts }')
+ expect('district_capital_has_free_slot','capital_province = { has_free_district_slot = yes }')
+ add(dump(get(guis['twcm_ui_313_0'],'effect')))
+ expect('building_review_valid',guard('twcm_ui_confirm'))
+ add('twcm_smoke_apply_effect = yes')
+ expect('district_created','capital_province = { num_districts > scope:twcm_test_district_count }')
+ expect('district_filled','capital_province = { any_built_regular_district = { any_district_building = { is_primary_building = no } } }')
+ expect('district_construction_is_free','gold = scope:twcm_test_build_gold')
+ expect('district_eligible_upgrades_complete','capital_province = { NOT = { any_built_regular_district = { any_district_building = { can_building_be_upgraded = yes is_building_being_upgraded = no } } } }')
+ add(dump(get(guis['twcm_ui_71_4'],'effect')))
+ expect('county_popular_support_applied','capital_province.county = { has_county_modifier = twcm_popular_support }')
+ add(dump(get(guis['twcm_ui_71_5'],'effect')))
+ expect('county_popular_support_removed','capital_province.county = { NOT = { has_county_modifier = twcm_popular_support } }')
  number(24)
  for skill in ['diplomacy','martial','stewardship','intrigue','learning','prowess']:action('spawn_skill_set_'+skill)
  action('spawn_age_set')
@@ -194,9 +215,10 @@ def main():
  errors=(logs/'error.log').read_text(errors='replace')
  mod_errors,native_errors=classify_errors(errors)
  gui_warnings=(logs/'gui_warnings.log').read_text(errors='replace')
- report={'manual_only':['Knight preference saved-state inspection in the Knights window'],'mod_errors':mod_errors,'native_errors':native_errors,'gui_warnings':gui_warnings,'exit':code,'profile':str(profile),'expected':tests,'passed':passed,'failed':failed,'completed':'TWCM_SMOKE_END' in text}
+ game_version=json.loads((GAME/'launcher/launcher-settings.json').read_text(encoding='utf-8-sig'))['rawVersion']
+ report={'game_version':game_version,'manual_only':['Knight preference saved-state inspection in the Knights window'],'mod_errors':mod_errors,'native_errors':native_errors,'gui_warnings':gui_warnings,'exit':code,'profile':str(profile),'expected':tests,'passed':passed,'failed':failed,'completed':'TWCM_SMOKE_END' in text}
  (work/'effect-smoke-results.json').write_text(json.dumps(report,indent=2))
- print(json.dumps({'exit':code,'profile':str(profile),'passed':len(passed),'expected':len(tests),'failed':failed,'mod_errors':len(mod_errors),'gui_warnings':len(gui_warnings),'completed':report['completed']},indent=2))
+ print(json.dumps({'game_version':game_version,'exit':code,'profile':str(profile),'passed':len(passed),'expected':len(tests),'failed':failed,'mod_errors':len(mod_errors),'gui_warnings':len(gui_warnings),'completed':report['completed']},indent=2))
  if code!=0 or mod_errors or gui_warnings.strip() or failed or set(passed)!=set(tests) or len(passed)!=len(tests) or not report['completed']:raise SystemExit(1)
 
 if __name__=='__main__':main()

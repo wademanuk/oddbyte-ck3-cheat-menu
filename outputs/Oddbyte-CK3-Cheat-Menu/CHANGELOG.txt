@@ -1,4 +1,11 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.0
+ODDBYTE — CK3 CHEAT MENU 1.6.1
+
+Updated for CK3 1.21 Florin. Refreshes catalogs, replaces development with settlement
+size and updates realm boosts and construction for districts. Bulk construction is
+free and instant within Florin's normal placement and unlock rules. Reviews saved
+in an older mod version must be cancelled and opened again before applying a cheat.
+
+1.6.0
 
 Adds ruler standing, languages/cultural acceptance, dynasty legacies, education/
 guardians and alliance tools. New actions use Search, Favourites and original-target

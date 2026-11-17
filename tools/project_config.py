@@ -4,7 +4,8 @@ import os
 
 ROOT = Path(__file__).resolve().parent.parent
 NAME = 'Oddbyte — CK3 Cheat Menu'
-VERSION = '1.6.0'
+VERSION = '1.6.1'
+SUPPORTED_VERSION = '1.21.*'
 ARCHIVE_STEM = 'Oddbyte-CK3-Cheat-Menu'
 PACKAGE = ROOT / 'outputs' / ARCHIVE_STEM
 # Keep the existing installation ID and script namespace for save compatibility.

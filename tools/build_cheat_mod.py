@@ -1,6 +1,6 @@
 from pathlib import Path
 import json,re,shutil,hashlib
-from project_config import ROOT,GAME,PACKAGE,MOD,USERMOD,NAME,VERSION
+from project_config import ROOT,GAME,PACKAGE,MOD,USERMOD,NAME,VERSION,SUPPORTED_VERSION
 NS='twcm'
 loc={};events=[];trait_meta={};graph={};event_options={}
 def write(rel,text,bom=False):
@@ -139,7 +139,7 @@ ailments=[x for x in ailments if x in trait_meta]
 event(34,'Heal Common Ailments','Remove illness, wounds, infirmity, incapability, depression, lunacy and possession. Other diseases and injuries may remain.',[
  option('twcm_clear_ailments','Heal common ailments','\n'.join('remove_trait = '+x for x in ailments),target=33),back(33)])
 modifier='twcm_near_instant_construction'
-event(40,'Construction Speed','Build almost instantly for this character: buildings, new holdings and domicile upgrades. Costs still apply. Existing work may need restarting. Enable again after succession.',[
+event(40,'Construction Speed','Build almost instantly for this character: buildings, districts, holdings and domicile upgrades. Costs still apply. Existing work may need restarting. Enable again after succession.',[
  option('twcm_build_on','Enable near-instant construction',f'add_character_modifier = {{ modifier = {modifier} }}',target=40,trigger=f'NOT = {{ has_character_modifier = {modifier} }}'),
  option('twcm_build_off','Disable near-instant construction',f'remove_character_modifier = {modifier}',target=40,trigger=f'has_character_modifier = {modifier}'),back(1)])
 exec((ROOT/'tools/cheat_mod_expansion.py').read_text(),globals())
@@ -148,7 +148,7 @@ exec((ROOT/'tools/claim_tools.py').read_text(),globals())
 exec((ROOT/'tools/diplomacy_tools.py').read_text(),globals())
 exec((ROOT/'tools/window_tools.py').read_text(),globals())
 label(modifier,'Near-instant Construction')
-label(modifier+'_desc','Buildings, new holdings and domicile upgrades finish much faster. Normal costs apply. Turn off in Construction speed.')
+label(modifier+'_desc','Buildings, districts, holdings and domicile upgrades finish much faster. Normal costs apply. Turn off in Construction speed.')
 label('twcm_open_decision','Open Classic Cheat Menu')
 label('twcm_open_decision_desc','Open the original menu of cheats for your ruler.')
 label('twcm_open_decision_tooltip','Open the classic menu for your ruler.')
@@ -180,10 +180,11 @@ write('common/modifiers/twcm_modifiers.txt',f'''# Build-speed modifiers reduce c
     build_speed = -10
     holding_build_speed = -10
     domicile_build_speed = -10
+    district_build_speed = -10
 }}
 '''+extra_modifiers)
 write('localization/english/twcm_l_english.yml','l_english:\n'+''.join(f' {key}:0 '+json.dumps(value,ensure_ascii=False)+'\n' for key,value in loc.items()),bom=True)
-descriptor='\n'.join(['version='+json.dumps(VERSION), 'tags={ "Utilities" }', 'name='+json.dumps(NAME,ensure_ascii=False), 'supported_version="1.20.*"'])+'\n'
+descriptor='\n'.join(['version='+json.dumps(VERSION), 'tags={ "Utilities" }', 'name='+json.dumps(NAME,ensure_ascii=False), 'supported_version='+json.dumps(SUPPORTED_VERSION)])+'\n'
 write('descriptor.mod',descriptor)
 (PACKAGE/'tw_basic_cheat_menu.mod').write_text(descriptor+'path="mod/tw_basic_cheat_menu"\n')
 (ROOT/'tools/cheat_mod_metadata.json').write_text(json.dumps({'events':graph,'event_options':event_options,'traits':{k:opposites(k) for k,_ in [t for _,_,ts in categories for t in ts]+commander_traits},'ailments':ailments,'localization_keys':sorted(loc),'parity':parity_meta,'claims':claims_meta,'diplomacy':diplomacy_meta,'window':window_meta},indent=2))

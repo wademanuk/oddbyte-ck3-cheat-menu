@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.1 — CK3 1.21 Florin
+
+- Updates the mod and its catalogs for CK3 1.21, including the new traits and cultures.
+- Replaces development edits with settlement size and updates the realm and popular-opinion boosts.
+- Adds district construction to the speed boost. Bulk tools expand regular district capacity, fill eligible slots and apply free, instant upgrades within Florin's placement and unlock rules.
+- Prevents a confirmation saved on an older mod version from applying a different action after updating.
+
 ## 1.6.0
 
 - Adds legitimacy adjustments, dread adjustments/exact values and tyranny removal.

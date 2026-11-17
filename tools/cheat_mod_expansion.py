@@ -35,8 +35,8 @@ event(70,'Counties and Buildings','Improve the selected character\'s counties or
  option('twcm_county_capital','Capital county',target=71,trigger='is_landed = yes exists = capital_province'),
  option('twcm_county_domain','All directly owned counties',target=72,trigger='any_held_title = { tier = tier_county }'),back(2)])
 for n,title,scope in [(71,'Capital County','capital_province.county = {\n%s\n}'),(72,'All Directly Owned Counties','every_held_title = { limit = { tier = tier_county }\n%s\n}')]:
- event(n,title,('Improve the capital county.' if n==71 else 'Improve all counties owned directly; excludes vassals.')+' Development and control stop at normal limits. The +100 popular-opinion bonus lasts until removed and does not stack.',[
-  option(f'twcm_dev_{n}_{v}',f'Add {v} development',scope%f'change_development_level = {v}',target=n) for v in [1,5,10]
+ event(n,title,('Improve the capital county.' if n==71 else 'Improve all counties owned directly; excludes vassals.')+' Size changes affect the county seat. Control and settlement size stop at normal limits. The +100 popular-opinion bonus lasts until removed and does not stack.',[
+  option(f'twcm_dev_{n}_{v}',f'Add {v} settlement size',scope%f'title_province = {{ change_province_size = {v} }}',target=n) for v in [1,5,10]
  ]+[
   option(f'twcm_control_{n}','Restore control to 100',scope%'change_county_control = 100',target=n),
   option(f'twcm_pop_on_{n}','Add +100 popular opinion',scope%'add_county_modifier = { modifier = twcm_popular_support }',target=n),
@@ -88,7 +88,7 @@ extra_modifiers='''
 twcm_health_boost = { health = 5 }
 twcm_high_fertility = { fertility = 1 }
 twcm_low_fertility = { fertility = -1 }
-twcm_popular_support = { county_opinion_add = 100 }
+twcm_popular_support = { popular_opinion_add = 100 }
 '''
 for key,title,desc in [
  ('twcm_health_boost','Cheat: Health Boost','+5 health until turned off in Health and healing.'),
