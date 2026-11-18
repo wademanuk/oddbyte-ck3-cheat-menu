@@ -1,5 +1,6 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.1
-For CK3 1.21.x. English. Single-player. Tested gameplay baseline: 1.21.0 on macOS.
+ODDBYTE — CK3 CHEAT MENU 1.6.2
+For CK3 1.21.x, including the latest Florin hotfix. English. Single-player.
+Playtested on macOS and Windows.
 
 INSTALLATION
 Download the named mod ZIP from:

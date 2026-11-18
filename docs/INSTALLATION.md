@@ -2,7 +2,7 @@
 
 **Designed for Windows, macOS and Linux. Use the same release ZIP on all three platforms.** The mod uses CK3 scripts, GUI definitions and localisation files. No Python, console commands or platform-specific installer are needed to play.
 
-Built for CK3 **1.21.x** and tested on **1.21.0 on macOS**. Windows and Linux have not been playtested by us. Back up a campaign separately before upgrading it across CK3 versions.
+Built for CK3 **1.21.x**, including the latest Florin hotfix. Playtested on **macOS and Windows**. See the [testing notes](TESTING.md) for coverage and limits. Back up a campaign separately before upgrading it across CK3 versions.
 
 ## 1. Download and extract
 
@@ -88,6 +88,12 @@ The installation folder and script identifiers are retained from earlier version
 - Use the CK3 user-data `mod` directory, not the Steam game installation directory.
 - Restart the launcher after copying the files, and check the playset used to launch the game.
 - If the launcher cannot resolve the portable path, open the adjacent `.mod` file in a text editor and set its `path=` to the full location of `tw_basic_cheat_menu`, using forward slashes. Leave `descriptor.mod` inside the folder unchanged.
+
+## If the Cheats button is missing in a campaign
+
+1. From the campaign map, press **F9** (the default Decisions shortcut), scroll down and choose **Open Cheat Menu → Open window**. If the decision panel is cut off, lower **GUI Scaling** in the game settings. If the window still doesn't appear, try **Open Classic Cheat Menu** in Decisions; it uses a regular game event.
+2. If neither decision appears, restart CK3 with a new playset containing only one copy of **Oddbyte — CK3 Cheat Menu**. Check the mod version in the launcher and test in a fresh single-player game so your main save stays untouched.
+3. If the Decisions entry opens the window but the map button is still missing, include your screen resolution, in-game GUI scaling, and a screenshot of the lower-right map area in your [bug report](TESTING.md#report-a-problem). Say whether the issue also happens with Oddbyte as the only enabled mod.
 
 ## Saves and removal
 

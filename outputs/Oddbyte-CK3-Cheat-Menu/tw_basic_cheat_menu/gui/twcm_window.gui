@@ -132599,7 +132599,8 @@ button_standard = {
 }
 window = {
  name = "twcm_hud_button" parentanchor = bottom|right position = { -210 -175 } size = { 125 40 } layer = hud_layer
- visible = "[GetPlayer.IsValid]"
+ # The floating button otherwise intercepts clicks on the Decisions panel beneath it.
+ visible = "[And(GetPlayer.IsValid, Not(IsGameViewOpen('decisions')))]"
  button_standard = {
  name = "open_cheats" position = { 0 0 } size = { 125 40 }
  text = "twcm_ui_open_button"

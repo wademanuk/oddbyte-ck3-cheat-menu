@@ -1,4 +1,10 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.1
+ODDBYTE — CK3 CHEAT MENU 1.6.2
+
+Hides the floating Cheats button while Decisions is open so it cannot block
+clicks on decision rows. Compatible with the latest CK3 1.21 Florin hotfix.
+Playtested on macOS and Windows.
+
+1.6.1
 
 Updated for CK3 1.21 Florin. Refreshes catalogs, replaces development with settlement
 size and updates realm boosts and construction for districts. Bulk construction is

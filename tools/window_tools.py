@@ -394,7 +394,8 @@ gui=f'''window = {{
 }}
 window = {{
  name = "twcm_hud_button" parentanchor = bottom|right position = {{ -210 -175 }} size = {{ 125 40 }} layer = hud_layer
- visible = "[GetPlayer.IsValid]"
+ # The floating button otherwise intercepts clicks on the Decisions panel beneath it.
+ visible = "[And(GetPlayer.IsValid, Not(IsGameViewOpen('decisions')))]"
  {button('open_cheats','twcm_ui_open_button','twcm_ui_open',0,0,125,40)}
 }}
 '''

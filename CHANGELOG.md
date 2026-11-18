@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.6.2 — Decisions panel fix
+
+- Hides the floating Cheats button while Decisions is open so it cannot intercept clicks on decision rows.
+- Compatible with the latest CK3 1.21 Florin hotfix. Playtested on macOS and Windows.
+
 ## 1.6.1 — CK3 1.21 Florin
 
 - Updates the mod and its catalogs for CK3 1.21, including the new traits and cultures.

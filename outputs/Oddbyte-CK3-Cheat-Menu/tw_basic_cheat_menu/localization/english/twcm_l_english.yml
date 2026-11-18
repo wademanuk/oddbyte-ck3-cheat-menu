@@ -7393,7 +7393,7 @@
  twcm_ui_me_label:0 "My ruler"
  twcm_ui_actor_label:0 "Selected character"
  twcm_ui_other_label:0 "Other character"
- twcm_ui_footer:0 "v1.6.1 • Check the names above before applying cheats"
+ twcm_ui_footer:0 "v1.6.2 • Check the names above before applying cheats"
  twcm_ui_confirm_title:0 "Confirm cheat"
  twcm_ui_confirm_desc:0 "Apply this cheat to the character named above?"
  twcm_ui_confirm_apply:0 "Apply cheat"

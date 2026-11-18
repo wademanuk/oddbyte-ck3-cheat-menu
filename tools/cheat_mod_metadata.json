@@ -16512,7 +16512,7 @@
     },
     "target_variable": "twcm_ui_target",
     "other_variable": "twcm_ui_other",
-    "version": "1.6.1",
+    "version": "1.6.2",
     "editor": {
       "pages": [
         600,

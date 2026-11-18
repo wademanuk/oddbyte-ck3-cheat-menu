@@ -1,6 +1,7 @@
 ODDBYTE — CK3 CHEAT MENU: TESTING
 
-Version 1.6.1: CK3 1.21.0 on macOS; 108 regression tests and 6,248 native checks.
+Version 1.6.2 works with the latest CK3 1.21 Florin hotfix.
+Playtested on macOS and Windows. 108 regression tests and 6,248 native checks passed.
 No mod-specific script errors or GUI warnings in the final native run.
 Coverage includes targets, reviews, catalogs, titles, contracts, artifacts, war outcomes,
 ruler standing, languages/acceptance, legacy choices and renown/level preservation,
