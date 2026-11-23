@@ -1209,6 +1209,9 @@
     "twcm_counties",
     "twcm_county_capital",
     "twcm_county_domain",
+    "twcm_debug_disable",
+    "twcm_debug_enable",
+    "twcm_debug_tooltip",
     "twcm_dev_71_1",
     "twcm_dev_71_10",
     "twcm_dev_71_5",
@@ -16512,7 +16515,7 @@
     },
     "target_variable": "twcm_ui_target",
     "other_variable": "twcm_ui_other",
-    "version": "1.6.2",
+    "version": "1.6.3",
     "editor": {
       "pages": [
         600,

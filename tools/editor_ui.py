@@ -74,6 +74,17 @@ def add_page(page, title, content):
 
 
 hub = editor_note('hub','Choose a focused editor. Use Selected character and Other character above for two-person tools. Large changes open a review before they happen.',70)
+label('twcm_debug_enable', 'Enable CK3 debug mode')
+label('twcm_debug_disable', 'Disable CK3 debug mode')
+label('twcm_debug_tooltip', 'Toggle CK3’s native debug console and tooltips for this session.')
+hub += '''button_standard = {
+ name = "twcm_debug_toggle"
+ size = { 600 38 }
+ text = "[SelectLocalization(InDebugMode, 'twcm_debug_disable', 'twcm_debug_enable')]"
+ tooltip = "twcm_debug_tooltip"
+ onclick = "[ExecuteConsoleCommand('debug_mode')]"
+}
+'''
 for dest, title in [(700,'Legitimacy, dread and tyranny'),(710,'Languages and cultural acceptance'),(720,'Dynasty legacies'),(730,'Education and guardians'),(740,'Alliances'),(601,'Browse all traits'),(605,'Set exact values'),(610,'Court and prisoners'),(620,'Family and dynasty'),(630,'Titles, vassals and contracts'),(640,'Wars and truces'),(650,'Culture picker'),(651,'Faith picker'),(652,'Discover innovations'),(653,'Culture traditions'),(654,'Rite doctrines'),(655,'Rite tenets'),(660,'Artifacts'),(670,'Create a character')]:
  hub += link(dest, title)
 add_page(600,'Tools & editors',hub)

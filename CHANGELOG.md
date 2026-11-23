@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.3 — Debug mode toggle
+
+- Adds a CK3 debug-mode toggle under **Tools & editors**.
+
 ## 1.6.2 — Decisions panel fix
 
 - Hides the floating Cheats button while Decisions is open so it cannot intercept clicks on decision rows.

@@ -1,4 +1,8 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.2
+ODDBYTE — CK3 CHEAT MENU 1.6.3
+
+Adds a CK3 debug-mode toggle under Tools & editors.
+
+1.6.2
 
 Hides the floating Cheats button while Decisions is open so it cannot block
 clicks on decision rows. Compatible with the latest CK3 1.21 Florin hotfix.

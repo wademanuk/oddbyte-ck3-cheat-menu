@@ -60,7 +60,9 @@ class EditorTests(unittest.TestCase):
   expression=search_expression("Genius'); ExecuteConsoleCommand('bad")
   self.assertNotIn("ExecuteConsoleCommand('",expression)
   self.assertIn('GetVariableSystem.HasValue',expression)
-  self.assertNotIn('ExecuteConsoleCommand(',self.gui)
+ def test_debug_toggle_is_the_only_console_command_in_the_gui(self):
+  self.assertEqual(re.findall(r'ExecuteConsoleCommand\s*\(([^)]*)\)', self.gui), ["'debug_mode'"])
+  self.assertIn("SelectLocalization(InDebugMode, 'twcm_debug_disable', 'twcm_debug_enable')", self.gui)
  def test_all_catalogued_actions_can_be_starred_and_keep_real_action_binding(self):
   for action in self.editor['actions']:
    self.assertIn('twcm_star_'+action,self.guis)

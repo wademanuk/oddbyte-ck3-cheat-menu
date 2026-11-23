@@ -10,7 +10,7 @@ A single-player cheat menu and character editor for **Crusader Kings III**. Chan
 
 [Installation](docs/INSTALLATION.md) · [Feature guide](docs/FEATURES.md) · [Report a bug](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/issues)
 
-**Version 1.6.2 · CK3 1.21.x · English · Single-player**
+**Version 1.6.3 · CK3 1.21.x · English · Single-player**
 
 **Designed for Windows, macOS and Linux — one release ZIP for all three.**
 
@@ -48,7 +48,7 @@ Create `mod` if needed. If Documents or the game's user-data folder is redirecte
 3. Check the **Selected character** name before applying a cheat. To edit someone else, right-click their portrait and choose **Cheat Menu: Open Editor**.
 4. Open **Tools & editors** for the extended tools. For actions involving two people, choose **Cheat Menu: Set Other Character** on the second person's portrait.
 
-No debug mode or console commands are required. The **Classic menu** remains available inside the window.
+No debug mode or console commands are required. To toggle CK3’s debug mode for the current session, open **Tools & editors**. The **Classic menu** remains available inside the window.
 
 ## Compatibility and limits
 

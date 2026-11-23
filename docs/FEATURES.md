@@ -2,6 +2,10 @@
 
 Use the names in the header to check who will be affected. The selected character receives character edits; Other is used by two-person tools. Major actions open a review.
 
+## Debug mode
+
+Open **Tools & editors → Enable CK3 debug mode** to turn on CK3’s debug console and tooltips for the current session. Click **Disable CK3 debug mode** in the same place to turn it off again. Oddbyte works with either setting.
+
 ## Ruler standing
 
 - Tools & editors > Legitimacy, dread and tyranny, also linked from Character.

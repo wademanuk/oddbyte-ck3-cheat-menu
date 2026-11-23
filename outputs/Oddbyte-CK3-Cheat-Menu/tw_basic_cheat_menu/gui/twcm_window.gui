@@ -5204,6 +5204,13 @@ scrollbox = { position = { 0 50 } size = { 640 460 }
  blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding spacing = 7
 text_multi = { size = { 610 70 } text = "twcm_editor_note_hub" fontsize = 16 }
 button_standard = {
+ name = "twcm_debug_toggle"
+ size = { 600 38 }
+ text = "[SelectLocalization(InDebugMode, 'twcm_debug_disable', 'twcm_debug_enable')]"
+ tooltip = "twcm_debug_tooltip"
+ onclick = "[ExecuteConsoleCommand('debug_mode')]"
+}
+button_standard = {
  name = "twcm_editor_link_700_legitimacy_dread_and_tyranny" position = { 0 0 } size = { 600 38 }
  text = "twcm_editor_link_700_legitimacy_dread_and_tyranny"
  onclick = "[GetScriptedGui( 'twcm_editor_nav_700' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"

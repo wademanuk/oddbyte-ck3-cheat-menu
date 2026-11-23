@@ -1,4 +1,4 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.2
+ODDBYTE — CK3 CHEAT MENU 1.6.3
 For CK3 1.21.x, including the latest Florin hotfix. English. Single-player.
 Playtested on macOS and Windows.
 
@@ -20,6 +20,7 @@ For two-person tools, right-click the second person > Cheat Menu: Set Other Char
 Both names appear in the header. Swap reverses the pair.
 Tools & editors, Pinned characters, Search, Favourites and Active boosts are in the sidebar.
 Classic menu keeps the original event interface. No debug mode or console is required.
+Use Tools & editors to toggle CK3 debug mode for the current session.
 
 Make a separate save before major edits. Many permanent changes have no undo button.
 Relevant DLC is still required. Other game versions, multiplayer, other-mod combinations
