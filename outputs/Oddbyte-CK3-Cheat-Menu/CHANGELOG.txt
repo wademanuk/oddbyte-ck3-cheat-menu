@@ -1,4 +1,9 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.3
+ODDBYTE — CK3 CHEAT MENU 1.7.0
+
+Adds a drag grip to the Cheats button. Adds men-at-arms recruitment, weight,
+sexuality, betrothal, cadet branch, succession law and private secret tools.
+
+1.6.3
 
 Adds a CK3 debug-mode toggle under Tools & editors.
 

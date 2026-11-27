@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.0 — Movable Cheats button and new editors
+
+- Drag the grip beside the floating **Cheats** button to move it.
+- Create personal men-at-arms regiments for free from **Military**. Unit access, regiment slots and upkeep still apply.
+- Adjust current weight or set sexuality under **Character → Body & identity**.
+- Break an engagement or found a cadet branch from **Tools & editors → Family and dynasty**.
+- Set realm succession laws for eligible feudal and clan rulers.
+- Privately learn the selected character’s secrets from **Diplomacy**.
+
 ## 1.6.3 — Debug mode toggle
 
 - Adds a CK3 debug-mode toggle under **Tools & editors**.

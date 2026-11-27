@@ -240,6 +240,7 @@ def short_description(n):
 
 label('twcm_ui_title',NAME)
 label('twcm_ui_open_button','Cheats')
+label('twcm_ui_move_button','Drag the grip to move. Click Cheats to open Oddbyte.')
 label('twcm_ui_close_label','Close')
 label('twcm_ui_legacy_label','Classic menu')
 label('twcm_ui_me_label','My ruler')
@@ -299,6 +300,7 @@ for n,data in ui_pages.items():
   content+=button('resource_exact','twcm_editor_page_605','twcm_editor_nav_605')
  elif n==20:
   content+=button('standing_tools','twcm_editor_page_700','twcm_editor_nav_700')+button('education_tools','twcm_editor_page_730','twcm_editor_nav_730')
+  content+=button('weight_tools','twcm_editor_page_750','twcm_editor_nav_750')
   content+=note('twcm_ui_character_help',45)
   step_buttons=''
   for i,step in enumerate([1,5,10]):
@@ -320,6 +322,7 @@ for n,data in ui_pages.items():
    content+=button('realm_sub_'+str(dest),ui_pages[dest]['title'],f'twcm_ui_nav_realm_{dest}')
  elif n==500:
   content+=button('alliance_tools','twcm_editor_page_740','twcm_editor_nav_740')
+  content+=button('discover_secrets','twcm_editor_discover_secrets_label','twcm_editor_discover_secrets')
   content+=note('twcm_ui_diplomacy_help',88)+textline('twcm_ui_dip_current',w=610,size=17,h=35)
   content+=actions_for(500)
   for dest in [501,502,503]:
@@ -332,7 +335,9 @@ for n,data in ui_pages.items():
   content+=note(short_description(n),100)
   content+=''.join(option_button(o,n) for o in data['options'])
  if n==400:content+=button('ownership_editor','twcm_editor_page_630','twcm_editor_nav_630')
- if n==80:content+=button('war_editor','twcm_editor_page_640','twcm_editor_nav_640')
+ if n==80:
+  content+=button('regiment_tools','twcm_editor_page_760','twcm_editor_nav_760')
+  content+=button('war_editor','twcm_editor_page_640','twcm_editor_nav_640')
  # Page widgets share a stable window and scroll region; changing state never recreates events.
  rendered_pages.append(f'''widget = {{
  name = "twcm_page_{n}" position = {{ 204 150 }} size = {{ 650 510 }}
@@ -393,10 +398,22 @@ gui=f'''window = {{
  }}
 }}
 window = {{
- name = "twcm_hud_button" parentanchor = bottom|right position = {{ -210 -175 }} size = {{ 125 40 }} layer = hud_layer
+ name = "twcm_hud_button" parentanchor = bottom|right position = {{ -210 -175 }} size = {{ 153 40 }} layer = hud_layer
+ movable = yes
+ min_dist_from_screen_edge = 153
+ filter_mouse = all
+ tooltip = "twcm_ui_move_button"
  # The floating button otherwise intercepts clicks on the Decisions panel beneath it.
  visible = "[And(GetPlayer.IsValid, Not(IsGameViewOpen('decisions')))]"
- {button('open_cheats','twcm_ui_open_button','twcm_ui_open',0,0,125,40)}
+ # Leave the grip transparent to input so the window receives the drag.
+ button_standard = {{
+  name = "twcm_hud_grip" size = {{ 28 40 }} alwaystransparent = yes
+  icon = {{
+   texture = "gfx/interface/icons/flat_icons/drag_indicator.dds"
+   position = {{ 7 13 }} size = {{ 14 14 }} alwaystransparent = yes
+  }}
+ }}
+ {button('open_cheats','twcm_ui_open_button','twcm_ui_open',28,0,125,40,tooltip='twcm_ui_move_button')}
 }}
 '''
 write('gui/twcm_window.gui','\n'.join(line.rstrip() for line in gui.splitlines())+'\n')

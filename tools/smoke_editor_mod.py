@@ -173,6 +173,67 @@ def build_overlay(destination,review=False):
  if review:
   from review_editor_cases import append_review_cases
   append_review_cases(add,action,expect,subjects,number,make,guard,guis,meta,destination)
+
+  make('twcm_smoke_identity',age=30)
+  make('twcm_smoke_betrothed',age=10)
+  make('twcm_smoke_fiancee','female',age=16)
+  subjects('scope:twcm_smoke_identity')
+  action('weight_reset')
+  expect('weight_reset_to_midpoint','scope:twcm_smoke_identity = { current_weight = 0 }')
+  action('weight_increase')
+  expect('weight_increased','scope:twcm_smoke_identity = { current_weight = 25 }')
+  action('weight_decrease')
+  expect('weight_decreased','scope:twcm_smoke_identity = { current_weight = 0 }')
+  add('scope:twcm_smoke_identity = { set_sexuality = asexual }')
+  for sexuality in ['heterosexual','homosexual','bisexual','asexual']:
+   action('sexuality_'+sexuality)
+   expect('sexuality_result_'+sexuality,'scope:twcm_smoke_identity = { has_sexuality = '+sexuality+' }')
+  expect('sexuality_unchanged_disabled','NOT = { '+guard('twcm_editor_sexuality_asexual')+' }')
+  add('scope:twcm_smoke_identity = { add_secret = { type = secret_witch } }')
+  action('discover_secrets')
+  expect('secrets_private','scope:twcm_smoke_identity = { any_secret = { type = secret_witch is_known_by = scope:twcm_smoke_root NOT = { is_known_by = scope:twcm_smoke_outsider } } }')
+  expect('secrets_already_known_disabled','NOT = { '+guard('twcm_editor_discover_secrets')+' }')
+  subjects('scope:twcm_smoke_betrothed','scope:twcm_smoke_fiancee')
+  expect('weight_child_disabled','NOT = { '+guard('twcm_editor_weight_increase')+' }')
+  expect('sexuality_child_disabled','NOT = { '+guard('twcm_editor_sexuality_bisexual')+' }')
+  expect('regiments_unlanded_disabled','NOT = { '+guard('twcm_editor_regiment_bowmen')+' }')
+  expect('succession_unlanded_disabled','NOT = { '+guard('twcm_editor_succession_partition')+' }')
+  add('scope:twcm_smoke_betrothed = { create_betrothal = scope:twcm_smoke_fiancee }')
+  action('break_betrothal')
+  expect('betrothal_ended_for_both','scope:twcm_smoke_betrothed = { is_betrothed = no } scope:twcm_smoke_fiancee = { is_betrothed = no }')
+  expect('betrothal_already_ended_disabled','NOT = { '+guard('twcm_editor_break_betrothal')+' }')
+
+  add('random_ruler = { limit = { is_adult = yes is_landed = yes exists = house is_house_head = no government_has_flag = government_is_feudal government_allows = create_cadet_branches } save_scope_as = twcm_smoke_cadet house = { save_scope_as = twcm_smoke_parent_house } dynasty = { save_scope_as = twcm_smoke_parent_dynasty } }')
+  subjects('scope:twcm_smoke_cadet')
+  action('cadet_branch')
+  expect('cadet_same_dynasty_new_house','scope:twcm_smoke_cadet = { is_house_head = yes dynasty = scope:twcm_smoke_parent_dynasty NOT = { house = scope:twcm_smoke_parent_house } }')
+  expect('cadet_new_head_disabled','NOT = { '+guard('twcm_editor_cadet_branch')+' }')
+  add('scope:twcm_smoke_cadet = { set_culture = culture:irish culture = { if = { limit = { has_innovation = innovation_primogeniture } remove_innovation = innovation_primogeniture } } }')
+  expect('succession_innovation_gate','NOT = { '+guard('twcm_editor_succession_single_heir')+' }')
+  for innovation in ['hereditary_rule','heraldry','primogeniture']:
+   add('culture:irish = { if = { limit = { NOT = { has_innovation = innovation_'+innovation+' } } add_innovation = innovation_'+innovation+' } }')
+  for action_key, law in [
+   ('single_heir','single_heir_succession_law'),
+   ('single_heir_youngest','single_heir_succession_law_youngest'),
+   ('high_partition','high_partition_succession_law'),
+   ('partition','partition_succession_law'),
+   ('confederate_partition','confederate_partition_succession_law'),
+  ]:
+   action('succession_'+action_key)
+   expect('succession_result_'+action_key,'scope:twcm_smoke_cadet = { has_realm_law = '+law+' }')
+  expect('succession_same_law_disabled','NOT = { '+guard('twcm_editor_succession_confederate_partition')+' }')
+
+  add('culture:irish = { if = { limit = { has_innovation = innovation_catapult } remove_innovation = innovation_catapult } }')
+  expect('regiment_onager_locked','NOT = { '+guard('twcm_editor_regiment_onager')+' }')
+  add('culture:irish = { add_innovation = innovation_catapult }')
+  add('scope:twcm_smoke_cadet = { save_scope_value_as = { name = twcm_smoke_regiment_gold value = gold } }')
+  for regiment in ['light_footmen','bowmen','onager']:
+   add('scope:twcm_smoke_cadet = { every_maa_regiment = { limit = { is_personal_maa_regiment = yes } destroy_maa_regiment = yes } }')
+   action('regiment_'+regiment)
+   expect('regiment_result_'+regiment,'scope:twcm_smoke_cadet = { gold = scope:twcm_smoke_regiment_gold maa_regiments_count = 1 any_maa_regiment = { is_personal_maa_regiment = yes is_maa_type = '+regiment+' maa_size = 1 } }')
+  add('scope:twcm_smoke_cadet = { while = { count = 16 limit = { maa_regiments_count < maa_regiments_max_count } create_maa_regiment = { type = bowmen size = 1 check_can_recruit = yes } } }')
+  expect('regiment_maximum_fixture','scope:twcm_smoke_cadet = { maa_regiments_count = maa_regiments_max_count }')
+  expect('regiment_slot_limit','NOT = { '+guard('twcm_editor_regiment_bowmen')+' }')
  add('debug_log = "TWCM_SMOKE_END"')
  (destination/'common/scripted_triggers/twcm_smoke_guards.txt').write_text('\n'.join(k+' = {\n'+v+'\n}' for k,v in guards.items()),encoding='utf-8-sig')
  (destination/'events/twcm_smoke_events.txt').write_text('namespace = twcmsmoke\ntwcmsmoke.1 = { type = character_event hidden = yes immediate = {\n'+'\n'.join(chunks)+'\n} }\n',encoding='utf-8-sig')

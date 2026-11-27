@@ -10,7 +10,7 @@ A single-player cheat menu and character editor for **Crusader Kings III**. Chan
 
 [Installation](docs/INSTALLATION.md) · [Feature guide](docs/FEATURES.md) · [Report a bug](https://github.com/wademanuk/oddbyte-ck3-cheat-menu/issues)
 
-**Version 1.6.3 · CK3 1.21.x · English · Single-player**
+**Version 1.7.0 · CK3 1.21.x · English · Single-player**
 
 **Designed for Windows, macOS and Linux — one release ZIP for all three.**
 
@@ -20,12 +20,12 @@ A single-player cheat menu and character editor for **Crusader Kings III**. Chan
 
 | Tools | Examples |
 | --- | --- |
-| Resources and character | Gold, prestige, piety, renown, legitimacy, dread, tyranny, stress, skills, age, health and fertility |
+| Resources and character | Gold, prestige, piety, renown, legitimacy, dread, tyranny, stress, skills, age, health, fertility, weight and sexuality |
 | Traits and lifestyles | Trait browser, trait experience, lifestyle experience and perk points |
-| Diplomacy and family | Alliances, hooks, opinions, relationships, guardians, education, marriage, adoption and house changes |
+| Diplomacy and family | Alliances, hooks, opinions, secrets, guardians, education, marriage, betrothal, adoption and cadet branches |
 | Dynasty | Individual legacy unlocks, with normal track order and required trait choices |
-| Realm and titles | Claims, title transfers, vassals, contracts, counties and fast construction |
-| Military | Refill existing troops, improve commanders and resolve a selected war |
+| Realm and titles | Claims, title transfers, vassals, contracts, succession laws, counties and fast construction |
+| Military | Create men-at-arms, refill existing troops, improve commanders and resolve a selected war |
 | Culture and religion | Languages, cultural acceptance, culture/faith/rite changes, innovations, traditions, doctrines and tenets |
 | Court and artifacts | Recruitment, council appointments, character creation and artifact tools |
 
@@ -44,7 +44,7 @@ Download and extract the [release ZIP](https://github.com/wademanuk/oddbyte-ck3-
 Create `mod` if needed. If Documents or the game's user-data folder is redirected, use its actual location. See the [full installation guide](docs/INSTALLATION.md) for each platform's steps and the Linux/Proton note.
 
 1. Restart the launcher, add **Oddbyte — CK3 Cheat Menu** to the playset you launch, and enable it.
-2. Load a single-player game and click **Cheats** near the lower-right map controls. **Decisions → Open Cheat Menu** also opens the window.
+2. Load a single-player game and click **Cheats** near the lower-right map controls. Drag the grip beside it to move the button. **Decisions → Open Cheat Menu** also opens the window.
 3. Check the **Selected character** name before applying a cheat. To edit someone else, right-click their portrait and choose **Cheat Menu: Open Editor**.
 4. Open **Tools & editors** for the extended tools. For actions involving two people, choose **Cheat Menu: Set Other Character** on the second person's portrait.
 

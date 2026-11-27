@@ -8,6 +8,8 @@ The release mod is designed for **Windows, macOS and Linux**, using the same ZIP
 
 Routine release and game patch checks run on macOS. We test on Windows when investigating a reported Windows-specific bug.
 
+Version 1.7.0 passed 109 regression tests and 6,315 in-game checks on CK3 1.21.0.3 on macOS. The new checks cover regiment types and slot limits, weight changes, adult-only sexuality settings, reciprocal betrothal removal, cadet branches, realm succession and private secret discovery.
+
 Coverage includes:
 
 - Selection, pins, favourites, numeric input, expired references and confirmation snapshots.

@@ -157,7 +157,7 @@ keypad += '}\n'
 add_page(605,'Set exact values',keypad + group_rows('exact'))
 add_page(610,'Court and prisoners',editor_note('court','Selected character is the ruler or jailer. Other character is the person to recruit, appoint, imprison or release. Choose Other by portrait or from Pinned characters.',84)+group_rows('court'))
 add_page(620,'Family and dynasty',link(720,'Dynasty legacies')+link(730,'Education and guardians')+editor_note('family','These tools act on the two named characters. Marriage, adoption and dynasty changes can alter inheritance. Read the review before applying.',75)+group_rows('family'))
-add_page(630,'Titles and vassals',editor_note('titles','Right-click a title owner > Cheat Menu: Edit a Title. Pick a county-or-higher title, then review a transfer here. These buttons change actual ownership; the existing claim tools remain separate.',104)+textline(label('twcm_editor_chosen_title','Chosen title: '+title_text),h=42)+group_rows('titles')+editor_note('contracts','Contracts below belong to the selected feudal vassal and their own liege. Other character is not used.',60)+group_rows('contracts'))
+add_page(630,'Titles and vassals',link(770,'Realm succession')+editor_note('titles','Right-click a title owner > Cheat Menu: Edit a Title. Pick a county-or-higher title, then review a transfer here. These buttons change actual ownership; the existing claim tools remain separate.',104)+textline(label('twcm_editor_chosen_title','Chosen title: '+title_text),h=42)+group_rows('titles')+editor_note('contracts','Contracts below belong to the selected feudal vassal and their own liege. Other character is not used.',60)+group_rows('contracts'))
 
 
 def choice_list(kind):
@@ -233,3 +233,6 @@ add_page(720,'Dynasty legacies',legacies)
 add_page(730,'Education and guardians',
  editor_note('education','Selected is the child; Other is the guardian. To replace a guardian, select that guardian as Other and remove them first. Guardianship edits require both people at home at the same court. Education focus needs age 6–15.',124)+group_rows('education'))
 add_page(740,'Alliances',editor_note('alliances','Selected and Other are the two rulers. Create an alliance without negotiation or marriage, or break their existing alliance. Reviews keep the original pair. Existing wars are unchanged.',105)+group_rows('alliances'))
+add_page(750,'Body & identity',editor_note('weight','Change the selected adult’s current weight. Reset returns it to the game’s midpoint.',57)+group_rows('weight')+group_rows('sexuality'))
+add_page(760,'Create men-at-arms',editor_note('regiments','Add a regiment to the selected ruler’s personal men-at-arms for free. You need a free slot and access to the unit. Normal upkeep applies.',70)+group_rows('regiments'))
+add_page(770,'Realm succession',editor_note('succession','Change the selected ruler’s realm succession law for free. Check the succession screen for the resulting heirs and individual title laws.',70)+group_rows('succession'))

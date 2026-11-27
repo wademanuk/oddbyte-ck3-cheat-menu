@@ -2,6 +2,14 @@
 
 Use the names in the header to check who will be affected. The selected character receives character edits; Other is used by two-person tools. Major actions open a review.
 
+## Move the Cheats button
+
+Drag the grip to the left of **Cheats** to move the button. Click **Cheats** to open the window. The button hides while **Decisions** is open and returns when you close it.
+
+## Body and identity
+
+Open **Character → Body & identity**. Increase or decrease the selected adult’s current weight by 25, or reset it to the game’s midpoint. Weight can still change over time. The same page can set sexuality to heterosexual, homosexual, bisexual or asexual.
+
 ## Debug mode
 
 Open **Tools & editors → Enable CK3 debug mode** to turn on CK3’s debug console and tooltips for the current session. Click **Disable CK3 debug mode** in the same place to turn it off again. Oddbyte works with either setting.
@@ -115,6 +123,7 @@ Open **Tools & editors → Enable CK3 debug mode** to turn on CK3’s debug cons
   older. The child joins the parent's house when one exists. Parentage/inheritance can change.
 - Designate a living direct child as heir. Title-specific succession laws can still affect
   what they inherit.
+- Break the engagement between Selected and Other, or found a cadet branch for a landed adult feudal house member. Eligible descendants join the new house.
 
 ## Titles, vassals and contracts
 
@@ -128,6 +137,7 @@ Open **Tools & editors → Enable CK3 debug mode** to turn on CK3’s debug cons
   landed vassal independent. Ancestors in the liege chain are excluded from vassalization.
 - Set feudal tax/levy obligations from none to maximum. Requires a modifiable feudal vassal
   contract. This edits the selected vassal's contract with their own liege; Other is not used.
+- Open **Tools & editors → Titles, vassals and contracts → Realm succession** to set Confederate Partition, Partition, High Partition, Primogeniture or Ultimogeniture. Requires an eligible feudal or clan ruler and the law’s native unlocks. Individual title laws can still affect inheritance.
 
 ## Wars and truces
 
@@ -175,6 +185,8 @@ Open **Tools & editors → Enable CK3 debug mode** to turn on CK3’s debug cons
 
 
 ## Diplomacy
+
+- **Learn selected character’s secrets** privately reveals unknown secrets to your ruler. Find the results in CK3’s **Intrigue** window.
 
 - Hooks: give the selected character a ten-year weak hook or twenty-year strong hook
   on Other, or remove their hook on Other. A weak grant preserves existing hooks;
@@ -257,6 +269,7 @@ war, government and religion rules still apply. Claim changes persist when saved
   The opinion modifier does not stack with itself and stays on the county until removed.
 - Military: fill existing men-at-arms to their current troop capacity; replenish personal
   holding levy pools and garrisons. No regiments or additional capacity are created.
+- **Military → Create men-at-arms** adds one size-1 regiment of Light Footmen, Bowmen or Onagers for free. The selected ruler needs a free regiment slot and access to that unit. Normal upkeep applies.
 - Commanders: add 5 martial, 5 prowess or both. Add/remove Aggressive Attacker,
   Unyielding Defender, Logistician, Military Engineer, Organizer and Flexible Leader.
   Select a different commander through their portrait to edit them.

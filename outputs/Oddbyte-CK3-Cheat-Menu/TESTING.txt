@@ -1,8 +1,8 @@
 ODDBYTE — CK3 CHEAT MENU: TESTING
 
-Version 1.6.3 works with the latest CK3 1.21 Florin hotfix.
-Oddbyte has been playtested on macOS and Windows. The new debug-mode toggle
-was tested in both directions on macOS. 109 regression tests passed.
+Version 1.7.0 works with CK3 1.21.0.3 Florin.
+Oddbyte has been playtested on macOS and Windows. This update was tested on
+macOS. 109 regression tests and 6,315 in-game checks passed.
 No mod-specific script errors or GUI warnings in the final native run.
 Coverage includes targets, reviews, catalogs, titles, contracts, artifacts, war outcomes,
 ruler standing, languages/acceptance, legacy choices and renown/level preservation,

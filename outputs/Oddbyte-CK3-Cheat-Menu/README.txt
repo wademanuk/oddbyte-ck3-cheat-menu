@@ -1,4 +1,4 @@
-ODDBYTE — CK3 CHEAT MENU 1.6.3
+ODDBYTE — CK3 CHEAT MENU 1.7.0
 For CK3 1.21.x, including the latest Florin hotfix. English. Single-player.
 Playtested on macOS and Windows.
 
@@ -14,6 +14,7 @@ When updating, close CK3 and back up/replace both items. Enable only one copy.
 
 OPEN AND SELECT
 Click Cheats near the lower-right map controls, or Decisions > Open Cheat Menu.
+Drag the grip beside Cheats to move the button.
 Check Selected character before applying a cheat. Right-click someone else and choose
 Cheat Menu: Open Editor to edit them. My ruler returns to your player ruler.
 For two-person tools, right-click the second person > Cheat Menu: Set Other Character.
@@ -21,6 +22,13 @@ Both names appear in the header. Swap reverses the pair.
 Tools & editors, Pinned characters, Search, Favourites and Active boosts are in the sidebar.
 Classic menu keeps the original event interface. No debug mode or console is required.
 Use Tools & editors to toggle CK3 debug mode for the current session.
+
+NEW IN 1.7.0
+- Character > Body & identity changes weight and sexuality.
+- Military > Create men-at-arms creates Light Footmen, Bowmen and Onagers.
+- Family and dynasty adds breaking betrothals and founding cadet branches.
+- Titles and vassals adds realm succession laws for eligible rulers.
+- Diplomacy can reveal a selected character's secrets privately to your ruler.
 
 Make a separate save before major edits. Many permanent changes have no undo button.
 Relevant DLC is still required. Other game versions, multiplayer, other-mod combinations

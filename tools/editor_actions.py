@@ -70,6 +70,7 @@ def single(key, title, effect, trigger='', **kwargs):
 pair = 'scope:twcm_target = { is_alive = yes } scope:twcm_other = { is_alive = yes } NOT = { scope:twcm_target = scope:twcm_other }'
 landed = 'scope:twcm_target = { is_landed = yes }'
 court_pair = pair + ' scope:twcm_target = { is_landed = yes } scope:twcm_other = { is_landed = no is_imprisoned = no is_adult = yes is_courtier_of = scope:twcm_target }'
+
 num = 'scope:twcm_editor_number'
 number_text = "[GetPlayer.MakeScope.Var('twcm_editor_number').GetValue|0]"
 title_text = "[GetPlayer.MakeScope.Var('twcm_editor_title').Title.GetName]"
@@ -371,6 +372,61 @@ editor_actions[name]={'id':name,'key':label('twcm_editor_quick_stress','Remove a
 
 exec((ROOT/'tools/ruler_tools.py').read_text(),globals())
 
+for key, title, amount in [
+ ('increase', 'Increase body weight by 25', '25'),
+ ('decrease', 'Decrease body weight by 25', '-25'),
+ ('reset', 'Reset body weight', '{ value = current_weight multiply = -1 }'),
+]:
+ single('weight_' + key, title, 'change_current_weight = ' + amount, 'is_adult = yes',
+        group='weight', help_text='Changes the selected adult’s current weight. Weight can still change over time.')
+
+for sexuality in ['heterosexual', 'homosexual', 'bisexual', 'asexual']:
+ single('sexuality_' + sexuality, 'Set sexuality to ' + sexuality, 'set_sexuality = ' + sexuality,
+        'is_adult = yes NOT = { has_sexuality = ' + sexuality + ' }', group='sexuality',
+        help_text='Changes the selected adult’s sexuality. Their existing relationships stay in place.')
+
+editor_action('break_betrothal', 'Break betrothal',
+              'scope:twcm_target = { break_betrothal = scope:twcm_other }',
+              pair + ' scope:twcm_target = { betrothed = scope:twcm_other }', group='family',
+              help_text='Breaks the engagement between these two characters. They must still be betrothed when you apply.')
+single('cadet_branch', 'Found a cadet branch', 'create_cadet_branch = { spread_to_descendants = yes }',
+       'is_adult = yes is_landed = yes exists = house is_house_head = no '
+       'government_has_flag = government_is_feudal government_allows = create_cadet_branches',
+       group='family', help_text='Founds a new house within the same dynasty. Applies to adult landed feudal house members. '
+       'Eligible descendants join the new house.')
+
+single('discover_secrets', 'Learn selected character’s secrets',
+       'every_secret = { limit = { NOT = { is_known_by = root } } reveal_to = root }',
+       'any_secret = { NOT = { is_known_by = root } }', group='secrets',
+       help_text='Privately reveals this character’s unknown secrets to your ruler. Find them in the Intrigue window.')
+
+for title, law, eligibility in [
+ ('Confederate Partition', 'confederate_partition_succession_law', 'confederate_partition'),
+ ('Partition', 'partition_succession_law', 'partition'),
+ ('High Partition', 'high_partition_succession_law', 'high_partition'),
+ ('Primogeniture', 'single_heir_succession_law', 'single_heir'),
+ ('Ultimogeniture', 'single_heir_succession_law_youngest', 'single_heir_youngest'),
+]:
+ single('succession_' + eligibility, 'Set ' + title, 'add_realm_law_skip_effects = ' + law,
+        'is_landed = yes OR = { government_has_flag = government_is_feudal government_has_flag = government_is_clan } '
+        'can_have_' + eligibility + '_succession_law_trigger = yes NOT = { has_realm_law = ' + law + ' }',
+        group='succession',
+        help_text='Changes the selected ruler’s realm succession law for free. '
+        'Requires an eligible feudal or clan ruler and the required innovations. Individual title laws still apply.')
+
+# Match the recruit conditions for these units in the native base-game regiment definitions.
+regiment_slot = 'is_landed = yes maa_regiments_count < maa_regiments_max_count'
+for regiment, name, requirements, explanation in [
+ ('light_footmen', 'Light Footmen', 'NOT = { government_has_flag = government_is_in_steppe }', ''),
+ ('bowmen', 'Bowmen', 'NOR = { government_has_flag = government_is_in_steppe government_has_flag = government_is_merchant }', ''),
+ ('onager', 'Onagers', 'NOR = { government_has_flag = government_is_in_steppe government_has_flag = government_is_merchant } culture = { has_innovation = innovation_catapult culture_uses_eastern_siege_weapons_trigger = no }', ' Requires the Catapult innovation and a culture that recruits Onagers.'),
+]:
+ single('regiment_' + regiment, 'Create ' + name,
+        'create_maa_regiment = { type = ' + regiment + ' size = 1 check_can_recruit = yes }',
+        regiment_slot + ' ' + requirements, group='regiments',
+        help_text='Creates one size-1 regiment for the selected ruler, with no recruitment cost. '
+        'Requires a free slot and access to this unit. Normal upkeep applies.' + explanation)
+
 # A shared star toggle works for every catalogued action, including legacy adapters.
 for action in list(editor_actions.values()):
  field = 'twcm_fav_' + action['id']
@@ -402,7 +458,7 @@ write('common/character_interactions/twcm_editor_interactions.txt', '''twcm_edit
  ai_will_do = { base = 0 }
 }
 ''')
-editor_meta = {'pages': [600,601,602,603,604,605,610,620,630,640,650,651,652,653,654,655,660,670,680,700,710,720,730,740],
+editor_meta = {'pages': [600,601,602,603,604,605,610,620,630,640,650,651,652,653,654,655,660,670,680,700,710,720,730,740,750,760,770],
  'traits': len(editor_traits), 'cultures': len(catalog['cultures']), 'faiths': len(catalog['faiths']),
  'innovations': len(catalog['innovations']), 'traditions': len(catalog['traditions']),
  'doctrines': sum(len(v['choices']) for v in catalog['doctrine_groups'].values()), 'tenets': len(catalog['tenets']),

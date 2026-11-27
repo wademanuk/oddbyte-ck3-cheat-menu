@@ -507,6 +507,13 @@ button_standard = {
  enabled = "[GetScriptedGui( 'twcm_editor_nav_730' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 
 }
+button_standard = {
+ name = "weight_tools" position = { 0 0 } size = { 600 38 }
+ text = "twcm_editor_page_750"
+ onclick = "[GetScriptedGui( 'twcm_editor_nav_750' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_nav_750' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+}
 text_multi = { size = { 610 45 } text = "twcm_ui_character_help" fontsize = 16 }
 text_single = { position = { 0 0 } size = { 600 32 } text = "twcm_ui_skill_step_label" fontsize = 18 max_width = 600 }
 widget = { size = { 610 36 } button_standard = {
@@ -2858,6 +2865,13 @@ button_standard = {
 
 }
 button_standard = {
+ name = "regiment_tools" position = { 0 0 } size = { 600 38 }
+ text = "twcm_editor_page_760"
+ onclick = "[GetScriptedGui( 'twcm_editor_nav_760' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_nav_760' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+}
+button_standard = {
  name = "war_editor" position = { 0 0 } size = { 600 38 }
  text = "twcm_editor_page_640"
  onclick = "[GetScriptedGui( 'twcm_editor_nav_640' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -4603,6 +4617,14 @@ button_standard = {
  text = "twcm_editor_page_740"
  onclick = "[GetScriptedGui( 'twcm_editor_nav_740' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_editor_nav_740' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+}
+button_standard = {
+ name = "discover_secrets" position = { 0 0 } size = { 600 38 }
+ text = "twcm_editor_discover_secrets_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_discover_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_discover_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_discover_secrets').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_discover_secrets_requirements'),GetScriptedGui('twcm_editor_discover_secrets').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 
 }
 text_multi = { size = { 610 88 } text = "twcm_ui_diplomacy_help" fontsize = 16 }
@@ -51629,6 +51651,312 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_increase').IsSet]" button_standard = {
+ name = "action_twcm_editor_weight_increase" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_increase_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_increase' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_increase' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_increase').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_increase_requirements'),GetScriptedGui('twcm_editor_weight_increase').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_increase" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_increase').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_increase' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_increase' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_decrease').IsSet]" button_standard = {
+ name = "action_twcm_editor_weight_decrease" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_decrease_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_decrease' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_decrease' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_decrease').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_decrease_requirements'),GetScriptedGui('twcm_editor_weight_decrease').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_decrease" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_decrease').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_decrease' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_decrease' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_reset').IsSet]" button_standard = {
+ name = "action_twcm_editor_weight_reset" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_reset_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_reset').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_reset_requirements'),GetScriptedGui('twcm_editor_weight_reset').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_reset" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_reset').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_heterosexual').IsSet]" button_standard = {
+ name = "action_twcm_editor_sexuality_heterosexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_heterosexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_heterosexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_heterosexual_requirements'),GetScriptedGui('twcm_editor_sexuality_heterosexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_heterosexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_heterosexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_homosexual').IsSet]" button_standard = {
+ name = "action_twcm_editor_sexuality_homosexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_homosexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_homosexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_homosexual_requirements'),GetScriptedGui('twcm_editor_sexuality_homosexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_homosexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_homosexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_bisexual').IsSet]" button_standard = {
+ name = "action_twcm_editor_sexuality_bisexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_bisexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_bisexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_bisexual_requirements'),GetScriptedGui('twcm_editor_sexuality_bisexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_bisexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_bisexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_asexual').IsSet]" button_standard = {
+ name = "action_twcm_editor_sexuality_asexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_asexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_asexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_asexual_requirements'),GetScriptedGui('twcm_editor_sexuality_asexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_asexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_asexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_break_betrothal').IsSet]" button_standard = {
+ name = "action_twcm_editor_break_betrothal" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_break_betrothal_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_break_betrothal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_break_betrothal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_break_betrothal').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_break_betrothal_requirements'),GetScriptedGui('twcm_editor_break_betrothal').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_break_betrothal" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_break_betrothal').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_break_betrothal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_break_betrothal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_cadet_branch').IsSet]" button_standard = {
+ name = "action_twcm_editor_cadet_branch" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_cadet_branch_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_cadet_branch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_cadet_branch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_cadet_branch').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_cadet_branch_requirements'),GetScriptedGui('twcm_editor_cadet_branch').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_cadet_branch" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_cadet_branch').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_cadet_branch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_cadet_branch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_discover_secrets').IsSet]" button_standard = {
+ name = "action_twcm_editor_discover_secrets" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_discover_secrets_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_discover_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_discover_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_discover_secrets').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_discover_secrets_requirements'),GetScriptedGui('twcm_editor_discover_secrets').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_discover_secrets" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_discover_secrets').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_discover_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_discover_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_confederate_partition').IsSet]" button_standard = {
+ name = "action_twcm_editor_succession_confederate_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_confederate_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_confederate_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_confederate_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_confederate_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_confederate_partition_requirements'),GetScriptedGui('twcm_editor_succession_confederate_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_confederate_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_confederate_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_confederate_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_confederate_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_partition').IsSet]" button_standard = {
+ name = "action_twcm_editor_succession_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_partition_requirements'),GetScriptedGui('twcm_editor_succession_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_high_partition').IsSet]" button_standard = {
+ name = "action_twcm_editor_succession_high_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_high_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_high_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_high_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_high_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_high_partition_requirements'),GetScriptedGui('twcm_editor_succession_high_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_high_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_high_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_high_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_high_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir').IsSet]" button_standard = {
+ name = "action_twcm_editor_succession_single_heir" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_single_heir_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_single_heir' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_single_heir' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_single_heir').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_single_heir_requirements'),GetScriptedGui('twcm_editor_succession_single_heir').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_single_heir" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir_youngest').IsSet]" button_standard = {
+ name = "action_twcm_editor_succession_single_heir_youngest" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_single_heir_youngest_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_single_heir_youngest' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_single_heir_youngest' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_single_heir_youngest').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_single_heir_youngest_requirements'),GetScriptedGui('twcm_editor_succession_single_heir_youngest').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_single_heir_youngest" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir_youngest').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir_youngest' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir_youngest' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_light_footmen').IsSet]" button_standard = {
+ name = "action_twcm_editor_regiment_light_footmen" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_light_footmen_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_light_footmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_light_footmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_light_footmen').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_light_footmen_requirements'),GetScriptedGui('twcm_editor_regiment_light_footmen').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_light_footmen" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_light_footmen').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_light_footmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_light_footmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_bowmen').IsSet]" button_standard = {
+ name = "action_twcm_editor_regiment_bowmen" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_bowmen_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_bowmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_bowmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_bowmen').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_bowmen_requirements'),GetScriptedGui('twcm_editor_regiment_bowmen').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_bowmen" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_bowmen').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_bowmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_bowmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_onager').IsSet]" button_standard = {
+ name = "action_twcm_editor_regiment_onager" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_onager_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_onager' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_onager' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_onager').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_onager_requirements'),GetScriptedGui('twcm_editor_regiment_onager').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_onager" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_onager').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_onager' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_onager' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[GetPlayer.MakeScope.Var('twcm_fav_twcm_ui_1_1').IsSet]" button_standard = {
  name = "action_twcm_ui_1_1" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_find_twcm_ui_1_1"
@@ -70851,6 +71179,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'be' ), GetVariableSystem.HasValue( 'twcm_search', 'bet' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'betr' ), GetVariableSystem.HasValue( 'twcm_search', 'betro' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'betrot' ), GetVariableSystem.HasValue( 'twcm_search', 'betroth' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'betrotha' ), GetVariableSystem.HasValue( 'twcm_search', 'betrothal' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'br' ), GetVariableSystem.HasValue( 'twcm_search', 'bre' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'brea' ), GetVariableSystem.HasValue( 'twcm_search', 'break' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'break ' ), GetVariableSystem.HasValue( 'twcm_search', 'break b' ) ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'break be' ), GetVariableSystem.HasValue( 'twcm_search', 'break bet' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'break betr' ), GetVariableSystem.HasValue( 'twcm_search', 'break betro' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'break betrot' ), GetVariableSystem.HasValue( 'twcm_search', 'break betroth' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'break betrotha' ), GetVariableSystem.HasValue( 'twcm_search', 'break betrothal' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_break_betrothal" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_break_betrothal_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_break_betrothal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_break_betrothal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_break_betrothal').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_break_betrothal_requirements'),GetScriptedGui('twcm_editor_break_betrothal').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_break_betrothal" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_break_betrothal').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_break_betrothal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_break_betrothal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'br' ), GetVariableSystem.HasValue( 'twcm_search', 'bri' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'brin' ), GetVariableSystem.HasValue( 'twcm_search', 'bring' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring ' ), GetVariableSystem.HasValue( 'twcm_search', 'bring o' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bring ot' ), GetVariableSystem.HasValue( 'twcm_search', 'bring oth' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring othe' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other ' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other ch' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other cha' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other char' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other chara' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other charac' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other charact' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other characte' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other character' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other character ' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other character t' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other character to' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other character to ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other character to c' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other character to co' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other character to cou' ), GetVariableSystem.HasValue( 'twcm_search', 'bring other character to cour' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bring other character to court' ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ) ) ) ) ), Or( Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'ch' ), GetVariableSystem.HasValue( 'twcm_search', 'cha' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'char' ), GetVariableSystem.HasValue( 'twcm_search', 'chara' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'charac' ), GetVariableSystem.HasValue( 'twcm_search', 'charact' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'characte' ), GetVariableSystem.HasValue( 'twcm_search', 'character' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'co' ), GetVariableSystem.HasValue( 'twcm_search', 'cou' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'cour' ), GetVariableSystem.HasValue( 'twcm_search', 'court' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'o' ), GetVariableSystem.HasValue( 'twcm_search', 'ot' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'oth' ), GetVariableSystem.HasValue( 'twcm_search', 'othe' ) ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'other' ), GetVariableSystem.HasValue( 'twcm_search', 't' ) ), GetVariableSystem.HasValue( 'twcm_search', 'to' ) ) ) )]" button_standard = {
  name = "action_twcm_editor_recruit" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_recruit_label"
@@ -73503,6 +73848,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bo' ), GetVariableSystem.HasValue( 'twcm_search', 'bow' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bowm' ), GetVariableSystem.HasValue( 'twcm_search', 'bowme' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bowmen' ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'cr' ), GetVariableSystem.HasValue( 'twcm_search', 'cre' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'crea' ), GetVariableSystem.HasValue( 'twcm_search', 'creat' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create' ), GetVariableSystem.HasValue( 'twcm_search', 'create ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create b' ), GetVariableSystem.HasValue( 'twcm_search', 'create bo' ) ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create bow' ), GetVariableSystem.HasValue( 'twcm_search', 'create bowm' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create bowme' ), GetVariableSystem.HasValue( 'twcm_search', 'create bowmen' ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_regiment_bowmen" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_bowmen_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_bowmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_bowmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_bowmen').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_bowmen_requirements'),GetScriptedGui('twcm_editor_regiment_bowmen').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_bowmen" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_bowmen').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_bowmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_bowmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'co' ), GetVariableSystem.HasValue( 'twcm_search', 'com' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'comm' ), GetVariableSystem.HasValue( 'twcm_search', 'comma' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'comman' ), GetVariableSystem.HasValue( 'twcm_search', 'command' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'commande' ), GetVariableSystem.HasValue( 'twcm_search', 'commander' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'cr' ), GetVariableSystem.HasValue( 'twcm_search', 'cre' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'crea' ), GetVariableSystem.HasValue( 'twcm_search', 'creat' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create' ), GetVariableSystem.HasValue( 'twcm_search', 'create ' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create c' ), GetVariableSystem.HasValue( 'twcm_search', 'create co' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create com' ), GetVariableSystem.HasValue( 'twcm_search', 'create comm' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create comma' ), GetVariableSystem.HasValue( 'twcm_search', 'create comman' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create command' ), GetVariableSystem.HasValue( 'twcm_search', 'create commande' ) ) ) ), GetVariableSystem.HasValue( 'twcm_search', 'create commander' ) ) )]" button_standard = {
  name = "action_twcm_editor_spawn_commander" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_spawn_commander_label"
@@ -73826,6 +74188,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'cr' ), GetVariableSystem.HasValue( 'twcm_search', 'cre' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'crea' ), GetVariableSystem.HasValue( 'twcm_search', 'creat' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create' ), GetVariableSystem.HasValue( 'twcm_search', 'create ' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create l' ), GetVariableSystem.HasValue( 'twcm_search', 'create li' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create lig' ), GetVariableSystem.HasValue( 'twcm_search', 'create ligh' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create light' ), GetVariableSystem.HasValue( 'twcm_search', 'create light ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create light f' ), GetVariableSystem.HasValue( 'twcm_search', 'create light fo' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create light foo' ), GetVariableSystem.HasValue( 'twcm_search', 'create light foot' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create light footm' ), GetVariableSystem.HasValue( 'twcm_search', 'create light footme' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create light footmen' ), GetVariableSystem.HasValue( 'twcm_search', 'f' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fo' ), GetVariableSystem.HasValue( 'twcm_search', 'foo' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'foot' ), GetVariableSystem.HasValue( 'twcm_search', 'footm' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'footme' ), GetVariableSystem.HasValue( 'twcm_search', 'footmen' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'l' ), GetVariableSystem.HasValue( 'twcm_search', 'li' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'lig' ), GetVariableSystem.HasValue( 'twcm_search', 'ligh' ) ) ) ) ) ), GetVariableSystem.HasValue( 'twcm_search', 'light' ) )]" button_standard = {
+ name = "action_twcm_editor_regiment_light_footmen" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_light_footmen_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_light_footmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_light_footmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_light_footmen').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_light_footmen_requirements'),GetScriptedGui('twcm_editor_regiment_light_footmen').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_light_footmen" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_light_footmen').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_light_footmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_light_footmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'a' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ar' ), GetVariableSystem.HasValue( 'twcm_search', 'arm' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'armo' ), GetVariableSystem.HasValue( 'twcm_search', 'armor' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'c' ), GetVariableSystem.HasValue( 'twcm_search', 'cr' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'cre' ), GetVariableSystem.HasValue( 'twcm_search', 'crea' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'creat' ), GetVariableSystem.HasValue( 'twcm_search', 'create' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create ' ), GetVariableSystem.HasValue( 'twcm_search', 'create m' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create ma' ), GetVariableSystem.HasValue( 'twcm_search', 'create mas' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create mast' ), GetVariableSystem.HasValue( 'twcm_search', 'create maste' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create master' ), GetVariableSystem.HasValue( 'twcm_search', 'create masterw' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create masterwo' ), GetVariableSystem.HasValue( 'twcm_search', 'create masterwor' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create masterwork' ), GetVariableSystem.HasValue( 'twcm_search', 'create masterwork ' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create masterwork a' ), GetVariableSystem.HasValue( 'twcm_search', 'create masterwork ar' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create masterwork arm' ), GetVariableSystem.HasValue( 'twcm_search', 'create masterwork armo' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create masterwork armor' ), GetVariableSystem.HasValue( 'twcm_search', 'm' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ma' ), GetVariableSystem.HasValue( 'twcm_search', 'mas' ) ) ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'mast' ), GetVariableSystem.HasValue( 'twcm_search', 'maste' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'master' ), GetVariableSystem.HasValue( 'twcm_search', 'masterw' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'masterwo' ), GetVariableSystem.HasValue( 'twcm_search', 'masterwor' ) ), GetVariableSystem.HasValue( 'twcm_search', 'masterwork' ) ) ) )]" button_standard = {
  name = "action_twcm_editor_artifact_create_armor_masterwork" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_artifact_create_armor_masterwork_label"
@@ -73911,6 +74290,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'cr' ), GetVariableSystem.HasValue( 'twcm_search', 'cre' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'crea' ), GetVariableSystem.HasValue( 'twcm_search', 'creat' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create' ), GetVariableSystem.HasValue( 'twcm_search', 'create ' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create o' ), GetVariableSystem.HasValue( 'twcm_search', 'create on' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create ona' ), GetVariableSystem.HasValue( 'twcm_search', 'create onag' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create onage' ), GetVariableSystem.HasValue( 'twcm_search', 'create onager' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create onagers' ), GetVariableSystem.HasValue( 'twcm_search', 'o' ) ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'on' ), GetVariableSystem.HasValue( 'twcm_search', 'ona' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'onag' ), GetVariableSystem.HasValue( 'twcm_search', 'onage' ) ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'onager' ), GetVariableSystem.HasValue( 'twcm_search', 'onagers' ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_regiment_onager" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_onager_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_onager' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_onager' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_onager').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_onager_requirements'),GetScriptedGui('twcm_editor_regiment_onager').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_onager" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_onager').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_onager' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_onager' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'cr' ), GetVariableSystem.HasValue( 'twcm_search', 'cre' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'crea' ), GetVariableSystem.HasValue( 'twcm_search', 'creat' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create' ), GetVariableSystem.HasValue( 'twcm_search', 'create ' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create p' ), GetVariableSystem.HasValue( 'twcm_search', 'create ph' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create phy' ), GetVariableSystem.HasValue( 'twcm_search', 'create phys' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create physi' ), GetVariableSystem.HasValue( 'twcm_search', 'create physic' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'create physici' ), GetVariableSystem.HasValue( 'twcm_search', 'create physicia' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'create physician' ), GetVariableSystem.HasValue( 'twcm_search', 'p' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ph' ), GetVariableSystem.HasValue( 'twcm_search', 'phy' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'phys' ), GetVariableSystem.HasValue( 'twcm_search', 'physi' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'physic' ), GetVariableSystem.HasValue( 'twcm_search', 'physici' ) ) ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'physicia' ), GetVariableSystem.HasValue( 'twcm_search', 'physician' ) ) ) )]" button_standard = {
  name = "action_twcm_editor_spawn_physician" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_spawn_physician_label"
@@ -73924,6 +74320,23 @@ button_standard = {
  text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_spawn_physician').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
  onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_spawn_physician' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_spawn_physician' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', '2' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', '25' ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bo' ), GetVariableSystem.HasValue( 'twcm_search', 'bod' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'body' ), GetVariableSystem.HasValue( 'twcm_search', 'by' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'd' ), GetVariableSystem.HasValue( 'twcm_search', 'de' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'dec' ), GetVariableSystem.HasValue( 'twcm_search', 'decr' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'decre' ), GetVariableSystem.HasValue( 'twcm_search', 'decrea' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'decreas' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease ' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease bo' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease bod' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body w' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body we' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body wei' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body weig' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body weigh' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight ' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight by' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight by ' ) ) ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight by 2' ), GetVariableSystem.HasValue( 'twcm_search', 'decrease body weight by 25' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'w' ), GetVariableSystem.HasValue( 'twcm_search', 'we' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'wei' ), GetVariableSystem.HasValue( 'twcm_search', 'weig' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'weigh' ), GetVariableSystem.HasValue( 'twcm_search', 'weight' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_weight_decrease" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_decrease_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_decrease' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_decrease' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_decrease').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_decrease_requirements'),GetScriptedGui('twcm_editor_weight_decrease').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_decrease" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_decrease').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_decrease' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_decrease' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  tooltip = "twcm_star_help"
 
 }
@@ -77073,6 +77486,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'a' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'b' ), GetVariableSystem.HasValue( 'twcm_search', 'br' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bra' ), GetVariableSystem.HasValue( 'twcm_search', 'bran' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'branc' ), GetVariableSystem.HasValue( 'twcm_search', 'branch' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'c' ), GetVariableSystem.HasValue( 'twcm_search', 'ca' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'cad' ), GetVariableSystem.HasValue( 'twcm_search', 'cade' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'cadet' ), GetVariableSystem.HasValue( 'twcm_search', 'f' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fo' ), GetVariableSystem.HasValue( 'twcm_search', 'fou' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'foun' ), GetVariableSystem.HasValue( 'twcm_search', 'found' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'found ' ), GetVariableSystem.HasValue( 'twcm_search', 'found a' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'found a ' ), GetVariableSystem.HasValue( 'twcm_search', 'found a c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'found a ca' ), GetVariableSystem.HasValue( 'twcm_search', 'found a cad' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'found a cade' ), GetVariableSystem.HasValue( 'twcm_search', 'found a cadet' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'found a cadet ' ), GetVariableSystem.HasValue( 'twcm_search', 'found a cadet b' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'found a cadet br' ), GetVariableSystem.HasValue( 'twcm_search', 'found a cadet bra' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'found a cadet bran' ), GetVariableSystem.HasValue( 'twcm_search', 'found a cadet branc' ) ) ) ) ) ), GetVariableSystem.HasValue( 'twcm_search', 'found a cadet branch' ) )]" button_standard = {
+ name = "action_twcm_editor_cadet_branch" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_cadet_branch_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_cadet_branch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_cadet_branch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_cadet_branch').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_cadet_branch_requirements'),GetScriptedGui('twcm_editor_cadet_branch').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_cadet_branch" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_cadet_branch').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_cadet_branch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_cadet_branch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', '1' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', '10' ), GetVariableSystem.HasValue( 'twcm_search', '100' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'b' ), GetVariableSystem.HasValue( 'twcm_search', 'bo' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bon' ), GetVariableSystem.HasValue( 'twcm_search', 'bone' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bones' ), GetVariableSystem.HasValue( 'twcm_search', 'f' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fr' ), GetVariableSystem.HasValue( 'twcm_search', 'fra' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'frag' ), GetVariableSystem.HasValue( 'twcm_search', 'fragi' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragil' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile ' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bo' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bon' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bone' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones ' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 1' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 10' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 ' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 x' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  ' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  f' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fr' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fra' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  frag' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragi' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragil' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile ' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile b' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile bo' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile bon' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile bone' ), GetVariableSystem.HasValue( 'twcm_search', 'fragile bones 100 xp  fragile bones' ) ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'x' ), GetVariableSystem.HasValue( 'twcm_search', 'xp' ) ) ) ) )]" button_standard = {
  name = "action_twcm_editor_trait_xp_fragile_bones_0" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_trait_xp_fragile_bones_0_label"
@@ -77787,6 +78217,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', '2' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', '25' ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bo' ), GetVariableSystem.HasValue( 'twcm_search', 'bod' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'body' ), GetVariableSystem.HasValue( 'twcm_search', 'by' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'i' ), GetVariableSystem.HasValue( 'twcm_search', 'in' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'inc' ), GetVariableSystem.HasValue( 'twcm_search', 'incr' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'incre' ), GetVariableSystem.HasValue( 'twcm_search', 'increa' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'increas' ), GetVariableSystem.HasValue( 'twcm_search', 'increase' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'increase ' ), GetVariableSystem.HasValue( 'twcm_search', 'increase b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'increase bo' ), GetVariableSystem.HasValue( 'twcm_search', 'increase bod' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body w' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body we' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body wei' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body weig' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body weigh' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body weight' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body weight ' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body weight b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body weight by' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body weight by ' ) ) ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'increase body weight by 2' ), GetVariableSystem.HasValue( 'twcm_search', 'increase body weight by 25' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'w' ), GetVariableSystem.HasValue( 'twcm_search', 'we' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'wei' ), GetVariableSystem.HasValue( 'twcm_search', 'weig' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'weigh' ), GetVariableSystem.HasValue( 'twcm_search', 'weight' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_weight_increase" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_increase_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_increase' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_increase' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_increase').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_increase_requirements'),GetScriptedGui('twcm_editor_weight_increase').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_increase" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_increase').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_increase' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_increase' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', '1' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', '10' ), GetVariableSystem.HasValue( 'twcm_search', '100' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'i' ), GetVariableSystem.HasValue( 'twcm_search', 'in' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'inf' ), GetVariableSystem.HasValue( 'twcm_search', 'infi' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'infir' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm ' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 1' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 10' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 100' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 ' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 x' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  ' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  i' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  in' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  inf' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  infi' ), GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  infir' ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'infirm 100 xp  infirm' ), GetVariableSystem.HasValue( 'twcm_search', 'x' ) ), GetVariableSystem.HasValue( 'twcm_search', 'xp' ) ) ) )]" button_standard = {
  name = "action_twcm_editor_trait_xp_infirm_0" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_trait_xp_infirm_0_label"
@@ -78055,6 +78502,23 @@ button_standard = {
  text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_learn_other_language').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
  onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_learn_other_language' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_learn_other_language' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ch' ), GetVariableSystem.HasValue( 'twcm_search', 'cha' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'char' ), GetVariableSystem.HasValue( 'twcm_search', 'chara' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'charac' ), GetVariableSystem.HasValue( 'twcm_search', 'charact' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'characte' ), GetVariableSystem.HasValue( 'twcm_search', 'character' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'characters' ), GetVariableSystem.HasValue( 'twcm_search', 'l' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'le' ), GetVariableSystem.HasValue( 'twcm_search', 'lea' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'lear' ), GetVariableSystem.HasValue( 'twcm_search', 'learn' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn ' ), GetVariableSystem.HasValue( 'twcm_search', 'learn s' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn se' ), GetVariableSystem.HasValue( 'twcm_search', 'learn sel' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn sele' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selec' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn select' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selecte' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected c' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected ch' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected cha' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected char' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected chara' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected charac' ) ) ) ) ) ), Or( Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected charact' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected characte' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected character' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters ' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters s' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters se' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters sec' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters secr' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters secre' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters secret' ), GetVariableSystem.HasValue( 'twcm_search', 'learn selected characters secrets' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sec' ), GetVariableSystem.HasValue( 'twcm_search', 'secr' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'secre' ), GetVariableSystem.HasValue( 'twcm_search', 'secret' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'secrets' ), GetVariableSystem.HasValue( 'twcm_search', 'sel' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sele' ), GetVariableSystem.HasValue( 'twcm_search', 'selec' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'select' ), GetVariableSystem.HasValue( 'twcm_search', 'selecte' ) ) ) ), GetVariableSystem.HasValue( 'twcm_search', 'selected' ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_discover_secrets" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_discover_secrets_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_discover_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_discover_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_discover_secrets').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_discover_secrets_requirements'),GetScriptedGui('twcm_editor_discover_secrets').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_discover_secrets" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_discover_secrets').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_discover_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_discover_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  tooltip = "twcm_star_help"
 
 }
@@ -90588,6 +91052,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bo' ), GetVariableSystem.HasValue( 'twcm_search', 'bod' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'body' ), GetVariableSystem.HasValue( 'twcm_search', 'r' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 're' ), GetVariableSystem.HasValue( 'twcm_search', 'res' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'rese' ), GetVariableSystem.HasValue( 'twcm_search', 'reset' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'reset ' ), GetVariableSystem.HasValue( 'twcm_search', 'reset b' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'reset bo' ), GetVariableSystem.HasValue( 'twcm_search', 'reset bod' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'reset body' ), GetVariableSystem.HasValue( 'twcm_search', 'reset body ' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'reset body w' ), GetVariableSystem.HasValue( 'twcm_search', 'reset body we' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'reset body wei' ), GetVariableSystem.HasValue( 'twcm_search', 'reset body weig' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'reset body weigh' ), GetVariableSystem.HasValue( 'twcm_search', 'reset body weight' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'w' ), GetVariableSystem.HasValue( 'twcm_search', 'we' ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'wei' ), GetVariableSystem.HasValue( 'twcm_search', 'weig' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'weigh' ), GetVariableSystem.HasValue( 'twcm_search', 'weight' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_weight_reset" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_reset_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_reset').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_reset_requirements'),GetScriptedGui('twcm_editor_weight_reset').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_reset" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_reset').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ch' ), GetVariableSystem.HasValue( 'twcm_search', 'cho' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'choi' ), GetVariableSystem.HasValue( 'twcm_search', 'choic' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'choice' ), GetVariableSystem.HasValue( 'twcm_search', 'k' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'kn' ), GetVariableSystem.HasValue( 'twcm_search', 'kni' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'knig' ), GetVariableSystem.HasValue( 'twcm_search', 'knigh' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'knight' ), GetVariableSystem.HasValue( 'twcm_search', 'n' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'no' ), GetVariableSystem.HasValue( 'twcm_search', 'nor' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'norm' ), GetVariableSystem.HasValue( 'twcm_search', 'norma' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'normal' ), GetVariableSystem.HasValue( 'twcm_search', 'r' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 're' ), GetVariableSystem.HasValue( 'twcm_search', 'res' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'rest' ), GetVariableSystem.HasValue( 'twcm_search', 'resto' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'restor' ), GetVariableSystem.HasValue( 'twcm_search', 'restore' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'restore ' ), GetVariableSystem.HasValue( 'twcm_search', 'restore n' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'restore no' ), GetVariableSystem.HasValue( 'twcm_search', 'restore nor' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'restore norm' ), GetVariableSystem.HasValue( 'twcm_search', 'restore norma' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal k' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal kn' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal kni' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal knig' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal knigh' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight ' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight ch' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight cho' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight choi' ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight choic' ) ), GetVariableSystem.HasValue( 'twcm_search', 'restore normal knight choice' ) ) ) ) )]" button_standard = {
  name = "action_twcm_editor_knight_default" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_knight_default_label"
@@ -91302,6 +91783,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'co' ), GetVariableSystem.HasValue( 'twcm_search', 'con' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'conf' ), GetVariableSystem.HasValue( 'twcm_search', 'confe' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'confed' ), GetVariableSystem.HasValue( 'twcm_search', 'confede' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'confeder' ), GetVariableSystem.HasValue( 'twcm_search', 'confedera' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'confederat' ), GetVariableSystem.HasValue( 'twcm_search', 'confederate' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'p' ), GetVariableSystem.HasValue( 'twcm_search', 'pa' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'par' ), GetVariableSystem.HasValue( 'twcm_search', 'part' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'parti' ), GetVariableSystem.HasValue( 'twcm_search', 'partit' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'partiti' ), GetVariableSystem.HasValue( 'twcm_search', 'partitio' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'partition' ), GetVariableSystem.HasValue( 'twcm_search', 's' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'se' ), GetVariableSystem.HasValue( 'twcm_search', 'set' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ' ), GetVariableSystem.HasValue( 'twcm_search', 'set c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set co' ), GetVariableSystem.HasValue( 'twcm_search', 'set con' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set conf' ), GetVariableSystem.HasValue( 'twcm_search', 'set confe' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set confed' ), GetVariableSystem.HasValue( 'twcm_search', 'set confede' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set confeder' ), GetVariableSystem.HasValue( 'twcm_search', 'set confedera' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set confederat' ), GetVariableSystem.HasValue( 'twcm_search', 'set confederate' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set confederate ' ), GetVariableSystem.HasValue( 'twcm_search', 'set confederate p' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set confederate pa' ), GetVariableSystem.HasValue( 'twcm_search', 'set confederate par' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set confederate part' ), GetVariableSystem.HasValue( 'twcm_search', 'set confederate parti' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set confederate partit' ), GetVariableSystem.HasValue( 'twcm_search', 'set confederate partiti' ) ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set confederate partitio' ), GetVariableSystem.HasValue( 'twcm_search', 'set confederate partition' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_succession_confederate_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_confederate_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_confederate_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_confederate_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_confederate_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_confederate_partition_requirements'),GetScriptedGui('twcm_editor_succession_confederate_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_confederate_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_confederate_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_confederate_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_confederate_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'co' ), GetVariableSystem.HasValue( 'twcm_search', 'con' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'cont' ), GetVariableSystem.HasValue( 'twcm_search', 'contr' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'contro' ), GetVariableSystem.HasValue( 'twcm_search', 'control' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set' ), GetVariableSystem.HasValue( 'twcm_search', 'set ' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set c' ), GetVariableSystem.HasValue( 'twcm_search', 'set co' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set con' ), GetVariableSystem.HasValue( 'twcm_search', 'set cont' ) ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set contr' ), GetVariableSystem.HasValue( 'twcm_search', 'set contro' ) ), GetVariableSystem.HasValue( 'twcm_search', 'set control' ) ) )]" button_standard = {
  name = "action_twcm_editor_doctrine_doctrine_clerical_function_taxation" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_doctrine_doctrine_clerical_function_taxation_label"
@@ -91982,6 +92480,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'h' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'hi' ), GetVariableSystem.HasValue( 'twcm_search', 'hig' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'high' ), GetVariableSystem.HasValue( 'twcm_search', 'p' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'pa' ), GetVariableSystem.HasValue( 'twcm_search', 'par' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'part' ), GetVariableSystem.HasValue( 'twcm_search', 'parti' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'partit' ), GetVariableSystem.HasValue( 'twcm_search', 'partiti' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'partitio' ), GetVariableSystem.HasValue( 'twcm_search', 'partition' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set' ), GetVariableSystem.HasValue( 'twcm_search', 'set ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set h' ), GetVariableSystem.HasValue( 'twcm_search', 'set hi' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set hig' ), GetVariableSystem.HasValue( 'twcm_search', 'set high' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set high ' ), GetVariableSystem.HasValue( 'twcm_search', 'set high p' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set high pa' ), GetVariableSystem.HasValue( 'twcm_search', 'set high par' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set high part' ), GetVariableSystem.HasValue( 'twcm_search', 'set high parti' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set high partit' ), GetVariableSystem.HasValue( 'twcm_search', 'set high partiti' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set high partitio' ), GetVariableSystem.HasValue( 'twcm_search', 'set high partition' ) ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_succession_high_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_high_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_high_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_high_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_high_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_high_partition_requirements'),GetScriptedGui('twcm_editor_succession_high_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_high_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_high_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_high_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_high_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bl' ), GetVariableSystem.HasValue( 'twcm_search', 'ble' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bles' ), GetVariableSystem.HasValue( 'twcm_search', 'bless' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'blessi' ), GetVariableSystem.HasValue( 'twcm_search', 'blessin' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'blessing' ), GetVariableSystem.HasValue( 'twcm_search', 'h' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ho' ), GetVariableSystem.HasValue( 'twcm_search', 'hol' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'holy' ), GetVariableSystem.HasValue( 'twcm_search', 's' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'se' ), GetVariableSystem.HasValue( 'twcm_search', 'set' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ' ), GetVariableSystem.HasValue( 'twcm_search', 'set h' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set ho' ), GetVariableSystem.HasValue( 'twcm_search', 'set hol' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set holy' ), GetVariableSystem.HasValue( 'twcm_search', 'set holy ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set holy b' ), GetVariableSystem.HasValue( 'twcm_search', 'set holy bl' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set holy ble' ), GetVariableSystem.HasValue( 'twcm_search', 'set holy bles' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set holy bless' ), GetVariableSystem.HasValue( 'twcm_search', 'set holy blessi' ) ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set holy blessin' ), GetVariableSystem.HasValue( 'twcm_search', 'set holy blessing' ) ) ) ) )]" button_standard = {
  name = "action_twcm_editor_doctrine_special_doctrine_pope_blessing" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_doctrine_special_doctrine_pope_blessing_label"
@@ -92594,6 +93109,23 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'p' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'pa' ), GetVariableSystem.HasValue( 'twcm_search', 'par' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'part' ), GetVariableSystem.HasValue( 'twcm_search', 'parti' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'partit' ), GetVariableSystem.HasValue( 'twcm_search', 'partiti' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'partitio' ), GetVariableSystem.HasValue( 'twcm_search', 'partition' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set' ), GetVariableSystem.HasValue( 'twcm_search', 'set ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set p' ), GetVariableSystem.HasValue( 'twcm_search', 'set pa' ) ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set par' ), GetVariableSystem.HasValue( 'twcm_search', 'set part' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set parti' ), GetVariableSystem.HasValue( 'twcm_search', 'set partit' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set partiti' ), GetVariableSystem.HasValue( 'twcm_search', 'set partitio' ) ), GetVariableSystem.HasValue( 'twcm_search', 'set partition' ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_succession_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_partition_requirements'),GetScriptedGui('twcm_editor_succession_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'c' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ch' ), GetVariableSystem.HasValue( 'twcm_search', 'cho' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'chos' ), GetVariableSystem.HasValue( 'twcm_search', 'chose' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'chosen' ), GetVariableSystem.HasValue( 'twcm_search', 'n' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'nu' ), GetVariableSystem.HasValue( 'twcm_search', 'num' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'numb' ), GetVariableSystem.HasValue( 'twcm_search', 'numbe' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'number' ), GetVariableSystem.HasValue( 'twcm_search', 'p' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'pi' ), GetVariableSystem.HasValue( 'twcm_search', 'pie' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'piet' ), GetVariableSystem.HasValue( 'twcm_search', 'piety' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set' ), GetVariableSystem.HasValue( 'twcm_search', 'set ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set p' ), GetVariableSystem.HasValue( 'twcm_search', 'set pi' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set pie' ), GetVariableSystem.HasValue( 'twcm_search', 'set piet' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety ' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety t' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to ' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to c' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to ch' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to cho' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to chos' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to chose' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen n' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen nu' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen num' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen numb' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen numbe' ), GetVariableSystem.HasValue( 'twcm_search', 'set piety to chosen number' ) ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 't' ), GetVariableSystem.HasValue( 'twcm_search', 'to' ) ) ) ) )]" button_standard = {
  name = "action_twcm_editor_exact_piety" position = { 0 0 } size = { 542 36 }
  text = "twcm_editor_exact_piety_label"
@@ -92675,6 +93207,23 @@ button_standard = {
  text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_exact_prestige').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
  onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_exact_prestige' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_exact_prestige' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'p' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'pr' ), GetVariableSystem.HasValue( 'twcm_search', 'pri' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'prim' ), GetVariableSystem.HasValue( 'twcm_search', 'primo' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'primog' ), GetVariableSystem.HasValue( 'twcm_search', 'primoge' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'primogen' ), GetVariableSystem.HasValue( 'twcm_search', 'primogeni' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'primogenit' ), GetVariableSystem.HasValue( 'twcm_search', 'primogenitu' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'primogenitur' ), GetVariableSystem.HasValue( 'twcm_search', 'primogeniture' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set' ), GetVariableSystem.HasValue( 'twcm_search', 'set ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set p' ), GetVariableSystem.HasValue( 'twcm_search', 'set pr' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set pri' ), GetVariableSystem.HasValue( 'twcm_search', 'set prim' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set primo' ), GetVariableSystem.HasValue( 'twcm_search', 'set primog' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set primoge' ), GetVariableSystem.HasValue( 'twcm_search', 'set primogen' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set primogeni' ), GetVariableSystem.HasValue( 'twcm_search', 'set primogenit' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set primogenitu' ), GetVariableSystem.HasValue( 'twcm_search', 'set primogenitur' ) ), GetVariableSystem.HasValue( 'twcm_search', 'set primogeniture' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_succession_single_heir" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_single_heir_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_single_heir' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_single_heir' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_single_heir').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_single_heir_requirements'),GetScriptedGui('twcm_editor_succession_single_heir').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_single_heir" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  tooltip = "twcm_star_help"
 
 }
@@ -92794,6 +93343,74 @@ button_standard = {
  text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_doctrine_doctrine_scriptural').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
  onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_doctrine_doctrine_scriptural' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_doctrine_doctrine_scriptural' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'a' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'as' ), GetVariableSystem.HasValue( 'twcm_search', 'ase' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'asex' ), GetVariableSystem.HasValue( 'twcm_search', 'asexu' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'asexua' ), GetVariableSystem.HasValue( 'twcm_search', 'asexual' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 's' ), GetVariableSystem.HasValue( 'twcm_search', 'se' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set' ), GetVariableSystem.HasValue( 'twcm_search', 'set ' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set s' ), GetVariableSystem.HasValue( 'twcm_search', 'set se' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sex' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexu' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexua' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuali' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexualit' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality t' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to ' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to a' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to as' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to ase' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to asex' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to asexu' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to asexua' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to asexual' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sex' ), GetVariableSystem.HasValue( 'twcm_search', 'sexu' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sexua' ), GetVariableSystem.HasValue( 'twcm_search', 'sexual' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuali' ), GetVariableSystem.HasValue( 'twcm_search', 'sexualit' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuality' ), GetVariableSystem.HasValue( 'twcm_search', 't' ) ) ) ), GetVariableSystem.HasValue( 'twcm_search', 'to' ) ) )]" button_standard = {
+ name = "action_twcm_editor_sexuality_asexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_asexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_asexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_asexual_requirements'),GetScriptedGui('twcm_editor_sexuality_asexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_asexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_asexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'b' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bi' ), GetVariableSystem.HasValue( 'twcm_search', 'bis' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bise' ), GetVariableSystem.HasValue( 'twcm_search', 'bisex' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'bisexu' ), GetVariableSystem.HasValue( 'twcm_search', 'bisexua' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'bisexual' ), GetVariableSystem.HasValue( 'twcm_search', 's' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'se' ), GetVariableSystem.HasValue( 'twcm_search', 'set' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ' ), GetVariableSystem.HasValue( 'twcm_search', 'set s' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set se' ), GetVariableSystem.HasValue( 'twcm_search', 'set sex' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexu' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexua' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexual' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuali' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexualit' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality ' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality t' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to b' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bi' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bis' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bise' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bisex' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bisexu' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bisexua' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to bisexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sex' ), GetVariableSystem.HasValue( 'twcm_search', 'sexu' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexua' ), GetVariableSystem.HasValue( 'twcm_search', 'sexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuali' ), GetVariableSystem.HasValue( 'twcm_search', 'sexualit' ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuality' ), GetVariableSystem.HasValue( 'twcm_search', 't' ) ), GetVariableSystem.HasValue( 'twcm_search', 'to' ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_sexuality_bisexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_bisexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_bisexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_bisexual_requirements'),GetScriptedGui('twcm_editor_sexuality_bisexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_bisexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_bisexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'h' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'he' ), GetVariableSystem.HasValue( 'twcm_search', 'het' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'hete' ), GetVariableSystem.HasValue( 'twcm_search', 'heter' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'hetero' ), GetVariableSystem.HasValue( 'twcm_search', 'heteros' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'heterose' ), GetVariableSystem.HasValue( 'twcm_search', 'heterosex' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'heterosexu' ), GetVariableSystem.HasValue( 'twcm_search', 'heterosexua' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'heterosexual' ), GetVariableSystem.HasValue( 'twcm_search', 's' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'se' ), GetVariableSystem.HasValue( 'twcm_search', 'set' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ' ), GetVariableSystem.HasValue( 'twcm_search', 'set s' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set se' ), GetVariableSystem.HasValue( 'twcm_search', 'set sex' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexu' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexua' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexual' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuali' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexualit' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality ' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality t' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to ' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to h' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to he' ) ) ) ) ) ), Or( Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to het' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to hete' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heter' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to hetero' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heteros' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heterose' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heterosex' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heterosexu' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heterosexua' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to heterosexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sex' ), GetVariableSystem.HasValue( 'twcm_search', 'sexu' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexua' ), GetVariableSystem.HasValue( 'twcm_search', 'sexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuali' ), GetVariableSystem.HasValue( 'twcm_search', 'sexualit' ) ) ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuality' ), GetVariableSystem.HasValue( 'twcm_search', 't' ) ), GetVariableSystem.HasValue( 'twcm_search', 'to' ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_sexuality_heterosexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_heterosexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_heterosexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_heterosexual_requirements'),GetScriptedGui('twcm_editor_sexuality_heterosexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_heterosexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_heterosexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 'h' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ho' ), GetVariableSystem.HasValue( 'twcm_search', 'hom' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'homo' ), GetVariableSystem.HasValue( 'twcm_search', 'homos' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'homose' ), GetVariableSystem.HasValue( 'twcm_search', 'homosex' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'homosexu' ), GetVariableSystem.HasValue( 'twcm_search', 'homosexua' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'homosexual' ), GetVariableSystem.HasValue( 'twcm_search', 's' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'se' ), GetVariableSystem.HasValue( 'twcm_search', 'set' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set ' ), GetVariableSystem.HasValue( 'twcm_search', 'set s' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set se' ), GetVariableSystem.HasValue( 'twcm_search', 'set sex' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexu' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexua' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexual' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuali' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexualit' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality ' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality t' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to ' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to h' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to ho' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to hom' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homo' ) ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homos' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homose' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homosex' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homosexu' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homosexua' ), GetVariableSystem.HasValue( 'twcm_search', 'set sexuality to homosexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sex' ), GetVariableSystem.HasValue( 'twcm_search', 'sexu' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexua' ), GetVariableSystem.HasValue( 'twcm_search', 'sexual' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuali' ), GetVariableSystem.HasValue( 'twcm_search', 'sexualit' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'sexuality' ), GetVariableSystem.HasValue( 'twcm_search', 't' ) ), GetVariableSystem.HasValue( 'twcm_search', 'to' ) ) ) ) )]" button_standard = {
+ name = "action_twcm_editor_sexuality_homosexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_homosexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_homosexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_homosexual_requirements'),GetScriptedGui('twcm_editor_sexuality_homosexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_homosexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_homosexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  tooltip = "twcm_star_help"
 
 }
@@ -93219,6 +93836,23 @@ button_standard = {
  text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_doctrine_temple_authority_toric_doctrine').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
  onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_doctrine_temple_authority_toric_doctrine' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_doctrine_temple_authority_toric_doctrine' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } visible = "[Or( Or( Or( Or( Or( Or( StringIsEmpty( GetVariableSystem.Get( 'twcm_search' ) ), GetVariableSystem.HasValue( 'twcm_search', 's' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'se' ), GetVariableSystem.HasValue( 'twcm_search', 'set' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ' ), GetVariableSystem.HasValue( 'twcm_search', 'set u' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set ul' ), GetVariableSystem.HasValue( 'twcm_search', 'set ult' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ulti' ), GetVariableSystem.HasValue( 'twcm_search', 'set ultim' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set ultimo' ), GetVariableSystem.HasValue( 'twcm_search', 'set ultimog' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ultimoge' ), GetVariableSystem.HasValue( 'twcm_search', 'set ultimogen' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set ultimogeni' ), GetVariableSystem.HasValue( 'twcm_search', 'set ultimogenit' ) ) ) ) ), Or( Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'set ultimogenitu' ), GetVariableSystem.HasValue( 'twcm_search', 'set ultimogenitur' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'set ultimogeniture' ), GetVariableSystem.HasValue( 'twcm_search', 'u' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'ul' ), GetVariableSystem.HasValue( 'twcm_search', 'ult' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ulti' ), GetVariableSystem.HasValue( 'twcm_search', 'ultim' ) ) ) ), Or( Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'ultimo' ), GetVariableSystem.HasValue( 'twcm_search', 'ultimog' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ultimoge' ), GetVariableSystem.HasValue( 'twcm_search', 'ultimogen' ) ) ), Or( Or( GetVariableSystem.HasValue( 'twcm_search', 'ultimogeni' ), GetVariableSystem.HasValue( 'twcm_search', 'ultimogenit' ) ), Or( GetVariableSystem.HasValue( 'twcm_search', 'ultimogenitu' ), GetVariableSystem.HasValue( 'twcm_search', 'ultimogenitur' ) ) ) ) ) ), GetVariableSystem.HasValue( 'twcm_search', 'ultimogeniture' ) )]" button_standard = {
+ name = "action_twcm_editor_succession_single_heir_youngest" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_single_heir_youngest_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_single_heir_youngest' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_single_heir_youngest' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_single_heir_youngest').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_single_heir_youngest_requirements'),GetScriptedGui('twcm_editor_succession_single_heir_youngest').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_single_heir_youngest" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir_youngest').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir_youngest' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir_youngest' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  tooltip = "twcm_star_help"
 
 }
@@ -97136,6 +97770,40 @@ button_standard = {
 
 }
 }
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_break_betrothal" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_break_betrothal_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_break_betrothal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_break_betrothal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_break_betrothal').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_break_betrothal_requirements'),GetScriptedGui('twcm_editor_break_betrothal').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_break_betrothal" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_break_betrothal').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_break_betrothal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_break_betrothal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_cadet_branch" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_cadet_branch_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_cadet_branch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_cadet_branch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_cadet_branch').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_cadet_branch_requirements'),GetScriptedGui('twcm_editor_cadet_branch').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_cadet_branch" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_cadet_branch').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_cadet_branch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_cadet_branch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
 
 } } }
 }
@@ -97145,6 +97813,13 @@ widget = {
  text_single = { position = { 0 0 } size = { 625 42 } text = "twcm_editor_page_630" fontsize = 25 max_width = 625 }
 scrollbox = { position = { 0 50 } size = { 640 460 }
  blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding spacing = 7
+button_standard = {
+ name = "twcm_editor_link_770_realm_succession" position = { 0 0 } size = { 600 38 }
+ text = "twcm_editor_link_770_realm_succession"
+ onclick = "[GetScriptedGui( 'twcm_editor_nav_770' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_nav_770' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+}
 text_multi = { size = { 610 104 } text = "twcm_editor_note_titles" fontsize = 16 }
 text_single = { position = { 0 0 } size = { 600 42 } text = "twcm_editor_chosen_title" fontsize = 18 max_width = 600 }
 widget = { size = { 610 39 } button_standard = {
@@ -123572,6 +124247,291 @@ button_standard = {
 
 } } }
 }
+widget = {
+ name = "twcm_page_750" position = { 204 150 } size = { 650 510 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_page').GetValue, '(CFixedPoint)750' )]"
+ text_single = { position = { 0 0 } size = { 625 42 } text = "twcm_editor_page_750" fontsize = 25 max_width = 625 }
+scrollbox = { position = { 0 50 } size = { 640 460 }
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding spacing = 7
+text_multi = { size = { 610 57 } text = "twcm_editor_note_weight" fontsize = 16 }
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_weight_increase" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_increase_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_increase' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_increase' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_increase').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_increase_requirements'),GetScriptedGui('twcm_editor_weight_increase').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_increase" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_increase').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_increase' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_increase' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_weight_decrease" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_decrease_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_decrease' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_decrease' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_decrease').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_decrease_requirements'),GetScriptedGui('twcm_editor_weight_decrease').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_decrease" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_decrease').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_decrease' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_decrease' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_weight_reset" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_weight_reset_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_weight_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_weight_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_weight_reset').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_weight_reset_requirements'),GetScriptedGui('twcm_editor_weight_reset').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_weight_reset" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_weight_reset').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_weight_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_sexuality_heterosexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_heterosexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_heterosexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_heterosexual_requirements'),GetScriptedGui('twcm_editor_sexuality_heterosexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_heterosexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_heterosexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_sexuality_homosexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_homosexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_homosexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_homosexual_requirements'),GetScriptedGui('twcm_editor_sexuality_homosexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_homosexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_homosexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_sexuality_bisexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_bisexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_bisexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_bisexual_requirements'),GetScriptedGui('twcm_editor_sexuality_bisexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_bisexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_bisexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_sexuality_asexual" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_sexuality_asexual_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_sexuality_asexual').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_sexuality_asexual_requirements'),GetScriptedGui('twcm_editor_sexuality_asexual').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_sexuality_asexual" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_sexuality_asexual').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+
+} } }
+}
+widget = {
+ name = "twcm_page_760" position = { 204 150 } size = { 650 510 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_page').GetValue, '(CFixedPoint)760' )]"
+ text_single = { position = { 0 0 } size = { 625 42 } text = "twcm_editor_page_760" fontsize = 25 max_width = 625 }
+scrollbox = { position = { 0 50 } size = { 640 460 }
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding spacing = 7
+text_multi = { size = { 610 70 } text = "twcm_editor_note_regiments" fontsize = 16 }
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_regiment_light_footmen" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_light_footmen_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_light_footmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_light_footmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_light_footmen').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_light_footmen_requirements'),GetScriptedGui('twcm_editor_regiment_light_footmen').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_light_footmen" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_light_footmen').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_light_footmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_light_footmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_regiment_bowmen" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_bowmen_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_bowmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_bowmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_bowmen').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_bowmen_requirements'),GetScriptedGui('twcm_editor_regiment_bowmen').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_bowmen" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_bowmen').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_bowmen' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_bowmen' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_regiment_onager" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_regiment_onager_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_regiment_onager' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_regiment_onager' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_regiment_onager').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_regiment_onager_requirements'),GetScriptedGui('twcm_editor_regiment_onager').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_regiment_onager" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_regiment_onager').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_onager' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_regiment_onager' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+
+} } }
+}
+widget = {
+ name = "twcm_page_770" position = { 204 150 } size = { 650 510 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_page').GetValue, '(CFixedPoint)770' )]"
+ text_single = { position = { 0 0 } size = { 625 42 } text = "twcm_editor_page_770" fontsize = 25 max_width = 625 }
+scrollbox = { position = { 0 50 } size = { 640 460 }
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding spacing = 7
+text_multi = { size = { 610 70 } text = "twcm_editor_note_succession" fontsize = 16 }
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_succession_confederate_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_confederate_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_confederate_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_confederate_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_confederate_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_confederate_partition_requirements'),GetScriptedGui('twcm_editor_succession_confederate_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_confederate_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_confederate_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_confederate_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_confederate_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_succession_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_partition_requirements'),GetScriptedGui('twcm_editor_succession_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_succession_high_partition" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_high_partition_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_high_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_high_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_high_partition').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_high_partition_requirements'),GetScriptedGui('twcm_editor_succession_high_partition').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_high_partition" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_high_partition').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_high_partition' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_high_partition' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_succession_single_heir" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_single_heir_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_single_heir' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_single_heir' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_single_heir').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_single_heir_requirements'),GetScriptedGui('twcm_editor_succession_single_heir').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_single_heir" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+widget = { size = { 610 39 } button_standard = {
+ name = "action_twcm_editor_succession_single_heir_youngest" position = { 0 0 } size = { 542 36 }
+ text = "twcm_editor_succession_single_heir_youngest_label"
+ onclick = "[GetScriptedGui( 'twcm_editor_succession_single_heir_youngest' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_editor_succession_single_heir_youngest' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "[Select_CString(GetScriptedGui('twcm_editor_succession_single_heir_youngest').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End),Localize('twcm_editor_succession_single_heir_youngest_requirements'),GetScriptedGui('twcm_editor_succession_single_heir_youngest').IsValidTooltip(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+}
+button_standard = {
+ name = "star_twcm_editor_succession_single_heir_youngest" position = { 553 0 } size = { 44 36 }
+ text = "[SelectLocalization( GetPlayer.MakeScope.Var('twcm_fav_twcm_editor_succession_single_heir_youngest').IsSet, 'twcm_editor_star_on', 'twcm_editor_star' )]"
+ onclick = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir_youngest' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ enabled = "[GetScriptedGui( 'twcm_star_twcm_editor_succession_single_heir_youngest' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_star_help"
+
+}
+}
+
+} } }
+}
 
  text_single = { position = { 24 678 } size = { 842 28 } text = "twcm_ui_footer" fontsize = 14 max_width = 842 }
 
@@ -132584,6 +133544,114 @@ button_standard = {
  text_multi = { size = { 470 206 } text = "twcm_editor_alliance_break_review" fontsize = 16 }
 
  } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1501' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_weight_increase_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1502' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_weight_decrease_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1503' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_weight_reset_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1504' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_sexuality_heterosexual_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1505' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_sexuality_homosexual_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1506' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_sexuality_bisexual_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1507' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_sexuality_asexual_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1508' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_break_betrothal_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1509' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_cadet_branch_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1510' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_discover_secrets_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1511' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_succession_confederate_partition_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1512' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_succession_partition_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1513' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_succession_high_partition_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1514' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_succession_single_heir_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1515' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_succession_single_heir_youngest_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1516' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_regiment_light_footmen_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1517' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_regiment_bowmen_review" fontsize = 16 }
+
+ } }
+}scrollbox = { position = { 20 80 } size = { 500 285 }
+ visible = "[EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('twcm_ui_pending').GetValue, '(CFixedPoint)1518' )]"
+ blockoverride "scrollbox_content" { vbox = { layoutpolicy_horizontal = expanding
+ text_multi = { size = { 470 170 } text = "twcm_editor_regiment_onager_review" fontsize = 16 }
+
+ } }
 }
    button_standard = {
  name = "cancel_pending" position = { 225 395 } size = { 135 38 }
@@ -132605,14 +133673,27 @@ button_standard = {
  }
 }
 window = {
- name = "twcm_hud_button" parentanchor = bottom|right position = { -210 -175 } size = { 125 40 } layer = hud_layer
+ name = "twcm_hud_button" parentanchor = bottom|right position = { -210 -175 } size = { 153 40 } layer = hud_layer
+ movable = yes
+ min_dist_from_screen_edge = 153
+ filter_mouse = all
+ tooltip = "twcm_ui_move_button"
  # The floating button otherwise intercepts clicks on the Decisions panel beneath it.
  visible = "[And(GetPlayer.IsValid, Not(IsGameViewOpen('decisions')))]"
+ # Leave the grip transparent to input so the window receives the drag.
  button_standard = {
- name = "open_cheats" position = { 0 0 } size = { 125 40 }
+  name = "twcm_hud_grip" size = { 28 40 } alwaystransparent = yes
+  icon = {
+   texture = "gfx/interface/icons/flat_icons/drag_indicator.dds"
+   position = { 7 13 } size = { 14 14 } alwaystransparent = yes
+  }
+ }
+ button_standard = {
+ name = "open_cheats" position = { 28 0 } size = { 125 40 }
  text = "twcm_ui_open_button"
  onclick = "[GetScriptedGui( 'twcm_ui_open' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
  enabled = "[GetScriptedGui( 'twcm_ui_open' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ tooltip = "twcm_ui_move_button"
 
 }
 
